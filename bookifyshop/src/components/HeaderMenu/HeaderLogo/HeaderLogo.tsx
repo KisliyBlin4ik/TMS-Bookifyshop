@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
+
+import './HeaderLogo.scss';
 
 const HeaderLogo = () => {
-  return (
-    <a href="/">Bookifyshop</a>
-    // svg формат
-  )
-}
+  const logo = 'Bookifyshop';
+  const upperCaseLogo = logo.toUpperCase();
 
-export default HeaderLogo
+  return (
+    <a href="/">{upperCaseLogo}</a>
+    // svg формат
+  );
+};
+
+export default HeaderLogo;

@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+
+    h1 {
+        font-size: 30px;
+    }
+
+    div {
+        flex-grow: 1;
+    }
+}

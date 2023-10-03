@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+main h1 {
+  font-size: 30px;
+}
+main div {
+  flex-grow: 1;
+}

@@ -6,7 +6,7 @@ import './Input.scss';
 
 const Input: FC<IInput> = ({ type, placeholder, value, label, onChange }) => {
   return (
-    <div className="formInput">
+    <div className={label ? `formInput formInput__${label}` : 'formInput'}>
       <label>{label}</label>
       <input
         type={type}

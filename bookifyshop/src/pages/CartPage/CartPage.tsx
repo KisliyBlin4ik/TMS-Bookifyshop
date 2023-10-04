@@ -4,7 +4,7 @@ import PageTemplate from 'src/components/PageTemplate';
 const CartPage = () => {
   return (
     <>
-      <PageTemplate title="Cart page">Cart page content</PageTemplate>
+      <PageTemplate title="Cart page" customClass='cartPage'>Cart page content</PageTemplate>
     </>
   );
 };

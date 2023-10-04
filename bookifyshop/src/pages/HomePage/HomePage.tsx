@@ -13,12 +13,10 @@ const HomePage = () => {
 
   return (
     <>
-      <PageTemplate title="Home page">
-        <div className="homePage">
-          {posts.map(({ id, image, title, date }, index) => (
-            <Post key={index} id={id} image={image} title={title} date={date} />
-          ))}
-        </div>
+      <PageTemplate title="Home page" customClass="homePage">
+        {posts.map(({ id, image, title, date }, index) => (
+          <Post key={index} id={id} image={image} title={title} date={date} />
+        ))}
       </PageTemplate>
     </>
   );

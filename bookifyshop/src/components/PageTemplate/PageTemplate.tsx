@@ -7,7 +7,7 @@ import { IPageTemplate } from 'src/interface/interface';
 
 import './PageTemplate.scss';
 
-const PageTemplate: FC<IPageTemplate> = ({ title, children }) => {
+const PageTemplate: FC<IPageTemplate> = ({ title, customClass, children }) => {
   const titlePage = `${title}`;
   const upperCaseTitlePage = titlePage.toUpperCase();
   
@@ -16,7 +16,7 @@ const PageTemplate: FC<IPageTemplate> = ({ title, children }) => {
       <HeaderMenu></HeaderMenu>
       <main>
         <h1>{upperCaseTitlePage}</h1>
-        <div>{children}</div>
+        <div className={`${customClass} main`}>{children}</div>
       </main>
       <Footer></Footer>
     </>

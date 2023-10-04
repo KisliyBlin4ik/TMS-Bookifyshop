@@ -10,7 +10,7 @@ const BookPage = () => {
 
   return (
     <>
-      <PageTemplate title="Book page">пост{bookId}</PageTemplate>
+      <PageTemplate title="Book page" customClass='bookPage'>пост{bookId}</PageTemplate>
     </>
   );
 };

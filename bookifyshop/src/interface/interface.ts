@@ -10,7 +10,12 @@ export interface IInput {
 
 export interface IPageTemplate {
   title: string;
+  customClass: string;
   children: ReactNode;
+}
+
+export interface IFormTemplate extends IPageTemplate {
+  id: string;
 }
 
 export interface IPost {
@@ -21,4 +26,9 @@ export interface IPost {
   date?: string;
   likes?: number;
   isFavorite?: boolean;
+}
+
+export interface IButton {
+  type: 'button' | 'submit';
+  content: string;
 }

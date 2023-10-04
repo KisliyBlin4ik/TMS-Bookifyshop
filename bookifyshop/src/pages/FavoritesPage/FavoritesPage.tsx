@@ -4,7 +4,7 @@ import PageTemplate from 'src/components/PageTemplate';
 const FavoritesPage = () => {
   return (
     <>
-      <PageTemplate title="Favorites page">Favorites page content</PageTemplate>
+      <PageTemplate title="Favorites page" customClass='favoritesPage'>Favorites page content</PageTemplate>
     </>
   );
 };

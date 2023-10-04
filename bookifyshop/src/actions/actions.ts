@@ -13,7 +13,6 @@ export const FETCH_POSTS = () => {
           throw new Error('Ошибка при запросе');
         }
         const data = await response.json();
-        console.log(data);
         dispatch({ type: 'GET_POSTS', payload: data });
       } catch (err) {
         console.log(err);

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;500&display=swap');
+
 main {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,10 @@ main {
     width: 100%;
 
     h1 {
-        font-size: 30px;
+        margin: 50px 0 40px;
+        font-size: 56px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     div {

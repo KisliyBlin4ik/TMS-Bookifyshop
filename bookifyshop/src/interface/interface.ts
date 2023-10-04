@@ -12,3 +12,13 @@ export interface IPageTemplate {
   title: string;
   children: ReactNode;
 }
+
+export interface IPost {
+  id: number;
+  image?: string;
+  title: string;
+  text?: string;
+  date?: string;
+  likes?: number;
+  isFavorite?: boolean;
+}

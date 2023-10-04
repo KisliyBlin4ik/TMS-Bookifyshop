@@ -2,7 +2,7 @@ import React, { useEffect, FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import { FETCH_POSTS } from './actions/actions';
 
@@ -14,12 +14,24 @@ import FavoritesPage from './pages/FavoritesPage';
 import SignInPage from './pages/SignInPage';
 import SearchPage from './pages/SearchPage';
 
+import {
+  ROUTE_ACCOUNT,
+  ROUTE_BOOK_PAGE,
+  ROUTE_CART,
+  ROUTE_FAVORITES,
+  ROUTE_HOME,
+  ROUTE_SEARCH,
+  ROUTE_SIGN_IN,
+} from './utils/routes';
+
 import './App.scss';
 
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
+  const navigate = useNavigate();
 
   useEffect(() => {
+    navigate('/home');
     dispatch(FETCH_POSTS());
   }, []);
 
@@ -27,13 +39,13 @@ function App() {
     <div className="wrapper">
       <div className="app">
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/search" element={<SearchPage />}></Route>
-          <Route path="/book" element={<BookPage />}></Route>
-          <Route path="/cart" element={<CartPage />}></Route>
-          <Route path="/favorites" element={<FavoritesPage />}></Route>
-          <Route path="/account" element={<AccountPage />}></Route>
-          <Route path="/sign-in" element={<SignInPage />}></Route>
+          <Route path={ROUTE_HOME} element={<HomePage />}></Route>
+          <Route path={ROUTE_SEARCH} element={<SearchPage />}></Route>
+          <Route path={ROUTE_BOOK_PAGE} element={<BookPage />}></Route>
+          <Route path={ROUTE_CART} element={<CartPage />}></Route>
+          <Route path={ROUTE_FAVORITES} element={<FavoritesPage />}></Route>
+          <Route path={ROUTE_ACCOUNT} element={<AccountPage />}></Route>
+          <Route path={ROUTE_SIGN_IN} element={<SignInPage />}></Route>
         </Routes>
       </div>
     </div>

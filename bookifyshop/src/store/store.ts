@@ -4,10 +4,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 export const initialState = {
   posts: [],
-  post: [],
 };
 
-const rootReducer = (state: any = initialState, action: any) => {
+const rootReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case 'GET_POSTS': {
       return {
@@ -15,6 +14,8 @@ const rootReducer = (state: any = initialState, action: any) => {
         posts: action.payload,
       };
     }
+    default:
+      return state;
   }
 };
 

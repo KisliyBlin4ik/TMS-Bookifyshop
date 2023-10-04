@@ -1,0 +1,10 @@
+.formPost {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 352px;
+
+    .formPost__footer {
+        display: flex;
+    }
+}

@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { FC } from 'react';
 
-const Input = () => {
+import { IInput } from 'src/interface/interface';
+
+import './Input.scss';
+
+const Input: FC<IInput> = ({ type, placeholder, value, label, onChange }) => {
   return (
-    <>
-    <input type="text" />
-    </>
-  )
-}
+    <div className="formInput">
+      <label>{label}</label>
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(e.currentTarget.value)}
+      />
+    </div>
+  );
+};
 
-export default Input
+export default Input;

@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { FC, ReactNode } from 'react';
 
-const Interface = () => {
-  return 
+export interface IInput {
+  type: 'password' | 'text' | 'file' | 'search';
+  placeholder?: string;
+  value: string;
+  label?: string;
+  onChange: (value: string) => void;
 }
 
-export default Interface
+export interface IPageTemplate {
+  title: string;
+  children: ReactNode;
+}

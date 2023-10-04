@@ -1,13 +1,11 @@
 import React, { FC, ReactNode } from 'react';
+
 import HeaderMenu from '../HeaderMenu';
 import Footer from '../Footer';
 
-import './PageTemplate.scss';
+import { IPageTemplate } from 'src/interface/interface';
 
-interface IPageTemplate {
-  title: string;
-  children: ReactNode;
-}
+import './PageTemplate.scss';
 
 const PageTemplate: FC<IPageTemplate> = ({ title, children }) => {
   return (

@@ -5,7 +5,7 @@ import Footer from '../Footer';
 
 import { IPageTemplate } from 'src/interface/interface';
 
-import './PageTemplate.scss';
+import 'src/scss/App.scss';
 
 const PageTemplate: FC<IPageTemplate> = ({ title, customClass, children }) => {
   const titlePage = `${title}`;

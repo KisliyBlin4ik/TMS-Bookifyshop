@@ -2,11 +2,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 25px;
     width: 100%;
     min-height: 95px;
-    background-color: rgba(152, 62, 255, 0.5);
-
-    div {
-        padding: 0 1.2rem;
-    }
+    font-size: 16px;
+    background-color: $main-color;
 }

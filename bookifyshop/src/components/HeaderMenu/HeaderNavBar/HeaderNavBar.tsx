@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 
 
-import './HeaderNavBar.scss'
+import 'src/scss/App.scss'
 
 const HeaderNavBar = () => {
   const navigate = useNavigate();

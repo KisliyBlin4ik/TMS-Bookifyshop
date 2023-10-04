@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*Fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;500&display=swap");
 /*Обнуление*/
 * {
   margin: 0;
@@ -21,13 +23,6 @@
 a:focus,
 a:active {
   outline: none;
-}
-
-nav,
-footer,
-header,
-aside {
-  display: block;
 }
 
 h1,
@@ -85,6 +80,155 @@ body {
 }
 
 /*--------------------*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  width: 100%;
+  min-height: 95px;
+  font-size: 16px;
+  background-color: rgba(152, 62, 255, 0.5);
+}
+
+.logo {
+  font-size: 28px;
+}
+
+nav ul {
+  display: flex;
+}
+nav ul li {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 5px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  width: 100%;
+  min-height: 104px;
+  background-color: rgba(152, 62, 255, 0.5);
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  max-width: 544px;
+  width: 100%;
+  gap: 4px;
+}
+.formInput .formInput__label {
+  font-weight: 700;
+  font-size: 16px;
+}
+.formInput input {
+  padding: 15px 20px;
+  border: 1px solid rgb(231, 231, 231);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 25px;
+  width: 100%;
+}
+main h1 {
+  margin: 50px 0 40px;
+  font-size: 56px;
+  font-family: "Bebas Neue", sans-serif;
+}
+main .main {
+  flex-grow: 1;
+}
+
+.formPost {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 352px;
+}
+.formPost .formPost__footer {
+  display: flex;
+}
+
+#form_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+#form_1 .FormTemplate {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#form_1 .FormTemplate .account__profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+}
+#form_1 .FormTemplate .account__password {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+#form_1 .FormTemplate .account__password .formInput__Password {
+  width: calc(50% - 16px);
+}
+#form_1 .FormTemplate .account__password .bb {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+#form_1 .account__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+}
+#form_1 .account__buttons :first-child {
+  background-color: rgba(152, 62, 255, 0.5);
+}
+#form_1 .account__buttons :first-child:hover {
+  background-color: rgba(152, 62, 255, 0.4);
+}
+#form_1 .account__buttons :first-child:active {
+  box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
+}
+#form_1 .account__buttons :last-child {
+  border: 1px solid rgb(231, 231, 231);
+  background-color: rgb(255, 255, 255);
+}
+#form_1 .account__buttons :last-child:hover {
+  background-color: rgb(231, 231, 231);
+}
+#form_1 .account__buttons :last-child:active {
+  box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
+}
+#form_1 .account__buttons button {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  width: 257px;
+  height: 56px;
+}
+
+.homePage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  row-gap: 48px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  margin-bottom: 72px;
+}
+
 .wrapper {
   overflow-x: hidden;
   background-color: #F7F7F7;
@@ -93,7 +237,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1120px;
+  max-width: 1170px;
   min-height: 100vh;
   margin: 0 auto;
   background-color: #FFFFFF;

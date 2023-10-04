@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { IPost } from 'src/interface/interface';
-
-import './Post.scss';
 import { ROUTE_BOOK } from 'src/utils/routes';
+
+import 'src/scss/App.scss';
 
 const Post: FC<IPost> = ({ id, image, title, date }) => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import './HeaderLogo.scss';
+import 'src/scss/App.scss';
 
 const HeaderLogo = () => {
   const navigate = useNavigate();

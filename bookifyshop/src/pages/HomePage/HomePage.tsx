@@ -6,7 +6,7 @@ import { IPost } from 'src/interface/interface';
 import PageTemplate from 'src/components/PageTemplate';
 import Post from 'src/components/Post';
 
-import './HomePage.scss';
+import 'src/scss/App.scss';
 
 const HomePage = () => {
   const posts: IPost[] = useSelector(({ posts }) => posts);

@@ -5,7 +5,7 @@ import Input from 'src/components/Input';
 import PageTemplate from 'src/components/PageTemplate';
 import FormTemplate from 'src/components/FormTemplate';
 
-import './AccountPage.scss';
+import 'src/scss/App.scss';
 
 const AccountPage = () => {
   const [name, setName] = useState('');

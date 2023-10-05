@@ -1,4 +1,62 @@
-.post-single__content {
-    max-width: 448px;
-    width: 100%;
+.post-single {
+    .post-single__book-description {
+        display: flex;
+        justify-content: space-between;
+
+        .book-description__image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 544px;
+            width: 100%;
+            background-color: $post-bg-color;
+        }
+
+        .book-description__details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 448px;
+            width: 100%;
+            border-top: 1px solid $border-color;
+
+            .book-description__price {
+                padding-top: 40px;
+                div:first-child{
+                    font-family: 'Bebas Neue', sans-serif;
+                    font-size: 40px;
+                    line-height: 150%;
+                }
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+            }
+
+            .book-description__content {
+                padding-bottom: 99px;
+            }
+
+            .book-description__btn {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                button {
+                    &:hover {
+                        background-color: $button-main-hover-color;
+                    }
+
+                    &:active {
+                        box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
+                    }
+
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+    &:last-child {
+        line-height: 200%;
+    }
 }

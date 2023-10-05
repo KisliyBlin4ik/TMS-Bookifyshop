@@ -4,7 +4,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-import { FETCH_POSTS } from './actions/actions';
+import { DELETE_POST, FETCH_POSTS } from './actions/actions';
 
 import HomePage from './pages/HomePage';
 import BookPage from './pages/BookPage';
@@ -31,6 +31,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    dispatch(DELETE_POST(navigate, {}))
     navigate('/home');
     dispatch(FETCH_POSTS());
   }, []);

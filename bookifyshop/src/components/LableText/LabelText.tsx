@@ -10,7 +10,7 @@ interface ILabelText {
 
 const LabelText: FC<ILabelText> = ({ text1, text2, text3 }) => {
   return (
-    <div className="post-single__detalise">
+    <div className="labelText__detalise">
       <div>{text1}</div>
       <div>
         {text2}

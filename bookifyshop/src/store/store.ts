@@ -40,6 +40,11 @@ const rootReducer = (state = initialState, action: any) => {
         post: action.payload,
       };
     }
+    case 'DELETE_POST':
+      return {
+        ...state,
+        post: {}, 
+      };
     default:
       return state;
   }

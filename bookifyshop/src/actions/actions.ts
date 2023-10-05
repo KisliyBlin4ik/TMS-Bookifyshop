@@ -43,3 +43,12 @@ export const FETCH_POST = (isbn13: string) => {
     activateUser();
   };
 };
+
+export const DELETE_POST = (navigate: any, payload: any) => {
+  return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
+    
+        dispatch({ type: 'DELETE_POST', payload: {} });
+        navigate('/home');
+
+  };
+};

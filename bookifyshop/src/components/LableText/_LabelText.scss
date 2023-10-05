@@ -1,4 +1,12 @@
-.post-single__detalise {
+.labelText__detalise {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    div:first-child {
+        color: #A8A8A8;
+        line-height: 200%;
+    }
+
+    div:last-child {}
 }

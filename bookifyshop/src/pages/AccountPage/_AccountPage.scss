@@ -52,6 +52,7 @@
 
             background-color: $main-color;
         }
+
         :last-child {
             &:hover {
                 background-color: $border-color;
@@ -60,13 +61,12 @@
             &:active {
                 box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
             }
+
             border: 1px solid $border-color;
             background-color: rgb(255, 255, 255);
         }
 
         button {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 24px;
             width: 257px;
             height: 56px;
         }

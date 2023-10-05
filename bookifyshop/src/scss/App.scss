@@ -1,18 +1,20 @@
-@import './_fonts' ;
-@import './_colors' ;
-@import './_reset' ;
+@import './_fonts';
+@import './_colors';
+@import './_reset';
 
-@import '../components/Button/Button' ;
-@import '../components/Footer/Footer' ;
-@import '../components/HeaderMenu/HeaderLogo/HeaderLogo' ;
-@import '../components/HeaderMenu/HeaderNavBar/HeaderNavBar' ;
-@import '../components/HeaderMenu/HeaderMenu' ;
-@import '../components/Input/Input' ;
-@import '../components/PageTemplate/PageTemplate' ;
-@import '../components/Post/Post' ;
+@import '../components/Button/Button';
+@import '../components/Footer/Footer';
+@import '../components/HeaderMenu/HeaderLogo/HeaderLogo';
+@import '../components/HeaderMenu/HeaderNavBar/HeaderNavBar';
+@import '../components/HeaderMenu/HeaderMenu';
+@import '../components/Input/Input';
+@import '../components/LableText/LabelText';
+@import '../components/PageTemplate/PageTemplate';
+@import '../components/Post/Post';
+@import '../components/PostSingle/PostSingle';
 
-@import '../pages/AccountPage/_AccountPage' ;
-@import '../pages/HomePage/HomePage' ;
+@import '../pages/AccountPage/_AccountPage';
+@import '../pages/HomePage/HomePage';
 
 
 

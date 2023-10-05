@@ -130,6 +130,11 @@ header {
   border: 1px solid rgb(231, 231, 231);
 }
 
+.post-single__detalise {
+  display: flex;
+  justify-content: space-between;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -142,9 +147,6 @@ main h1 {
   font-size: 56px;
   font-family: "Bebas Neue", sans-serif;
 }
-main .main {
-  flex-grow: 1;
-}
 
 .formPost {
   display: flex;
@@ -154,6 +156,11 @@ main .main {
 }
 .formPost .formPost__footer {
   display: flex;
+}
+
+.post-single__content {
+  max-width: 448px;
+  width: 100%;
 }
 
 #form_1 {

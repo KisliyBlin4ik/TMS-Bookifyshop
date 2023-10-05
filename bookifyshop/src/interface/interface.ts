@@ -9,7 +9,7 @@ export interface IInput {
 }
 
 export interface IPageTemplate {
-  title: string;
+  title?: string;
   customClass: string;
   children: ReactNode;
 }
@@ -18,14 +18,28 @@ export interface IFormTemplate extends IPageTemplate {
   id: string;
 }
 
-export interface IPost {
-  id: number;
-  image?: string;
+export interface IPosts {
+  image: string;
+  isbn13: string;
+  price: string;
+  subtitle: string;
   title: string;
-  text?: string;
-  date?: string;
-  likes?: number;
-  isFavorite?: boolean;
+  url: string;
+}
+
+export interface IPost extends IPosts {
+  authors: string;
+  desc: string;
+  error: string;
+  isbn10: string;
+  language: string;
+  pages: string;
+  pdf: {
+    FreeeBook: string;
+  };
+  publisher: string;
+  rating: string;
+  year: string;
 }
 
 export interface IButton {

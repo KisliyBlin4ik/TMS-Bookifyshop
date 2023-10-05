@@ -1,16 +1,17 @@
 import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
+import Button from 'src/components/Button';
 import PageTemplate from 'src/components/PageTemplate';
+import PostSingle from 'src/components/PostSingle';
 
 const BookPage = () => {
   const { bookId } = useParams();
-  const location = useLocation();
-  const l = location.state;
-  console.log(location.state);
 
   return (
     <>
-      <PageTemplate title="Book page" customClass='bookPage'>пост{bookId}</PageTemplate>
+      <PageTemplate customClass="bookPage">
+        <PostSingle></PostSingle>
+      </PageTemplate>
     </>
   );
 };

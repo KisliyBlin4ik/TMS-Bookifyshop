@@ -15,8 +15,8 @@ const PageTemplate: FC<IPageTemplate> = ({ title, customClass, children }) => {
     <>
       <HeaderMenu></HeaderMenu>
       <main>
-        <h1>{upperCaseTitlePage}</h1>
-        <div className={`${customClass} main`}>{children}</div>
+        {title ? <h1>{upperCaseTitlePage}</h1> : ''}
+        <div className={customClass}>{children}</div>
       </main>
       <Footer></Footer>
     </>

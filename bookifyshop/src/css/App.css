@@ -87,8 +87,71 @@ button {
   font-family: "Bebas Neue", sans-serif;
   font-size: 24px;
   color: rgb(49, 48, 55);
+  background-color: rgb(214, 180, 252);
   width: 100%;
   height: 56px;
+}
+button:hover {
+  background-color: rgba(152, 62, 255, 0.5);
+}
+button:active {
+  box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
+}
+
+.formCartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+  width: 100%;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.formCartItem .cartItem__description {
+  display: flex;
+  gap: 32px;
+  max-width: 734px;
+  width: 100%;
+}
+.formCartItem .cartItem__description .cartItem__image {
+  display: flex;
+  max-width: 256px;
+  max-height: 200px;
+  width: 100%;
+  cursor: pointer;
+  background-color: rgb(254, 233, 226);
+}
+.formCartItem .cartItem__description .cartItem__image :first-child {
+  max-width: 256px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.formCartItem .cartItem__description .cartItem__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+.formCartItem .cartItem__description .cartItem__details .cartItem__title {
+  font-size: 24px;
+  line-height: 133%;
+  font-family: "Bebas Neue", sans-serif;
+}
+.formCartItem .cartItem__description .cartItem__details .cartItem__author {
+  color: rgb(168, 168, 168);
+  line-height: 150%;
+}
+.formCartItem .cartItem__price {
+  font-size: 40px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.cartTotal {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 256px;
+  width: 100%;
+  margin-bottom: 72px;
 }
 
 footer {
@@ -98,6 +161,7 @@ footer {
   padding: 0 25px;
   width: 100%;
   min-height: 95px;
+  border-radius: 20px 20px 0 0;
   font-size: 16px;
   background-color: rgb(214, 180, 252);
 }
@@ -123,6 +187,7 @@ header {
   padding: 0 25px;
   width: 100%;
   min-height: 104px;
+  border-radius: 0 0 20px 20px;
   background-color: rgb(214, 180, 252);
 }
 
@@ -148,7 +213,7 @@ header {
   justify-content: space-between;
 }
 .labelText__detalise div:first-child {
-  color: #A8A8A8;
+  color: rgb(168, 168, 168);
   line-height: 200%;
 }
 main {
@@ -217,16 +282,7 @@ main h1 {
   align-items: center;
   gap: 40px;
 }
-.post-single .post-single__book-description .book-description__details .book-description__btn button {
-  background-color: rgb(214, 180, 252);
-}
-.post-single .post-single__book-description .book-description__details .book-description__btn button:hover {
-  background-color: rgba(152, 62, 255, 0.5);
-}
-.post-single .post-single__book-description .book-description__details .book-description__btn button:active {
-  box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
-}
-.post-single:last-child {
+.post-single .post-single__text {
   line-height: 200%;
 }
 
@@ -266,15 +322,6 @@ main h1 {
   justify-content: flex-end;
   gap: 30px;
 }
-#form_1 .account__buttons :first-child {
-  background-color: rgb(214, 180, 252);
-}
-#form_1 .account__buttons :first-child:hover {
-  background-color: rgba(152, 62, 255, 0.5);
-}
-#form_1 .account__buttons :first-child:active {
-  box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
-}
 #form_1 .account__buttons :last-child {
   border: 1px solid rgb(231, 231, 231);
   background-color: rgb(255, 255, 255);
@@ -282,12 +329,16 @@ main h1 {
 #form_1 .account__buttons :last-child:hover {
   background-color: rgb(231, 231, 231);
 }
-#form_1 .account__buttons :last-child:active {
-  box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
-}
 #form_1 .account__buttons button {
   width: 257px;
   height: 56px;
+}
+
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
 }
 
 .homePage {

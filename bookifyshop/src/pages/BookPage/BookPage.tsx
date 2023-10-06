@@ -10,7 +10,7 @@ const BookPage = () => {
   return (
     <>
       <PageTemplate customClass="bookPage">
-        <PostSingle></PostSingle>
+        <PostSingle />
       </PageTemplate>
     </>
   );

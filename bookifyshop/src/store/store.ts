@@ -23,7 +23,8 @@ export const initialState = {
     title: '',
     url: '',
     year: '',
-  }
+  },
+  cart: [],
 };
 
 const rootReducer = (state = initialState, action: any) => {
@@ -40,11 +41,18 @@ const rootReducer = (state = initialState, action: any) => {
         post: action.payload,
       };
     }
-    case 'DELETE_POST':
+    case 'DELETE_POST': {
       return {
         ...state,
         post: {}, 
       };
+    }
+    case 'ADD_CART': {
+      return {
+        ...state,
+        cart: state.cart.concat(action.payload), 
+      };
+    }
     default:
       return state;
   }

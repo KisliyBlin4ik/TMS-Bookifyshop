@@ -1,0 +1,54 @@
+.formCartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+
+    .cartItem__description {
+        display: flex;
+        gap: 32px;
+        max-width: 734px;
+        width: 100%;
+
+        .cartItem__image {
+            display: flex;
+            max-width: 256px;
+            max-height: 200px;
+            width: 100%;
+            cursor: pointer;
+            background-color: $post-bg-color;
+
+            :first-child {
+                max-width: 256px;
+                object-fit: contain;
+            }
+        }
+
+        .cartItem__details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 25px;
+
+            .cartItem__title {
+                font-size: 24px;
+                line-height: 133%;
+                font-family: 'Bebas Neue', sans-serif;
+            }
+
+            .cartItem__author {
+                color: $font-color-2;
+                line-height: 150%;
+            }
+        }
+    }
+
+    .cartItem__price {
+        font-size: 40px;
+        font-family: 'Bebas Neue', sans-serif;
+
+    }
+
+}

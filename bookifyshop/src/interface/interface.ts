@@ -41,8 +41,14 @@ export interface IPost extends IPosts {
   rating: string;
   year: string;
 }
+export interface IAddCart extends IPosts {
+  authors: string;
+  year: string;
+  isbn10: string;
+}
 
 export interface IButton {
   type: 'button' | 'submit';
   content: string;
+  onClick?: () => {};
 }

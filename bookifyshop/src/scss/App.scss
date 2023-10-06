@@ -3,6 +3,8 @@
 @import './_reset';
 
 @import '../components/Button/Button';
+@import '../components/CartItem/CartItem';
+@import '../components/CartTotal/CartTotal';
 @import '../components/Footer/Footer';
 @import '../components/HeaderMenu/HeaderLogo/HeaderLogo';
 @import '../components/HeaderMenu/HeaderNavBar/HeaderNavBar';
@@ -14,6 +16,7 @@
 @import '../components/PostSingle/PostSingle';
 
 @import '../pages/AccountPage/_AccountPage';
+@import '../pages/CartPage/CartPage';
 @import '../pages/HomePage/HomePage';
 
 

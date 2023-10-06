@@ -46,9 +46,13 @@ export const FETCH_POST = (isbn13: string) => {
 
 export const DELETE_POST = (navigate: any, payload: any) => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
-    
-        dispatch({ type: 'DELETE_POST', payload: {} });
-        navigate('/home');
+    dispatch({ type: 'DELETE_POST', payload: {} });
+    navigate('/home');
+  };
+};
 
+export const ADD_CART = (addCart: any) => {
+  return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
+    dispatch({ type: 'ADD_CART', payload: addCart });
   };
 };

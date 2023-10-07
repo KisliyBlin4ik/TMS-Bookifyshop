@@ -4,12 +4,51 @@
         justify-content: space-between;
 
         .book-description__image {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             max-width: 544px;
             width: 100%;
             background-color: $post-bg-color;
+
+            .book-description__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 56px;
+                height: 56px;
+                background-color: $font-color;
+                cursor: auto;
+
+                svg {
+                    cursor: pointer;
+                    transition: 0.2s;
+                    // fill(для svg) и stroke(для path) в файле svg
+
+                    &:hover {
+                        transition: 0.2s;
+                        scale: (1.2);
+                    }
+
+                    &:active {
+                        scale: (1);
+                    }
+                }
+            }
+
+            .book-description__iconStyle {
+                svg {
+                    fill: $favorite-icon-color;
+                }
+
+                path {
+                    stroke: $favorite-icon-color;
+                }
+            }
         }
 
         .book-description__details {

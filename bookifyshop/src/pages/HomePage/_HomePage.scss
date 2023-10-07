@@ -1,7 +1,7 @@
 .homePage {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
+    align-items: start;
     justify-items: center;
     row-gap: 48px;
     column-gap: 32px;

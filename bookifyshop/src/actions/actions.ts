@@ -1,6 +1,17 @@
 import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { IAddCart } from 'src/interface/interface';
 // import instance from "src/axiosConfig.js";
+
+export const ADD_TO_FAVORITES = (post: IAddCart) => ({
+  type: 'ADD_TO_FAVORITES',
+  payload: post,
+});
+
+export const REMOVE_FROM_FAVORITES = (post: IAddCart) => ({
+  type: 'REMOVE_FROM_FAVORITES',
+  payload: post,
+});
 
 export const FETCH_POSTS = () => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {

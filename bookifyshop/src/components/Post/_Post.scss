@@ -3,7 +3,10 @@
     flex-direction: column;
     gap: 10px;
     max-width: 352px;
+    width: 100%;
     img {
+        max-height: 350px;
+        object-fit: contain;
         background-color: $post-bg-color;
     }
 

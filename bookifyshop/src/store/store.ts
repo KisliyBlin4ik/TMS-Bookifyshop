@@ -25,6 +25,19 @@ export const initialState = {
     year: '',
   },
   cart: [],
+  favorites: [
+    {  
+    author: '',
+    image: '',
+    isbn10: '',
+    isbn13: '',
+    price: '',
+    subtitle: '',
+    title: '',
+    url: '',
+    year: '',
+  }
+  ],
 };
 
 const rootReducer = (state = initialState, action: any) => {
@@ -51,6 +64,18 @@ const rootReducer = (state = initialState, action: any) => {
       return {
         ...state,
         cart: state.cart.concat(action.payload), 
+      };
+    }
+    case 'ADD_TO_FAVORITES': {
+      return {
+        ...state,
+        favorites: [...state.favorites, action.payload],
+      };
+    }
+    case 'REMOVE_FROM_FAVORITES': {
+      return {
+        ...state,
+        favorites: state.favorites.filter((post) => post.isbn13 !== action.payload.isbn13)
       };
     }
     default:

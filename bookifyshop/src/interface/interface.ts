@@ -52,3 +52,10 @@ export interface IButton {
   content: string;
   onClick?: () => {};
 }
+
+export interface ILabelText {
+  text1: string;
+  text2: string;
+  text3?: string;
+  onChange: (value: number) => void;
+}

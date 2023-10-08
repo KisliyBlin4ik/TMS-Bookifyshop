@@ -7,11 +7,13 @@ button {
     height: 56px;
 
     &:hover {
+        transition: 0.2s;
         background-color: $button-main-hover-color;
     }
 
     &:active {
-        box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
+        transition: 0.1s;
+        box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0.2) inset;
     }
 
 }

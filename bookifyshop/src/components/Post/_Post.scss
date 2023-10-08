@@ -4,13 +4,38 @@
     gap: 10px;
     max-width: 352px;
     width: 100%;
+
     img {
         max-height: 350px;
         object-fit: contain;
-        background-color: $post-bg-color;
+        // background-color: $post-bg-color;
     }
 
     .formPost__footer {
         display: flex;
+    }
+}
+
+.formPost:nth-child(4n + 1) {
+    img {
+        background-color: $post-bg-color;
+    }
+}
+
+.formPost:nth-child(4n + 2) {
+    img {
+        background-color: $post-bg-color-2;
+    }
+}
+
+.formPost:nth-child(4n + 3) {
+    img {
+        background-color: $post-bg-color-3;
+    }
+}
+
+.formPost:nth-child(4n + 4) {
+    img {
+        background-color: $post-bg-color-4;
     }
 }

@@ -55,9 +55,9 @@ export const FETCH_POST = (isbn13: string) => {
   };
 };
 
-export const DELETE_POST = (navigate: any, payload: any) => {
+export const DELETE_POST = (navigate: any, obj: any) => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
-    dispatch({ type: 'DELETE_POST', payload: {} });
+    dispatch({ type: 'DELETE_POST', payload: obj });
     navigate('/home');
   };
 };

@@ -1,0 +1,35 @@
+.signInPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    .formTemplate {
+        display: flex;
+        flex-direction: column;
+        max-width: 544px;
+        width: 100%;
+        border: 1px solid $border-color;
+
+        .formSignIn {
+            .formSignIn__signIn {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 32px;
+            }
+
+            .formSignIn__signUp {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding: 32px;
+            }
+
+            button {
+                max-width: 480px;
+                margin: 8px 32px 40px;
+            }
+        }
+    }
+}

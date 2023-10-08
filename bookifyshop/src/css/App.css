@@ -87,15 +87,17 @@ button {
   font-family: "Bebas Neue", sans-serif;
   font-size: 24px;
   color: rgb(49, 48, 55);
-  background-color: rgb(214, 180, 252);
+  background-color: rgb(226, 200, 255);
   width: 100%;
   height: 56px;
 }
 button:hover {
+  transition: 0.2s;
   background-color: rgba(152, 62, 255, 0.5);
 }
 button:active {
-  box-shadow: 0px 0px 12px 10px rgba(34, 60, 80, 0.2) inset;
+  transition: 0.1s;
+  box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0.2) inset;
 }
 
 .formCartItem {
@@ -210,7 +212,7 @@ footer {
   min-height: 95px;
   border-radius: 20px 20px 0 0;
   font-size: 16px;
-  background-color: rgb(214, 180, 252);
+  background-color: rgb(226, 200, 255);
 }
 
 .logo {
@@ -235,7 +237,7 @@ header {
   width: 100%;
   min-height: 104px;
   border-radius: 0 0 20px 20px;
-  background-color: rgb(214, 180, 252);
+  background-color: rgb(226, 200, 255);
 }
 
 .formInput {
@@ -248,6 +250,7 @@ header {
 .formInput .formInput__label {
   font-weight: 700;
   font-size: 16px;
+  line-height: 200%;
 }
 .formInput input {
   padding: 15px 20px;
@@ -287,10 +290,25 @@ main h1 {
   max-height: 350px;
   -o-object-fit: contain;
      object-fit: contain;
-  background-color: rgb(254, 233, 226);
 }
 .formPost .formPost__footer {
   display: flex;
+}
+
+.formPost:nth-child(4n+1) img {
+  background-color: rgb(254, 233, 226);
+}
+
+.formPost:nth-child(4n+2) img {
+  background-color: rgb(202, 239, 240);
+}
+
+.formPost:nth-child(4n+3) img {
+  background-color: rgb(215, 228, 253);
+}
+
+.formPost:nth-child(4n+4) img {
+  background-color: rgb(244, 238, 253);
 }
 
 .post-single .post-single__book-description {
@@ -330,10 +348,10 @@ main h1 {
   scale: 1;
 }
 .post-single .post-single__book-description .book-description__image .book-description__iconStyle svg {
-  fill: rgb(255, 0, 0);
+  fill: rgb(252, 133, 127);
 }
 .post-single .post-single__book-description .book-description__image .book-description__iconStyle path {
-  stroke: rgb(255, 0, 0);
+  stroke: rgb(252, 133, 127);
 }
 .post-single .post-single__book-description .book-description__details {
   display: flex;
@@ -367,33 +385,63 @@ main h1 {
   line-height: 200%;
 }
 
+.formTabMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.formTabMenu div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  font-size: 24px;
+  color: rgb(168, 168, 168);
+  font-family: "Bebas Neue", sans-serif;
+  cursor: pointer;
+}
+.formTabMenu div:hover {
+  transition: 0.2s;
+  color: rgb(49, 48, 55);
+}
+.formTabMenu .active {
+  position: relative;
+  color: rgb(49, 48, 55);
+  top: 2px;
+  padding-bottom: 1px;
+  border-bottom: 2px solid rgb(49, 48, 55);
+}
+
 #form_1 {
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
-#form_1 .FormTemplate {
+#form_1 .formTemplate {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-#form_1 .FormTemplate .account__profile {
+#form_1 .formTemplate .account__profile {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   width: 100%;
 }
-#form_1 .FormTemplate .account__password {
+#form_1 .formTemplate .account__password {
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 16px;
   padding-bottom: 72px;
   border-bottom: 1px solid rgb(231, 231, 231);
 }
-#form_1 .FormTemplate .account__password .formInput__Password {
+#form_1 .formTemplate .account__password .formInput__Password {
   width: calc(50% - 16px);
 }
-#form_1 .FormTemplate .account__password .bb {
+#form_1 .formTemplate .account__password .bb {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
@@ -431,6 +479,36 @@ main h1 {
   -moz-column-gap: 32px;
        column-gap: 32px;
   margin-bottom: 72px;
+}
+
+.signInPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.signInPage .formTemplate {
+  display: flex;
+  flex-direction: column;
+  max-width: 544px;
+  width: 100%;
+  border: 1px solid rgb(231, 231, 231);
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signIn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signUp {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+}
+.signInPage .formTemplate .formSignIn button {
+  max-width: 480px;
+  margin: 8px 32px 40px;
 }
 
 .wrapper {

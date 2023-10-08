@@ -1,12 +1,9 @@
 import React, { FC } from 'react';
+import { ILabelText } from 'src/interface/interface';
 
 import 'src/scss/App.scss';
 
-interface ILabelText {
-  text1: string;
-  text2: string;
-  text3?: string;
-}
+
 
 const LabelText: FC<ILabelText> = ({ text1, text2, text3 }) => {
   return (

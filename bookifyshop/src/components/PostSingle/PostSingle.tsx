@@ -55,7 +55,7 @@ const PostSingle = () => {
 
   const handleFavoriteClick = () => {
     // console.log(addCart);
-    
+
     if (isFavorites) {
       dispatch(REMOVE_FROM_FAVORITES(addCart));
     } else {
@@ -74,7 +74,11 @@ const PostSingle = () => {
       <h1>{title}</h1>
       <div className="post-single__book-description">
         <div className="book-description__image">
-          <button className={`book-description__icon ${isFavorites ? 'book-description__iconStyle' : ''}`}>
+          <button
+            className={`book-description__icon ${
+              isFavorites ? 'book-description__iconStyle' : ''
+            }`}
+          >
             <FavoriteIcon onClick={handleFavoriteClick} />
           </button>
           <img src={image} alt="" />
@@ -85,16 +89,26 @@ const PostSingle = () => {
             <div>{rating}</div>
           </div>
           <div className="book-description__content">
-            <LableText text1="Authors" text2={authors} />
-            <LableText text1="Publisher" text2={publisher} text3={year} />
-            <LableText text1="Language" text2={language} />
-            <LableText text1="Format" text2="Paper book / ebook (PDF)" />
+            <LableText text1="Authors" text2={authors} onChange={() => {}} />
+            <LableText
+              text1="Publisher"
+              text2={publisher}
+              text3={year}
+              onChange={() => {}}
+            />
+            <LableText text1="Language" text2={language} onChange={() => {}} />
+            <LableText
+              text1="Format"
+              text2="Paper book / ebook (PDF)"
+              onChange={() => {}}
+            />
           </div>
           <div className="book-description__btn">
             <Button
               type="button"
               content="add to card"
               onClick={() => dispatch(ADD_CART(addCart))}
+              // добавить проверку. Если пость уже есть то цифра кол-ва++ и >1 delete
             />
             {/* addCart = image, title, price, authors, year, isbn10, isbn 13*/}
             <p>Preview book</p>

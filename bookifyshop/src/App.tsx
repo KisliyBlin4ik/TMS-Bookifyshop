@@ -31,8 +31,8 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(DELETE_POST(navigate, {}))
-    navigate('/home');
+    dispatch(DELETE_POST(navigate, {}));
+    navigate('/sign-in');
     dispatch(FETCH_POSTS());
   }, []);
 

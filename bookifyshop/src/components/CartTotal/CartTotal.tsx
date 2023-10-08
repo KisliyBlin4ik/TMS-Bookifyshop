@@ -9,8 +9,8 @@ const CartTotal = () => {
   return (
     <div className="cartTotal">
       <div>
-        <LabelText text1="Sum total:" text2="$69" />
-        <LabelText text1="VAT" text2="$96" />
+        <LabelText text1="Sum total:" text2="$69" onChange={() => {}} />
+        <LabelText text1="VAT" text2="$96" onChange={() => {}} />
       </div>
       <div>TOTAL</div>
       <Button type="button" content="check out" />

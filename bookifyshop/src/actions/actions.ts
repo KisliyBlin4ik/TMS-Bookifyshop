@@ -17,14 +17,13 @@ export const FETCH_POSTS = () => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
     const activateUser = async () => {
       try {
-        const response = await fetch(
-          // 'https://64f101948a8b66ecf77a538e.mockapi.io/postsForReact/posts'
-          'https://api.itbook.store/1.0/new'
-        );
+        const response = await fetch('https://api.itbook.store/1.0/new');
         if (!response.ok) {
           throw new Error('Ошибка при запросе');
         }
         const data = await response.json();
+        
+        // console.log(data);
         const books = data.books;
         dispatch({ type: 'GET_POSTS', payload: books });
       } catch (err) {
@@ -35,18 +34,26 @@ export const FETCH_POSTS = () => {
   };
 };
 
-export const FETCH_POST = (isbn13: string) => {
+export const FETCH_POST = (isbn13Arr: string[]) => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
     const activateUser = async () => {
       try {
-        const response = await fetch(
-          `https://api.itbook.store/1.0/books/${isbn13}`
-        );
-        if (!response.ok) {
-          throw new Error('Ошибка при запросе');
-        }
-        const data = await response.json();
-        dispatch({ type: 'GET_POST', payload: data });
+        const fetchPromises = isbn13Arr.map(async (isbn13) => {
+          const response = await fetch(
+            `https://api.itbook.store/1.0/books/${isbn13}`
+          );
+          if (!response.ok) {
+            throw new Error('Ошибка при запросе');
+          }
+          const data = await response.json();
+          // console.log(data);
+          return data
+        })
+        
+        const results = await Promise.all(fetchPromises);
+        // console.log(results);
+        
+        dispatch({ type: 'GET_POST', payload: results });
       } catch (err) {
         console.log(err);
       }

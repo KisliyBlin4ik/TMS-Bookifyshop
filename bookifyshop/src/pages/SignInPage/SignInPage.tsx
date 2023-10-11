@@ -15,10 +15,6 @@ const SignInPage = () => {
     setToggleState(index);
   };
 
-  console.log(
-    toggleState === 1 ? 'Sign IN' : toggleState === 2 ? 'Sign UP' : ''
-  );
-
   return (
     <>
       <PageTemplate title="" customClass="signInPage">

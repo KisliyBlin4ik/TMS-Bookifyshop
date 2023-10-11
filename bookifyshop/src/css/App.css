@@ -224,6 +224,7 @@ nav ul {
   display: flex;
 }
 nav ul li {
+  font-size: 24px;
   cursor: pointer;
   padding: 10px;
   margin: 0 5px;
@@ -282,17 +283,42 @@ main h1 {
 .formPost {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   max-width: 352px;
   width: 100%;
+  height: 100%;
 }
 .formPost img {
-  max-height: 350px;
+  max-height: 264px;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.formPost .formPost__footer {
+.formPost .formPost__content {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  height: 100%;
+}
+.formPost .formPost__content .formPost__header .formPost__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  line-height: 133%;
+  min-height: 64px;
+}
+.formPost .formPost__content .formPost__header .formPost__publisher {
+  color: rgb(168, 168, 168);
+  font-size: 16px;
+  line-height: 150%;
+}
+.formPost .formPost__content .formPost__footer {
+  display: flex;
+  justify-content: space-between;
+}
+.formPost .formPost__content .formPost__footer .formPost__price {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  line-height: 133%;
 }
 
 .formPost:nth-child(4n+1) img {
@@ -385,6 +411,11 @@ main h1 {
   line-height: 200%;
 }
 
+.formRating {
+  display: flex;
+  gap: 8px;
+}
+
 .formTabMenu {
   display: flex;
   justify-content: space-between;
@@ -473,6 +504,7 @@ main h1 {
 .homePage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   align-items: start;
   justify-items: center;
   row-gap: 48px;

@@ -1,43 +1,13 @@
 import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { IAddCart } from 'src/interface/interface';
 
 export const initialState = {
   posts: [],
-  post: {
-    author: '',
-    desc: '',
-    error: '',
-    image: '',
-    isbn10: '',
-    isbn13: '',
-    language: '',
-    pages: '',
-    pdf: {
-      FreeeBook: '',
-    },
-    price: '',
-    publisher: '',
-    rating: '',
-    subtitle: '',
-    title: '',
-    url: '',
-    year: '',
-  },
+  post: [],
   cart: [],
-  favorites: [
-    {  
-    author: '',
-    image: '',
-    isbn10: '',
-    isbn13: '',
-    price: '',
-    subtitle: '',
-    title: '',
-    url: '',
-    year: '',
-  }
-  ],
+  favorites: [],
 };
 
 const rootReducer = (state = initialState, action: any) => {
@@ -57,25 +27,27 @@ const rootReducer = (state = initialState, action: any) => {
     case 'DELETE_POST': {
       return {
         ...state,
-        post: {}, 
+        post: [],
       };
     }
     case 'ADD_CART': {
       return {
         ...state,
-        cart: state.cart.concat(action.payload), 
+        cart: state.cart.concat(action.payload),
       };
     }
     case 'ADD_TO_FAVORITES': {
       return {
         ...state,
-        favorites: [...state.favorites, action.payload],
+        favorites: state.favorites.concat(action.payload),
       };
     }
     case 'REMOVE_FROM_FAVORITES': {
       return {
         ...state,
-        favorites: state.favorites.filter((post) => post.isbn13 !== action.payload.isbn13)
+        favorites: state.favorites.filter(
+          (post: IAddCart) => post.isbn13 !== action.payload.isbn13
+        ),
       };
     }
     default:

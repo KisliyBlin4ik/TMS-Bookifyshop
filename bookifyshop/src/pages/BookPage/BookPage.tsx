@@ -6,6 +6,8 @@ import PostSingle from 'src/components/PostSingle';
 
 const BookPage = () => {
   const { bookId } = useParams();
+  // console.log(bookId);
+  
 
   return (
     <>

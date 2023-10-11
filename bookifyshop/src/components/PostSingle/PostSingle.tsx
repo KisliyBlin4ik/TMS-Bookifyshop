@@ -23,21 +23,26 @@ const PostSingle = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const location = useLocation();
   const [addC, setAddC] = useState({});
-  const { image, isbn13, price, subtitle, title, url }: IPosts = location.state;
-
-  const favorites: IAddCart[] = useSelector(({ favorites }) => favorites);
-
-  const {
+  const { 
     authors,
     desc,
     error,
+    image,
     isbn10,
+    isbn13,
     language,
     pages,
+    pdf,
+    price,
     publisher,
     rating,
+    subtitle,
+    title,
+    url,
     year,
-  }: IPost = useSelector(({ post }) => post);
+   }: IPost = location.state;
+
+  const favorites: IAddCart[] = useSelector(({ favorites }) => favorites);
 
   const addCart: IAddCart = {
     image,
@@ -65,8 +70,8 @@ const PostSingle = () => {
 
   // image, title, price, authors, year, isbn10, isbn 13
   useEffect(() => {
-    setAddC(addCart);
-    dispatch(FETCH_POST(isbn13));
+    // setAddC(addCart);
+    // dispatch(FETCH_POST(isbn13));
   }, []);
 
   return (

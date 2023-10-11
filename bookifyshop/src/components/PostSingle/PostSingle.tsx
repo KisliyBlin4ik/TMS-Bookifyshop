@@ -18,12 +18,13 @@ import LableText from '../LableText';
 import { ReactComponent as FavoriteIcon } from '../../assets/icons/FavoriteIcon.svg';
 
 import 'src/scss/App.scss';
+import TabMenu from '../TabMenu';
 
 const PostSingle = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const location = useLocation();
   const [addC, setAddC] = useState({});
-  const { 
+  const {
     authors,
     desc,
     error,
@@ -40,7 +41,7 @@ const PostSingle = () => {
     title,
     url,
     year,
-   }: IPost = location.state;
+  }: IPost = location.state;
 
   const favorites: IAddCart[] = useSelector(({ favorites }) => favorites);
 
@@ -66,6 +67,12 @@ const PostSingle = () => {
     } else {
       dispatch(ADD_TO_FAVORITES(addCart));
     }
+  };
+
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (index: number) => {
+    setToggleState(index);
   };
 
   // image, title, price, authors, year, isbn10, isbn 13
@@ -121,9 +128,22 @@ const PostSingle = () => {
           </div>
         </div>
       </div>
-      <div>TabMenu</div>
+      <TabMenu
+        text1="Description"
+        text2="Authors"
+        text3="Rviews"
+        onChange={toggleTab}
+      />
       {/* доделать табы */}
-      <div className="post-single__text">{desc}</div>
+      <div className="post-single__text">
+        {toggleState === 1
+          ? desc
+          : toggleState === 2
+          ? authors
+          : toggleState === 3
+          ? 'No reviews'
+          : ''}
+      </div>
     </div>
   );
 };

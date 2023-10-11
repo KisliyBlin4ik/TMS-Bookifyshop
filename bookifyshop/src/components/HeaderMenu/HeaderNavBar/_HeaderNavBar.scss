@@ -7,6 +7,20 @@ nav {
             cursor: pointer;
             padding: 10px;
             margin: 0 5px;
+            svg {
+                cursor: pointer;
+                transition: 0.2s;
+                // fill(для svg) и stroke(для path) в файле svg
+
+                &:hover {
+                    transition: 0.2s;
+                    scale: (1.2);
+                }
+
+                &:active {
+                    scale: (1);
+                }
+            }
         }
     }
 }

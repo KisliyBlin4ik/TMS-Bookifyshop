@@ -55,9 +55,9 @@ const Post: FC<IPost> = ({
     >
       <img src={image} alt="" />
       <div className="formPost__content">
-        <div className='formPost__header'>
+        <div className="formPost__header">
           <div className="formPost__title">{title}</div>
-          <div className='formPost__publisher'>
+          <div className="formPost__publisher">
             by {publisher}, {year}
           </div>
         </div>

@@ -45,12 +45,19 @@ export interface IAddCart extends IPosts {
   authors: string;
   year: string;
   isbn10: string;
+  counter: number;
+}
+export interface IAddFavorite extends IPosts {
+  authors: string;
+  year: string;
+  isbn10: string;
 }
 
 export interface IButton {
   type: 'button' | 'submit';
   content: string;
-  onClick?: () => {};
+  children?: ReactNode;
+  onClick?: () => void;
 }
 
 export interface ILabelText {
@@ -58,4 +65,13 @@ export interface ILabelText {
   text2: string;
   text3?: string;
   onChange: (value: number) => void;
+}
+
+export interface ICounter {
+  counter: number;
+  isbn13: string;
+}
+
+export interface IRating {
+  rating: string;
 }

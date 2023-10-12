@@ -1,16 +1,23 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AnyAction } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
+
+import { IAddCart, IPost, IPosts } from 'src/interface/interface';
 
 import PageTemplate from 'src/components/PageTemplate';
 import Post from 'src/components/Post';
-import { IAddCart, IPost, IPosts } from 'src/interface/interface';
 
 const FavoritesPage = () => {
-  const favorites: IPost[] = useSelector(({ favorites }) => favorites);
-  // console.log(favorites);
+  const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 
+  const favorites: IPost[] = useSelector(({ favorites }) => favorites);
+
+  useEffect(() => {
+    dispatch({ type: 'SET_LOADING', payload: false });
+  }, []);
   //добавить кнопку удаления поста из массива favorites(store)
-  // добавить компонент FavoriteItem
+
   return (
     <>
       <PageTemplate title="Favorites page" customClass="favoritesPage">

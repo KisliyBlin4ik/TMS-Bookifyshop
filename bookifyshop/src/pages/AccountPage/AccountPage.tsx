@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { AnyAction } from 'redux';
+import { useDispatch } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
 
 import Button from 'src/components/Button';
 import Input from 'src/components/Input';
@@ -8,6 +11,8 @@ import FormTemplate from 'src/components/FormTemplate';
 import 'src/scss/App.scss';
 
 const AccountPage = () => {
+  const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,6 +32,10 @@ const AccountPage = () => {
 
     console.log('send form:', formData);
   };
+
+  useEffect(() => {
+    dispatch({ type: 'SET_LOADING', payload: false });
+  }, []);
 
   return (
     <>

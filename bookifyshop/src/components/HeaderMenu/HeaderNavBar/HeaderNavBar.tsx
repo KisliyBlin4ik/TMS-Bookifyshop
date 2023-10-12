@@ -1,8 +1,8 @@
 import React from 'react'
 import { useNavigate, Link } from "react-router-dom";
+import { ReactComponent as HeartIcon } from 'src/assets/icons/HeartIcon.svg';
+import { ReactComponent as CartIcon } from 'src/assets/icons/CartIcon2.svg';
 import { ReactComponent as UserIcon } from 'src/assets/icons/UserIcon.svg';
-import { ReactComponent as HearthIcon } from 'src/assets/icons/HeartIcon.svg';
-import { ReactComponent as CardIcon } from 'src/assets/icons/CardIcon.svg';
 
 
 
@@ -16,10 +16,10 @@ const HeaderNavBar = () => {
     <nav> 
         <ul>
             <li>
-                <Link to={ROUTE_FAVORITES}><HearthIcon/></Link>
+                <Link to={ROUTE_FAVORITES}><HeartIcon/></Link>
             </li>
             <li>
-                <Link to={ROUTE_CART}><CardIcon/></Link>
+                <Link to={ROUTE_CART}><CartIcon/></Link>
             </li>
             <li>
                 <Link to={ROUTE_ACCOUNT}><UserIcon/></Link>

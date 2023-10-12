@@ -4,21 +4,22 @@ import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { useLocation } from 'react-router-dom';
 
-import { IAddCart, IPost, IPosts } from 'src/interface/interface';
+import { IAddCart, IAddFavorite, IPost } from 'src/interface/interface';
 
 import {
-  ADD_CART,
+  ADD_TO_CART,
+  ADD_TO_CART_AGAIN,
   ADD_TO_FAVORITES,
-  FETCH_POST,
   REMOVE_FROM_FAVORITES,
 } from 'src/actions/actions';
 
-import Button from '../Button';
-import LableText from '../LableText';
 import { ReactComponent as FavoriteIcon } from '../../assets/icons/FavoriteIcon.svg';
 
-import 'src/scss/App.scss';
+import Button from '../Button';
+import LableText from '../LableText';
 import TabMenu from '../TabMenu';
+
+import 'src/scss/App.scss';
 
 const PostSingle = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
@@ -43,9 +44,10 @@ const PostSingle = () => {
     year,
   }: IPost = location.state;
 
-  const favorites: IAddCart[] = useSelector(({ favorites }) => favorites);
+  const favorites: IAddFavorite[] = useSelector(({ favorites }) => favorites);
+  const cart: IAddCart[] = useSelector(({ cart }) => cart);
 
-  const addCart: IAddCart = {
+  const addFavorite: IAddFavorite = {
     image,
     title,
     price,
@@ -56,16 +58,43 @@ const PostSingle = () => {
     url,
     subtitle,
   };
+  const counter = 1;
+  const addCart: IAddCart = {
+    image,
+    title,
+    price,
+    authors,
+    year,
+    isbn10,
+    isbn13,
+    url,
+    subtitle,
+    counter,
+  };
 
-  const isFavorites = favorites.some((post) => post.isbn13 === addCart.isbn13);
+  const isFavorites = favorites.some(
+    (post) => post.isbn13 === addFavorite.isbn13
+  );
 
   const handleFavoriteClick = () => {
-    // console.log(addCart);
+    console.log(addFavorite);
 
     if (isFavorites) {
-      dispatch(REMOVE_FROM_FAVORITES(addCart));
+      dispatch(REMOVE_FROM_FAVORITES(addFavorite));
     } else {
-      dispatch(ADD_TO_FAVORITES(addCart));
+      dispatch(ADD_TO_FAVORITES(addFavorite));
+    }
+  };
+
+  const isCarts = cart.some((post) => post.isbn13 === addFavorite.isbn13);
+
+  const handleCartClick = () => {
+    console.log(addFavorite);
+
+    if (isCarts) {
+      dispatch(ADD_TO_CART_AGAIN(addCart));
+    } else {
+      dispatch(ADD_TO_CART(addCart));
     }
   };
 
@@ -119,7 +148,7 @@ const PostSingle = () => {
             <Button
               type="button"
               content="add to card"
-              onClick={() => dispatch(ADD_CART(addCart))}
+              onClick={handleCartClick}
               // добавить проверку. Если пость уже есть то цифра кол-ва++ и >1 delete
             />
             {/* addCart = image, title, price, authors, year, isbn10, isbn 13*/}

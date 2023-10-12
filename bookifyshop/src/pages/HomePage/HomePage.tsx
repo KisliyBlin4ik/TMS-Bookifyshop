@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { AnyAction } from 'redux';
 
 import { IPost, IPosts } from 'src/interface/interface';
+
+import { FETCH_POST } from 'src/actions/actions';
 
 import PageTemplate from 'src/components/PageTemplate';
 import Post from 'src/components/Post';
 
 import 'src/scss/App.scss';
-import { ThunkDispatch } from 'redux-thunk';
-import { AnyAction } from 'redux';
-import { FETCH_POST, FETCH_POSTS } from 'src/actions/actions';
 
 const HomePage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

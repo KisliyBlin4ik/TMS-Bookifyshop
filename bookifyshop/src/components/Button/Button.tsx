@@ -4,10 +4,10 @@ import { IButton } from 'src/interface/interface';
 
 import 'src/scss/App.scss';
 
-const Button: FC<IButton> = ({ type, content, onClick }) => {
+const Button: FC<IButton> = ({ type, content, children, onClick }) => {
   return (
     <button type={type} onClick={onClick}>
-      {content}
+      {content ? content : children ? children : ''}
     </button>
   );
 };

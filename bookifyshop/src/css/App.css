@@ -92,11 +92,10 @@ button {
   height: 56px;
 }
 button:hover {
-  transition: 0.2s;
+  transition: 0.1s;
   background-color: rgba(152, 62, 255, 0.5);
 }
 button:active {
-  transition: 0.1s;
   box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0.2) inset;
 }
 
@@ -146,6 +145,14 @@ button:active {
   font-size: 40px;
   font-family: "Bebas Neue", sans-serif;
 }
+.formCartItem .cartItem__delete button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0);
+}
 
 .cartTotal {
   display: flex;
@@ -154,6 +161,26 @@ button:active {
   max-width: 256px;
   width: 100%;
   margin-bottom: 72px;
+}
+
+.formCounter {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  width: 168px;
+}
+.formCounter .formCounter__counter {
+  font-family: "Bebas Neue", sans-serif;
+  line-height: 133%;
+  font-size: 24px;
+  text-align: center;
+  width: 56px;
+}
+.formCounter button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .formFavoriteItem {
@@ -210,7 +237,7 @@ footer {
   padding: 0 25px;
   width: 100%;
   min-height: 95px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 0 0 20px 20px;
   font-size: 16px;
   background-color: rgb(226, 200, 255);
 }
@@ -252,7 +279,7 @@ header {
   padding: 0 25px;
   width: 100%;
   min-height: 104px;
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px 20px 0 0;
   background-color: rgb(226, 200, 255);
 }
 
@@ -281,6 +308,54 @@ header {
 .labelText__detalise div:first-child {
   color: rgb(168, 168, 168);
   line-height: 200%;
+}
+
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 220px auto;
+}
+.sk-cube-grid .sk-cube1 {
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: rgba(152, 62, 255, 0.5);
+  float: left;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    transform: scale3D(0, 0, 1);
+  }
 }
 main {
   display: flex;
@@ -423,28 +498,24 @@ main h1 {
   gap: 40px;
 }
 .post-single .formTabMenu {
-  display: flex;
   justify-content: flex-start;
-  align-items: center;
   gap: 40px;
   margin: 72px 0 0 0;
-  border-bottom: 1px solid rgb(231, 231, 231);
+  padding: 0;
 }
 .post-single .formTabMenu div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 161px;
-  width: 100%;
   height: 48px;
   font-size: 16px;
   line-height: 150%;
   color: rgb(168, 168, 168);
-  cursor: pointer;
 }
 .post-single .formTabMenu div:hover {
-  transition: 0.2s;
   color: rgb(49, 48, 55);
+}
+.post-single .formTabMenu .active {
+  color: rgb(49, 48, 55);
+  border-bottom: 2px solid rgb(49, 48, 55);
 }
 .post-single .post-single__text {
   padding: 49px 0;
@@ -457,6 +528,27 @@ main h1 {
   gap: 8px;
 }
 
+.formTabMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.formTabMenu div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  font-size: 24px;
+  color: rgb(168, 168, 168);
+  cursor: pointer;
+}
+.formTabMenu div:hover {
+  transition: 0.2s;
+  color: rgb(49, 48, 55);
+}
 .formTabMenu .active {
   position: relative;
   color: rgb(49, 48, 55);
@@ -546,26 +638,18 @@ main h1 {
   border: 1px solid rgb(231, 231, 231);
 }
 .signInPage .formTemplate .formSignIn .formTabMenu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 32px;
   border-bottom: 1px solid rgb(231, 231, 231);
 }
 .signInPage .formTemplate .formSignIn .formTabMenu div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 72px;
-  font-size: 24px;
   color: rgb(168, 168, 168);
   font-family: "Bebas Neue", sans-serif;
-  cursor: pointer;
 }
 .signInPage .formTemplate .formSignIn .formTabMenu div:hover {
-  transition: 0.2s;
   color: rgb(49, 48, 55);
+}
+.signInPage .formTemplate .formSignIn .formTabMenu .active {
+  color: rgb(49, 48, 55);
+  border-bottom: 2px solid rgb(49, 48, 55);
 }
 .signInPage .formTemplate .formSignIn .formSignIn__signIn {
   display: flex;
@@ -596,5 +680,6 @@ main h1 {
   min-height: 100vh;
   margin: 0 auto;
   background-color: #FFFFFF;
+  border-radius: 20px;
   box-shadow: 0px 0px 12px 0px rgba(34, 60, 80, 0.2);
 }

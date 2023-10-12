@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { IPost, IPosts } from 'src/interface/interface';
+import { IPost } from 'src/interface/interface';
 import { ROUTE_BOOK } from 'src/utils/routes';
 
-import 'src/scss/App.scss';
 import Rating from '../Rating';
+
+import 'src/scss/App.scss';
 
 const Post: FC<IPost> = ({
   authors,

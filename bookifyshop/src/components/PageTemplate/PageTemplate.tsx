@@ -34,10 +34,20 @@ const PageTemplate: FC<IPageTemplate> = ({
     <>
       <HeaderMenu></HeaderMenu>
       <main>
-        {title ? <div className='main__header'>
-          {invisible ? '' : <Button type='button' content='' customClass='goBackBtn' onClick={goBack} ><BackIcon/></Button> }
-          <h1>{upperCaseTitlePage}</h1>
-        </div> : ''}
+        {title ? (
+          <div className="main__header">
+            {invisible ? (
+              ''
+            ) : (
+              <Button type="button" customClass="goBackBtn" onClick={goBack}>
+                <BackIcon />
+              </Button>
+            )}
+            <h1>{upperCaseTitlePage}</h1>
+          </div>
+        ) : (
+          ''
+        )}
         {isLoading ? <Loader /> : <div className={customClass}>{children}</div>}
       </main>
       <Footer></Footer>

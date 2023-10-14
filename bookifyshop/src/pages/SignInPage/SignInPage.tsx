@@ -38,9 +38,9 @@ const SignInPage = () => {
             ''
           )}
           {toggleState === 1 ? (
-            <Button type="button" content="Sign In" />
+            <Button type="button">Sign In</Button>
           ) : toggleState === 2 ? (
-            <Button type="button" content="Sign Up" />
+            <Button type="button">Sign Up</Button>
           ) : (
             ''
           )}

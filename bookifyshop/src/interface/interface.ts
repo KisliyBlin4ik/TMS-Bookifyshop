@@ -56,8 +56,7 @@ export interface IAddFavorite extends IPosts {
 
 export interface IButton {
   type: 'button' | 'submit';
-  content: string;
-  children?: ReactNode;
+  children: string | ReactNode;
   customClass?: string;
   onClick?: () => void;
 }

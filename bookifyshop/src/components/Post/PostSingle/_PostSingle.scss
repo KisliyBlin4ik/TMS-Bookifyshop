@@ -62,7 +62,7 @@
             .book-description__price {
                 padding-top: 40px;
 
-                div:first-child {
+                &:first-child div {
                     font-family: 'Bebas Neue', sans-serif;
                     font-size: 40px;
                     line-height: 150%;

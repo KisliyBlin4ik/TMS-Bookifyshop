@@ -18,52 +18,27 @@ import CartCounter from '../CartCounter';
 
 import 'src/scss/App.scss';
 
-const CartItem: FC<IAddCart> = ({
-  image,
-  title,
-  price,
-  authors,
-  year,
-  isbn10,
-  isbn13,
-  subtitle,
-  url,
-  counter,
-}) => {
+const CartItem: FC<IAddCart> = ({ image, title, price, authors, year, isbn10, isbn13, subtitle, url, counter }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
-
   const navigate = useNavigate();
 
-  const addCart: IAddCart = {
-    image,
-    title,
-    price,
-    authors,
-    year,
-    isbn10,
-    isbn13,
-    url,
-    subtitle,
-    counter,
-  };
-
-  console.log(counter);
-  console.log(price);
   const priceNumber = parseFloat(price.replace('$', ''));
   const totalCost = priceNumber * counter;
+
+  const handleImageClick = () => {
+    navigate(`${ROUTE_BOOK}/${isbn13}`, {
+      state: { image, isbn13, price, subtitle, title, url },
+    });
+  };
+
+  const handleRemoveFromCart = () => {
+    dispatch(REMOVE_FROM_CART({ image, title, price, authors, year, isbn10, isbn13, url, subtitle, counter }));
+  };
 
   return (
     <div className="formCartItem">
       <div className="cartItem__description">
-        <div
-          className="cartItem__image"
-          onClick={() => {
-            navigate(`${ROUTE_BOOK}/${isbn13}`, {
-              state: { image, isbn13, price, subtitle, title, url },
-            });
-            console.log('click');
-          }}
-        >
+        <div className="cartItem__image" onClick={handleImageClick}>
           <img src={image} alt="" />
         </div>
         <div className="cartItem__details">
@@ -80,11 +55,7 @@ const CartItem: FC<IAddCart> = ({
       </div>
       <div className="cartItem__price">{`$${totalCost}`}</div>
       <div className="cartItem__delete">
-        <Button
-          type="button"
-          content=""
-          onClick={() => dispatch(REMOVE_FROM_CART(addCart))}
-        >
+        <Button type="button" onClick={handleRemoveFromCart}>
           <DeleteIcon />
         </Button>
       </div>

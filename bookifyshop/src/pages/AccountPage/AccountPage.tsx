@@ -83,8 +83,8 @@ const AccountPage = () => {
             </div>
           </FormTemplate>
           <div className="account__buttons">
-            <Button type="submit" content="Save Changes" />
-            <Button type="button" content="Cancel" />
+            <Button type="submit">Save Changes</Button>
+            <Button type="button">Cancel</Button>
           </div>
         </form>
       </PageTemplate>

@@ -13,7 +13,7 @@ const CartTotal = () => {
         <LabelText text1="VAT" text2="$96" onChange={() => {}} />
       </div>
       <div>TOTAL</div>
-      <Button type="button" content="check out" />
+      <Button type="button">check out</Button>
     </div>
   );
 };

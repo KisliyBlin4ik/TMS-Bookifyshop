@@ -15,6 +15,7 @@ import LableText from '../../LableText';
 import TabMenu from '../../Common/TabMenu';
 
 import 'src/scss/App.scss';
+import Rating from 'src/components/Common/Rating';
 
 const PostSingle: FC<IPostItem> = ({ authors, desc, error, image, isbn10, isbn13, language, pages, pdf, price, publisher, rating, subtitle, title, url, year }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
@@ -67,7 +68,8 @@ const PostSingle: FC<IPostItem> = ({ authors, desc, error, image, isbn10, isbn13
         <div className="book-description__details">
           <div className="book-description__price">
             <div>{price}</div>
-            <div>{rating}</div>
+            <Rating rating={rating}/>
+            {/* <div>{rating}</div> */}
           </div>
           <div className="book-description__content">
             <LableText text1="Authors" text2={authors} onChange={() => {}} />
@@ -85,11 +87,9 @@ const PostSingle: FC<IPostItem> = ({ authors, desc, error, image, isbn10, isbn13
             />
           </div>
           <div className="book-description__btn">
-            <Button
-              type="button"
-              content="add to card"
-              onClick={handleCartClick}
-            />
+            <Button type="button" onClick={handleCartClick}>
+              add to card
+            </Button>
             <p>Preview book</p>
             {/* ссылка из url */}
           </div>

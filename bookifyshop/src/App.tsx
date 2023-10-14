@@ -1,5 +1,5 @@
 import React, { useEffect, FC } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { Routes, Route, useNavigate } from 'react-router-dom';

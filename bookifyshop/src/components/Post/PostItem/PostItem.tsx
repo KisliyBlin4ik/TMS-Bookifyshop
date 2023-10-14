@@ -8,65 +8,27 @@ import Rating from '../../Common/Rating';
 
 import 'src/scss/App.scss';
 
-const PostItem: FC<IPostItem> = ({
-  authors,
-  desc,
-  error,
-  image,
-  isbn10,
-  isbn13,
-  language,
-  pages,
-  pdf,
-  price,
-  publisher,
-  rating,
-  subtitle,
-  title,
-  url,
-  year,
-}) => {
+const PostItem: FC<IPostItem> = (props) => {
   const navigate = useNavigate();
 
   const handlePostClick = () => {
-    navigate(`${ROUTE_BOOK}/${isbn13}`,  {
-      state: {
-        authors,
-        desc,
-        error,
-        image,
-        isbn10,
-        isbn13,
-        language,
-        pages,
-        pdf,
-        price,
-        publisher,
-        rating,
-        subtitle,
-        title,
-        url,
-        year,
-      },
-    });
+    const { ...state } = props;
+    navigate(`${ROUTE_BOOK}/${state.isbn13}`, { state });
   };
 
   return (
-    <div
-      className="formPost"
-      onClick={handlePostClick}
-    >
-      <img src={image} alt="" />
+    <div className="formPost" onClick={handlePostClick}>
+      <img src={props.image} alt="" />
       <div className="formPost__content">
         <div className="formPost__header">
-          <div className="formPost__title">{title}</div>
+          <div className="formPost__title">{props.title}</div>
           <div className="formPost__publisher">
-            by {publisher}, {year}
+            by {props.publisher}, {props.year}
           </div>
         </div>
         <div className="formPost__footer">
-          <div className="formPost__price">{price}</div>
-          <Rating rating={rating} />
+          <div className="formPost__price">{props.price}</div>
+          <Rating rating={props.rating} />
         </div>
       </div>
     </div>

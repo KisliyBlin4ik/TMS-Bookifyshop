@@ -6,12 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 import { IAddCart, IAddFavorite, IPostItem } from 'src/interface/interface';
 
-import {
-  ADD_TO_CART,
-  ADD_TO_CART_AGAIN,
-  ADD_TO_FAVORITES,
-  REMOVE_FROM_FAVORITES,
-} from 'src/actions/actions';
+import { ADD_TO_CART, ADD_TO_CART_AGAIN, ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from 'src/actions/actions';
 
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
@@ -21,24 +16,7 @@ import TabMenu from '../../Common/TabMenu';
 
 import 'src/scss/App.scss';
 
-const PostSingle: FC<IPostItem> = ({
-  authors,
-  desc,
-  error,
-  image,
-  isbn10,
-  isbn13,
-  language,
-  pages,
-  pdf,
-  price,
-  publisher,
-  rating,
-  subtitle,
-  title,
-  url,
-  year,
-}) => {
+const PostSingle: FC<IPostItem> = ({ authors, desc, error, image, isbn10, isbn13, language, pages, pdf, price, publisher, rating, subtitle, title, url, year }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 
   const favorites: IAddFavorite[] = useSelector(({ favorites }) => favorites);
@@ -46,40 +24,14 @@ const PostSingle: FC<IPostItem> = ({
 
   const [toggleState, setToggleState] = useState(1);
 
-  const addFavorite: IAddFavorite = {
-    image,
-    title,
-    price,
-    authors,
-    year,
-    isbn10,
-    isbn13,
-    url,
-    subtitle,
-  };
+  const addFavorite: IAddFavorite = { image, title, price, authors, year, isbn10, isbn13, url, subtitle };
 
-  const counter = 1;
+  const addCart: IAddCart = { image, title, price, authors, year, isbn10, isbn13, url, subtitle, counter: 1 };
 
-  const addCart: IAddCart = {
-    image,
-    title,
-    price,
-    authors,
-    year,
-    isbn10,
-    isbn13,
-    url,
-    subtitle,
-    counter,
-  };
-
-  const isFavorites = favorites.some(
-    (post) => post.isbn13 === addFavorite.isbn13
-  );
+  const isFavorites = favorites.some((post) => post.isbn13 === addFavorite.isbn13);
+  const isCarts = cart.some((post) => post.isbn13 === addCart.isbn13);
 
   const handleFavoriteClick = () => {
-    console.log(addFavorite);
-
     if (isFavorites) {
       dispatch(REMOVE_FROM_FAVORITES(addFavorite));
     } else {
@@ -87,11 +39,7 @@ const PostSingle: FC<IPostItem> = ({
     }
   };
 
-  const isCarts = cart.some((post) => post.isbn13 === addFavorite.isbn13);
-
   const handleCartClick = () => {
-    console.log(addFavorite);
-
     if (isCarts) {
       dispatch(ADD_TO_CART_AGAIN(addCart));
     } else {

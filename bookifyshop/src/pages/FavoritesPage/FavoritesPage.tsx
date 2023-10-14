@@ -17,7 +17,6 @@ const FavoritesPage = () => {
   useEffect(() => {
     dispatch({ type: 'SET_LOADING', payload: false });
   }, []);
-  //добавить кнопку удаления поста из массива favorites(store)
 
   return (
     <>

@@ -25,7 +25,8 @@ const CartItem: FC<IAddCart> = (props) => {
   const { ...state } = props;
 
   const priceNumber = parseFloat(props.price.replace('$', ''));
-  const totalCost = priceNumber * props.counter;
+  const totalCost = (priceNumber * props.counter).toFixed(2);
+
 
   const handleImageClick = () => {
     navigate(`${ROUTE_BOOK}/${props.isbn13}`, { state });

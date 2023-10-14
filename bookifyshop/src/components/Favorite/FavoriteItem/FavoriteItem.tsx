@@ -10,11 +10,21 @@ import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.sv
 import Rating from 'src/components/Common/Rating';
 
 import 'src/scss/App.scss';
+import Button from 'src/components/Common/Button';
+import { useDispatch } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { AnyAction } from 'redux';
+import { REMOVE_FROM_FAVORITES } from 'src/actions/actions';
 
 const FavoriteItem: FC<IAddFavorite> = (props) => {
+  const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();
 
   const { ...state } = props;
+
+  const handleRemoveFromCart = () => {
+    dispatch(REMOVE_FROM_FAVORITES(state));
+  };
 
   return (
     <div className="formFavoriteItem">
@@ -40,7 +50,11 @@ const FavoriteItem: FC<IAddFavorite> = (props) => {
           </div>
         </div>
       </div>
-      <div className="favoriteItem__icon"><FavoriteIcon/></div>
+      <div className="favoriteItem__icon">
+        <Button type="button" onClick={handleRemoveFromCart}>
+          <FavoriteIcon />
+        </Button>
+      </div>
     </div>
   );
 };

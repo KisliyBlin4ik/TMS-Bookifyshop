@@ -87,7 +87,7 @@ button {
   font-family: "Bebas Neue", sans-serif;
   font-size: 24px;
   color: rgb(49, 48, 55);
-  background-color: rgb(226, 200, 255);
+  background: rgb(226, 200, 255);
   width: 100%;
   height: 56px;
 }
@@ -308,19 +308,27 @@ button:active {
   font-size: 24px;
   line-height: 133%;
 }
-.formFavoriteItem .favoriteItem__icon svg {
+.formFavoriteItem .favoriteItem__icon button {
+  display: flex;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.formFavoriteItem .favoriteItem__icon button:active {
+  box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0) inset;
+}
+.formFavoriteItem .favoriteItem__icon button svg {
   cursor: pointer;
   transition: 0.2s;
   fill: rgb(252, 133, 127);
 }
-.formFavoriteItem .favoriteItem__icon svg path {
+.formFavoriteItem .favoriteItem__icon button svg path {
   stroke: rgb(252, 133, 127);
 }
-.formFavoriteItem .favoriteItem__icon svg:hover {
+.formFavoriteItem .favoriteItem__icon button svg:hover {
   transition: 0.2s;
   scale: 1.2;
 }
-.formFavoriteItem .favoriteItem__icon svg:active {
+.formFavoriteItem .favoriteItem__icon button svg:active {
   scale: 1;
 }
 
@@ -333,7 +341,7 @@ footer {
   min-height: 95px;
   border-radius: 0 0 20px 20px;
   font-size: 16px;
-  background-color: rgb(226, 200, 255);
+  background: rgb(226, 200, 255);
 }
 
 .logo {
@@ -374,7 +382,7 @@ header {
   width: 100%;
   min-height: 104px;
   border-radius: 20px 20px 0 0;
-  background-color: rgb(226, 200, 255);
+  background: rgb(226, 200, 255);
 }
 
 .labelText__detalise {
@@ -671,6 +679,8 @@ main .main__header h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: flex-end;
+  flex-grow: 1;
   gap: 48px;
 }
 

@@ -21,6 +21,7 @@ import {
   ROUTE_FAVORITES,
   ROUTE_HOME,
   ROUTE_SEARCH,
+  ROUTE_SEARCH_PAGE,
   ROUTE_SIGN_IN,
 } from './utils/routes';
 
@@ -29,7 +30,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(DELETE_POST(navigate, {}));
+    // dispatch(DELETE_POST(navigate, {}));
     navigate('/sign-in');
     dispatch(FETCH_POSTS());
   }, []);
@@ -39,7 +40,7 @@ function App() {
       <div className="app">
         <Routes>
           <Route path={ROUTE_HOME} element={<HomePage />}></Route>
-          <Route path={ROUTE_SEARCH} element={<SearchPage />}></Route>
+          <Route path={ROUTE_SEARCH_PAGE} element={<SearchPage />}></Route>
           <Route path={ROUTE_BOOK_PAGE} element={<BookPage />}></Route>
           <Route path={ROUTE_CART} element={<CartPage />}></Route>
           <Route path={ROUTE_FAVORITES} element={<FavoritesPage />}></Route>

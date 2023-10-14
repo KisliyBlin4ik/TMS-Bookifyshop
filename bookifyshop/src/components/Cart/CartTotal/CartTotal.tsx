@@ -1,10 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import LabelText from '../../LableText/LabelText';
+import LabelText from '../../Common/LableText/LabelText';
 import Button from '../../Common/Button';
-
-import 'src/scss/App.scss';
 
 const CartTotal = () => {
   const cart = useSelector(({ cart }) => cart);

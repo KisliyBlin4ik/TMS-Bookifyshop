@@ -123,6 +123,16 @@ button:active {
   border: 1px solid rgb(231, 231, 231);
 }
 
+.labelText__detalise {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.labelText__detalise div:first-child {
+  color: rgb(168, 168, 168);
+  line-height: 200%;
+}
+
 .formRating {
   display: flex;
   gap: 8px;
@@ -383,16 +393,6 @@ header {
   min-height: 104px;
   border-radius: 20px 20px 0 0;
   background: rgb(226, 200, 255);
-}
-
-.labelText__detalise {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.labelText__detalise div:first-child {
-  color: rgb(168, 168, 168);
-  line-height: 200%;
 }
 
 .sk-cube-grid {
@@ -695,7 +695,17 @@ main .main__header h1 {
 .homePage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  align-items: start;
+  justify-items: center;
+  row-gap: 48px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  margin-bottom: 72px;
+}
+
+.searchPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: start;
   justify-items: center;
   row-gap: 48px;

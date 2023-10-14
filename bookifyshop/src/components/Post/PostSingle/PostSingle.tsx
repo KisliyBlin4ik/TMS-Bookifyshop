@@ -16,7 +16,7 @@ import {
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
 import Button from '../../Common/Button';
-import LableText from '../../LableText';
+import LableText from '../../Common/LableText';
 import TabMenu from '../../Common/TabMenu';
 
 import 'src/scss/App.scss';

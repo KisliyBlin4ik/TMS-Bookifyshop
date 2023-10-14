@@ -49,7 +49,7 @@ export interface IAddFavorite extends IPostItem {
 }
 
 export interface IButton {
-  type: 'button' | 'submit';
+  type: 'button' | 'submit' | 'reset';
   children: string | ReactNode;
   customClass?: string;
   onClick?: () => void;

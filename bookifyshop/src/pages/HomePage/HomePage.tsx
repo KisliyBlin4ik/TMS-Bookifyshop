@@ -18,7 +18,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(FETCH_POST(isbnArr));
-  }, []);
+  }, [posts]);
 
   const post: IPostItem[] = useSelector(({ post }) => post);
 
@@ -28,6 +28,7 @@ const HomePage = () => {
         {post.map((postItem, index) => (
           <PostItem key={index} {...postItem} />
         ))}
+        {/* сделать пагинацию */}
       </PageTemplate>
     </>
   );

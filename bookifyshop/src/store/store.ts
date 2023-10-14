@@ -8,6 +8,7 @@ export const initialState = {
   post: [],
   cart: [],
   favorites: [],
+  search: [],
   isLoading: false,
 };
 
@@ -23,6 +24,12 @@ const rootReducer = (state: any = initialState, action: any) => {
       return {
         ...state,
         post: action.payload,
+      };
+    }
+    case 'SEARCH_POST': {
+      return {
+        ...state,
+        search: action.payload,
       };
     }
     case 'DELETE_POST': {

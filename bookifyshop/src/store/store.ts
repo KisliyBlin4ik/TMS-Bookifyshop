@@ -1,7 +1,7 @@
 import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { IAddCart } from 'src/interface/interface';
+import { IAddCart, IAddFavorite } from 'src/interface/interface';
 
 export const initialState = {
   posts: [],
@@ -69,7 +69,7 @@ const rootReducer = (state: any = initialState, action: any) => {
       return {
         ...state,
         favorites: state.favorites.filter(
-          (post: IAddCart) => post.isbn13 !== action.payload.isbn13
+          (post: IAddFavorite) => post.isbn13 !== action.payload.isbn13
         ),
       };
     }

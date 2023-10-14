@@ -99,11 +99,69 @@ button:active {
   box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0.2) inset;
 }
 
+.FormTemplate .FormTemplate__label {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  max-width: 544px;
+  width: 100%;
+  gap: 4px;
+}
+.formInput .formInput__label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 200%;
+}
+.formInput input {
+  line-height: 200%;
+  padding: 14px 20px;
+  border: 1px solid rgb(231, 231, 231);
+}
+
+.formRating {
+  display: flex;
+  gap: 8px;
+}
+
+.formTabMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.formTabMenu div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  font-size: 24px;
+  color: rgb(168, 168, 168);
+  cursor: pointer;
+}
+.formTabMenu div:hover {
+  transition: 0.2s;
+  color: rgb(49, 48, 55);
+}
+.formTabMenu .active {
+  position: relative;
+  color: rgb(49, 48, 55);
+  top: 2px;
+  padding-bottom: 1px;
+  border-bottom: 2px solid rgb(49, 48, 55);
+}
+
 .formCartItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 48px;
   width: 100%;
   border-bottom: 1px solid rgb(231, 231, 231);
 }
@@ -145,13 +203,26 @@ button:active {
   font-size: 40px;
   font-family: "Bebas Neue", sans-serif;
 }
+.formCartItem .cartItem__delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+}
 .formCartItem .cartItem__delete button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
   background-color: rgba(255, 255, 255, 0);
+  transition: 0.2s;
+}
+.formCartItem .cartItem__delete button:hover {
+  transition: 0.2s;
+  scale: 1.2;
+}
+.formCartItem .cartItem__delete button:active {
+  scale: 1;
+  box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0) inset;
 }
 
 .cartTotal {
@@ -187,7 +258,7 @@ button:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 48px;
   width: 100%;
   border-bottom: 1px solid rgb(231, 231, 231);
 }
@@ -214,7 +285,8 @@ button:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 25px;
+  gap: 24px;
+  width: 100%;
 }
 .formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__title {
   font-size: 24px;
@@ -225,9 +297,31 @@ button:active {
   color: rgb(168, 168, 168);
   line-height: 150%;
 }
-.formFavoriteItem .favoriteItem__price {
-  font-size: 40px;
+.formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 352px;
+}
+.formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__amount :nth-child(1n+1) {
   font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  line-height: 133%;
+}
+.formFavoriteItem .favoriteItem__icon svg {
+  cursor: pointer;
+  transition: 0.2s;
+  fill: rgb(252, 133, 127);
+}
+.formFavoriteItem .favoriteItem__icon svg path {
+  stroke: rgb(252, 133, 127);
+}
+.formFavoriteItem .favoriteItem__icon svg:hover {
+  transition: 0.2s;
+  scale: 1.2;
+}
+.formFavoriteItem .favoriteItem__icon svg:active {
+  scale: 1;
 }
 
 footer {
@@ -247,18 +341,18 @@ footer {
 }
 .logo a {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 35px;
+  font-size: 41px;
   color: rgb(49, 48, 55);
 }
 
 nav ul {
   display: flex;
+  gap: 8px;
 }
 nav ul li {
   font-size: 24px;
   cursor: pointer;
-  padding: 10px;
-  margin: 0 5px;
+  padding: 16px;
 }
 nav ul li svg {
   cursor: pointer;
@@ -281,23 +375,6 @@ header {
   min-height: 104px;
   border-radius: 20px 20px 0 0;
   background-color: rgb(226, 200, 255);
-}
-
-.formInput {
-  display: flex;
-  flex-direction: column;
-  max-width: 544px;
-  width: 100%;
-  gap: 4px;
-}
-.formInput .formInput__label {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 200%;
-}
-.formInput input {
-  padding: 15px 20px;
-  border: 1px solid rgb(231, 231, 231);
 }
 
 .labelText__detalise {
@@ -364,8 +441,26 @@ main {
   padding: 0 25px;
   width: 100%;
 }
-main h1 {
-  margin: 50px 0 40px;
+main .main__header {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 72px 0 48px;
+}
+main .main__header .goBackBtn {
+  color: rgb(49, 48, 55);
+  background-color: rgba(255, 255, 255, 0);
+  width: 50px;
+  height: 24px;
+}
+main .main__header .goBackBtn:hover {
+  transition: 0s;
+  background-color: rgba(255, 255, 255, 0);
+}
+main .main__header .goBackBtn:active {
+  box-shadow: 0px 0px 12px 12px rgba(255, 255, 255, 0) inset;
+}
+main .main__header h1 {
   font-size: 56px;
   font-family: "Bebas Neue", sans-serif;
 }
@@ -478,12 +573,12 @@ main h1 {
   border-top: 1px solid rgb(231, 231, 231);
 }
 .post-single .post-single__book-description .book-description__details .book-description__price {
-  padding-top: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 40px;
 }
-.post-single .post-single__book-description .book-description__details .book-description__price div:first-child {
+.post-single .post-single__book-description .book-description__details .book-description__price:first-child div {
   font-family: "Bebas Neue", sans-serif;
   font-size: 40px;
   line-height: 150%;
@@ -523,44 +618,11 @@ main h1 {
   line-height: 200%;
 }
 
-.formRating {
-  display: flex;
-  gap: 8px;
-}
-
-.formTabMenu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 32px;
-  border-bottom: 1px solid rgb(231, 231, 231);
-}
-.formTabMenu div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 72px;
-  font-size: 24px;
-  color: rgb(168, 168, 168);
-  cursor: pointer;
-}
-.formTabMenu div:hover {
-  transition: 0.2s;
-  color: rgb(49, 48, 55);
-}
-.formTabMenu .active {
-  position: relative;
-  color: rgb(49, 48, 55);
-  top: 2px;
-  padding-bottom: 1px;
-  border-bottom: 2px solid rgb(49, 48, 55);
-}
-
 #form_1 {
   display: flex;
   flex-direction: column;
   gap: 48px;
+  margin: 0 0 72px;
 }
 #form_1 .formTemplate {
   display: flex;
@@ -609,7 +671,15 @@ main h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 40px;
+  gap: 48px;
+}
+
+.favoritesPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 48px;
+  margin: 0 0 72px;
 }
 
 .homePage {

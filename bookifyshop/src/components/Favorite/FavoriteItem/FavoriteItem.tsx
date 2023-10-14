@@ -3,22 +3,18 @@ import { useNavigate } from 'react-router-dom';
 
 import { ROUTE_BOOK } from 'src/utils/routes';
 
-import { IAddCart } from 'src/interface/interface';
+import { IAddCart, IAddFavorite } from 'src/interface/interface';
+
+import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
+
+import Rating from 'src/components/Common/Rating';
 
 import 'src/scss/App.scss';
 
-const FavoriteItem: FC<IAddCart> = ({
-  image,
-  title,
-  price,
-  authors,
-  year,
-  isbn10,
-  isbn13,
-  subtitle,
-  url,
-}) => {
+const FavoriteItem: FC<IAddFavorite> = (props) => {
   const navigate = useNavigate();
+
+  const { ...state } = props;
 
   return (
     <div className="formFavoriteItem">
@@ -26,26 +22,25 @@ const FavoriteItem: FC<IAddCart> = ({
         <div
           className="favoriteItem__image"
           onClick={() => {
-            navigate(`${ROUTE_BOOK}/${isbn13}`, {
-              state: { image, isbn13, price, subtitle, title, url },
-            });
-            console.log('click');
+            navigate(`${ROUTE_BOOK}/${props.isbn13}`, { state });
           }}
         >
-          <img src={image} alt="" />
+          <img src={props.image} alt="" />
         </div>
         <div className="favoriteItem__details">
           <div>
-            <div className="favoriteItem__title">{title}</div>
+            <div className="favoriteItem__title">{props.title}</div>
             <div className="favoriteItem__author">
-              {authors},{year}
+              {props.authors},{props.year}
             </div>
           </div>
-          <div className="favoriteItem__amount">1 x 2</div>
+          <div className="favoriteItem__amount">
+            <div>{props.price}</div>
+            <Rating rating={props.rating} />
+          </div>
         </div>
       </div>
-      <div className="favoriteItem">{price}</div>
-      <div className="favoriteItem">1</div>
+      <div className="favoriteItem__icon"><FavoriteIcon/></div>
     </div>
   );
 };

@@ -42,16 +42,10 @@ export interface IPostItem extends IPosts {
   rating: string;
   year: string;
 }
-export interface IAddCart extends IPosts {
-  authors: string;
-  year: string;
-  isbn10: string;
+export interface IAddCart extends IPostItem {
   counter: number;
 }
-export interface IAddFavorite extends IPosts {
-  authors: string;
-  year: string;
-  isbn10: string;
+export interface IAddFavorite extends IPostItem {
 }
 
 export interface IButton {

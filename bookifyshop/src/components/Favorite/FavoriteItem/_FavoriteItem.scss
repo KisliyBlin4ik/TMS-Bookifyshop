@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 48px;
     width: 100%;
     border-bottom: 1px solid $border-color;
 
@@ -30,7 +30,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 25px;
+            gap: 24px;
+            width: 100%;
 
             .favoriteItem__title {
                 font-size: 24px;
@@ -42,13 +43,41 @@
                 color: $font-color-2;
                 line-height: 150%;
             }
+
+            .favoriteItem__amount {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 352px;
+
+                :nth-child(1n + 1) {
+                    font-family: 'Bebas Neue', sans-serif;
+                    font-size: 24px;
+                    line-height: 133%;
+                }
+            }
         }
     }
 
-    .favoriteItem__price {
-        font-size: 40px;
-        font-family: 'Bebas Neue', sans-serif;
+    .favoriteItem__icon {
+        svg {
+            cursor: pointer;
+            transition: 0.2s;
+            fill: $favorite-icon-color;
 
+            path {
+                stroke: $favorite-icon-color;
+            }
+
+            &:hover {
+                transition: 0.2s;
+                scale: (1.2);
+            }
+
+            &:active {
+                scale: (1);
+            }
+        }
     }
 
 }

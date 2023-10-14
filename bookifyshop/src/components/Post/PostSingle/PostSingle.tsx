@@ -6,7 +6,12 @@ import { useLocation } from 'react-router-dom';
 
 import { IAddCart, IAddFavorite, IPostItem } from 'src/interface/interface';
 
-import { ADD_TO_CART, ADD_TO_CART_AGAIN, ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from 'src/actions/actions';
+import {
+  ADD_TO_CART,
+  ADD_TO_CART_AGAIN,
+  ADD_TO_FAVORITES,
+  REMOVE_FROM_FAVORITES,
+} from 'src/actions/actions';
 
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
@@ -17,17 +22,19 @@ import TabMenu from '../../Common/TabMenu';
 import 'src/scss/App.scss';
 import Rating from 'src/components/Common/Rating';
 
-const PostSingle: FC<IPostItem> = ({ authors, desc, error, image, isbn10, isbn13, language, pages, pdf, price, publisher, rating, subtitle, title, url, year }) => {
+const PostSingle: FC<IPostItem> = (props) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 
   const favorites: IAddFavorite[] = useSelector(({ favorites }) => favorites);
   const cart: IAddCart[] = useSelector(({ cart }) => cart);
 
+  const { ...state } = props;
+
   const [toggleState, setToggleState] = useState(1);
 
-  const addFavorite: IAddFavorite = { image, title, price, authors, year, isbn10, isbn13, url, subtitle };
+  const addFavorite: IAddFavorite = { ...state };
 
-  const addCart: IAddCart = { image, title, price, authors, year, isbn10, isbn13, url, subtitle, counter: 1 };
+  const addCart: IAddCart = { counter: 1, ...state };
 
   const isFavorites = favorites.some((post) => post.isbn13 === addFavorite.isbn13);
   const isCarts = cart.some((post) => post.isbn13 === addCart.isbn13);
@@ -63,23 +70,31 @@ const PostSingle: FC<IPostItem> = ({ authors, desc, error, image, isbn10, isbn13
           >
             <FavoriteIcon onClick={handleFavoriteClick} />
           </button>
-          <img src={image} alt="" />
+          <img src={props.image} alt="" />
         </div>
         <div className="book-description__details">
           <div className="book-description__price">
-            <div>{price}</div>
-            <Rating rating={rating}/>
+            <div>{props.price}</div>
+            <Rating rating={props.rating} />
             {/* <div>{rating}</div> */}
           </div>
           <div className="book-description__content">
-            <LableText text1="Authors" text2={authors} onChange={() => {}} />
             <LableText
-              text1="Publisher"
-              text2={publisher}
-              text3={year}
+              text1="Authors"
+              text2={props.authors}
               onChange={() => {}}
             />
-            <LableText text1="Language" text2={language} onChange={() => {}} />
+            <LableText
+              text1="Publisher"
+              text2={props.publisher}
+              text3={props.year}
+              onChange={() => {}}
+            />
+            <LableText
+              text1="Language"
+              text2={props.language}
+              onChange={() => {}}
+            />
             <LableText
               text1="Format"
               text2="Paper book / ebook (PDF)"
@@ -103,9 +118,9 @@ const PostSingle: FC<IPostItem> = ({ authors, desc, error, image, isbn10, isbn13
       />
       <div className="post-single__text">
         {toggleState === 1
-          ? desc
+          ? props.desc
           : toggleState === 2
-          ? authors
+          ? props.authors
           : toggleState === 3
           ? 'No reviews'
           : ''}

@@ -60,6 +60,9 @@
             border-top: 1px solid $border-color;
 
             .book-description__price {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 padding-top: 40px;
 
                 &:first-child div {
@@ -67,11 +70,6 @@
                     font-size: 40px;
                     line-height: 150%;
                 }
-
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
             }
 
             .book-description__content {

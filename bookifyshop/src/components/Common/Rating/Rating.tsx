@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 
 import { IRating } from 'src/interface/interface';
 
-import { ReactComponent as EmptyStarIcon } from '../../assets/icons/EmptyStarIcon.svg';
-import { ReactComponent as FilledStarIcon } from '../../assets/icons/FilledStarIcon.svg';
+import { ReactComponent as EmptyStarIcon } from 'src/assets/icons/EmptyStarIcon.svg';
+import { ReactComponent as FilledStarIcon } from 'src/assets/icons/FilledStarIcon.svg';
 
 import 'src/scss/App.scss';
 

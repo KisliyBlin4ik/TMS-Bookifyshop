@@ -52,13 +52,28 @@
     }
 
     .cartItem__delete {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+
         button {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 24px;
-            height: 24px;
             background-color: rgba(255, 255, 255, 0);
+            transition: 0.2s;
+
+            &:hover {
+                transition: 0.2s;
+                scale: (1.2);
+            }
+
+            &:active {
+                scale: (1);
+                box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0) inset;
+
+            }
         }
     }
 

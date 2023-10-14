@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { useLocation } from 'react-router-dom';
 
-import { IAddCart, IAddFavorite, IPost } from 'src/interface/interface';
+import { IAddCart, IAddFavorite, IPostItem } from 'src/interface/interface';
 
 import {
   ADD_TO_CART,
@@ -13,39 +13,38 @@ import {
   REMOVE_FROM_FAVORITES,
 } from 'src/actions/actions';
 
-import { ReactComponent as FavoriteIcon } from '../../assets/icons/FavoriteIcon.svg';
+import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
-import Button from '../Button';
-import LableText from '../LableText';
-import TabMenu from '../TabMenu';
+import Button from '../../Common/Button';
+import LableText from '../../LableText';
+import TabMenu from '../../Common/TabMenu';
 
 import 'src/scss/App.scss';
 
-const PostSingle = () => {
+const PostSingle: FC<IPostItem> = ({
+  authors,
+  desc,
+  error,
+  image,
+  isbn10,
+  isbn13,
+  language,
+  pages,
+  pdf,
+  price,
+  publisher,
+  rating,
+  subtitle,
+  title,
+  url,
+  year,
+}) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
-  const location = useLocation();
-  const [addC, setAddC] = useState({});
-  const {
-    authors,
-    desc,
-    error,
-    image,
-    isbn10,
-    isbn13,
-    language,
-    pages,
-    pdf,
-    price,
-    publisher,
-    rating,
-    subtitle,
-    title,
-    url,
-    year,
-  }: IPost = location.state;
 
   const favorites: IAddFavorite[] = useSelector(({ favorites }) => favorites);
   const cart: IAddCart[] = useSelector(({ cart }) => cart);
+
+  const [toggleState, setToggleState] = useState(1);
 
   const addFavorite: IAddFavorite = {
     image,
@@ -58,7 +57,9 @@ const PostSingle = () => {
     url,
     subtitle,
   };
+
   const counter = 1;
+
   const addCart: IAddCart = {
     image,
     title,
@@ -98,21 +99,12 @@ const PostSingle = () => {
     }
   };
 
-  const [toggleState, setToggleState] = useState(1);
-
   const toggleTab = (index: number) => {
     setToggleState(index);
   };
 
-  // image, title, price, authors, year, isbn10, isbn 13
-  useEffect(() => {
-    // setAddC(addCart);
-    // dispatch(FETCH_POST(isbn13));
-  }, []);
-
   return (
     <div className="post-single">
-      <h1>{title}</h1>
       <div className="post-single__book-description">
         <div className="book-description__image">
           <button
@@ -149,9 +141,7 @@ const PostSingle = () => {
               type="button"
               content="add to card"
               onClick={handleCartClick}
-              // добавить проверку. Если пость уже есть то цифра кол-ва++ и >1 delete
             />
-            {/* addCart = image, title, price, authors, year, isbn10, isbn 13*/}
             <p>Preview book</p>
             {/* ссылка из url */}
           </div>
@@ -163,7 +153,6 @@ const PostSingle = () => {
         text3="Rviews"
         onChange={toggleTab}
       />
-      {/* доделать табы */}
       <div className="post-single__text">
         {toggleState === 1
           ? desc

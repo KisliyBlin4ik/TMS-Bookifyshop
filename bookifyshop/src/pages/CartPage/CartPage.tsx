@@ -5,8 +5,8 @@ import { ThunkDispatch } from 'redux-thunk';
 
 import { IAddCart } from 'src/interface/interface';
 
-import CartItem from 'src/components/CartItem';
-import CartTotal from 'src/components/CartTotal';
+import CartItem from 'src/components/Cart/CartItem';
+import CartTotal from 'src/components/Cart/CartTotal';
 import PageTemplate from 'src/components/PageTemplate';
 
 const CartPage = () => {

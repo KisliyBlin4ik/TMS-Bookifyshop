@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { IPost } from 'src/interface/interface';
+import { IPostItem } from 'src/interface/interface';
 import { ROUTE_BOOK } from 'src/utils/routes';
 
-import Rating from '../Rating';
+import Rating from '../../Common/Rating';
 
 import 'src/scss/App.scss';
 
-const Post: FC<IPost> = ({
+const PostItem: FC<IPostItem> = ({
   authors,
   desc,
   error,
@@ -28,31 +28,33 @@ const Post: FC<IPost> = ({
 }) => {
   const navigate = useNavigate();
 
+  const handlePostClick = () => {
+    navigate(`${ROUTE_BOOK}/${isbn13}`,  {
+      state: {
+        authors,
+        desc,
+        error,
+        image,
+        isbn10,
+        isbn13,
+        language,
+        pages,
+        pdf,
+        price,
+        publisher,
+        rating,
+        subtitle,
+        title,
+        url,
+        year,
+      },
+    });
+  };
+
   return (
     <div
       className="formPost"
-      onClick={() => {
-        navigate(`${ROUTE_BOOK}/${isbn13}`, {
-          state: {
-            authors,
-            desc,
-            error,
-            image,
-            isbn10,
-            isbn13,
-            language,
-            pages,
-            pdf,
-            price,
-            publisher,
-            rating,
-            subtitle,
-            title,
-            url,
-            year,
-          },
-        });
-      }}
+      onClick={handlePostClick}
     >
       <img src={image} alt="" />
       <div className="formPost__content">
@@ -71,4 +73,4 @@ const Post: FC<IPost> = ({
   );
 };
 
-export default Post;
+export default PostItem;

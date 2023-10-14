@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
-import { ICounter } from 'src/interface/interface';
+import { ICartCounter } from 'src/interface/interface';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 
@@ -14,7 +14,7 @@ import { ReactComponent as Minus } from 'src/assets/icons/MinusIcon.svg';
 
 import 'src/scss/App.scss';
 
-const Counter: FC<ICounter> = ({ counter, isbn13 }) => {
+const CartCounter: FC<ICartCounter> = ({ counter, isbn13 }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 
   const increaseCounter = () => {
@@ -40,4 +40,4 @@ const Counter: FC<ICounter> = ({ counter, isbn13 }) => {
   );
 };
 
-export default Counter;
+export default CartCounter;

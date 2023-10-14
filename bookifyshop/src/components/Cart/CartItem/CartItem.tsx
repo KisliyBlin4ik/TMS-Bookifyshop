@@ -11,9 +11,10 @@ import { IAddCart } from 'src/interface/interface';
 import { REMOVE_FROM_CART } from 'src/actions/actions';
 
 import { ReactComponent as CloseIcon } from 'src/assets/icons/CloseIcon.svg';
+import { ReactComponent as DeleteIcon } from 'src/assets/icons/DeleteIcon.svg';
 
-import Button from '../Button';
-import Counter from '../Counter';
+import Button from '../../Common/Button';
+import CartCounter from '../CartCounter';
 
 import 'src/scss/App.scss';
 
@@ -73,7 +74,7 @@ const CartItem: FC<IAddCart> = ({
             </div>
           </div>
           <div className="cartItem__amount">
-            <Counter counter={counter} isbn13={isbn13} />
+            <CartCounter counter={counter} isbn13={isbn13} />
           </div>
         </div>
       </div>
@@ -84,7 +85,7 @@ const CartItem: FC<IAddCart> = ({
           content=""
           onClick={() => dispatch(REMOVE_FROM_CART(addCart))}
         >
-          <CloseIcon />
+          <DeleteIcon />
         </Button>
       </div>
     </div>

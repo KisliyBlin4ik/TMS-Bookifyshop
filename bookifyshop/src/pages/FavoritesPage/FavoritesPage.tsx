@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 
-import { IAddCart, IPost, IPosts } from 'src/interface/interface';
+import { IAddCart, IPostItem, IPosts } from 'src/interface/interface';
 
 import PageTemplate from 'src/components/PageTemplate';
-import Post from 'src/components/Post';
+import Post from 'src/components/Post/PostItem';
 
 const FavoritesPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 
-  const favorites: IPost[] = useSelector(({ favorites }) => favorites);
+  const favorites: IPostItem[] = useSelector(({ favorites }) => favorites);
 
   useEffect(() => {
     dispatch({ type: 'SET_LOADING', payload: false });

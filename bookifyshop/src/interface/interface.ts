@@ -12,6 +12,7 @@ export interface IPageTemplate {
   title?: string;
   customClass: string;
   children: ReactNode;
+  invisible?: boolean;
 }
 
 export interface IFormTemplate extends IPageTemplate {
@@ -27,7 +28,7 @@ export interface IPosts {
   url: string;
 }
 
-export interface IPost extends IPosts {
+export interface IPostItem extends IPosts {
   authors: string;
   desc: string;
   error: string;
@@ -57,6 +58,7 @@ export interface IButton {
   type: 'button' | 'submit';
   content: string;
   children?: ReactNode;
+  customClass?: string;
   onClick?: () => void;
 }
 
@@ -67,7 +69,7 @@ export interface ILabelText {
   onChange: (value: number) => void;
 }
 
-export interface ICounter {
+export interface ICartCounter {
   counter: number;
   isbn13: string;
 }

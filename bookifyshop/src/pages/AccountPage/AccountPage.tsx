@@ -3,10 +3,10 @@ import { AnyAction } from 'redux';
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 
-import Button from 'src/components/Button';
-import Input from 'src/components/Input';
+import Button from 'src/components/Common/Button';
+import Input from 'src/components/Common/Input';
 import PageTemplate from 'src/components/PageTemplate';
-import FormTemplate from 'src/components/FormTemplate';
+import FormTemplate from 'src/components/Common/FormTemplate';
 
 import 'src/scss/App.scss';
 

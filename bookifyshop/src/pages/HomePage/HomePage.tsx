@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 
-import { IPost, IPosts } from 'src/interface/interface';
+import { IPostItem, IPosts } from 'src/interface/interface';
 
 import { FETCH_POST } from 'src/actions/actions';
 
 import PageTemplate from 'src/components/PageTemplate';
-import Post from 'src/components/Post';
+import Post from 'src/components/Post/PostItem';
 
 import 'src/scss/App.scss';
+import PostItem from 'src/components/Post/PostItem';
 
 const HomePage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
@@ -23,11 +24,11 @@ const HomePage = () => {
     dispatch(FETCH_POST(isbnArr));
   }, []);
 
-  const post: IPost[] = useSelector(({ post }) => post);
+  const post: IPostItem[] = useSelector(({ post }) => post);
 
   return (
     <>
-      <PageTemplate title="Home page" customClass="homePage">
+      <PageTemplate title="Home page" customClass="homePage" invisible>
         {post.map(
           (
             {
@@ -50,7 +51,7 @@ const HomePage = () => {
             },
             index
           ) => (
-            <Post
+            <PostItem
               key={index}
               authors={authors}
               desc={desc}

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LabelText from '../LableText/LabelText';
-import Button from '../Button';
+import LabelText from '../../LableText/LabelText';
+import Button from '../../Common/Button';
 
 import 'src/scss/App.scss';
 

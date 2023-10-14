@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import HeaderLogo from './HeaderLogo';
-import Input from '../Input';
+import Input from '../Common/Input';
 import HeaderNavBar from './HeaderNavBar';
 
 import 'src/scss/App.scss';

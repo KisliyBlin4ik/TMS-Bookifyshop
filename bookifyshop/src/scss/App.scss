@@ -2,28 +2,30 @@
 @import './_colors';
 @import './_reset';
 
-@import '../components/Button/Button';
-@import '../components/CartItem/CartItem';
-@import '../components/CartTotal/CartTotal';
-@import '../components/Counter/Counter';
-@import '../components/FavoriteItem/FavoriteItem';
+@import '../components/Common/Button/_Button';
+@import '../components/Common/FormTemplate/_FormTemplate';
+@import '../components/Common/Input/_Input';
+@import '../components/Common/Rating/_Rating';
+@import '../components/Common/TabMenu/_TabMenu';
+
+@import '../components/Cart/CartItem/_CartItem';
+@import '../components/Cart/CartTotal/_CartTotal';
+@import '../components/Cart/CartCounter/_CartCounter';
+@import '../components/Favorite/FavoriteItem/_FavoriteItem';
 @import '../components/Footer/Footer';
 @import '../components/HeaderMenu/HeaderLogo/HeaderLogo';
 @import '../components/HeaderMenu/HeaderNavBar/HeaderNavBar';
 @import '../components/HeaderMenu/HeaderMenu';
-@import '../components/Input/Input';
 @import '../components/LableText/LabelText';
 @import '../components/Loader/Loader';
 @import '../components/PageTemplate/PageTemplate';
-@import '../components/Post/Post';
-@import '../components/PostSingle/PostSingle';
-@import '../components/Rating/Rating';
-@import '../components/TabMenu/TabMenu';
+@import '../components/Post/PostItem/_PostItem';
+@import '../components/Post/PostSingle/_PostSingle';
 
 @import '../pages/AccountPage/_AccountPage';
-@import '../pages/CartPage/CartPage';
-@import '../pages/HomePage/HomePage';
-@import '../pages/SignInPage/SignInPage';
+@import '../pages/CartPage/_CartPage';
+@import '../pages/HomePage/_HomePage';
+@import '../pages/SignInPage/_SignInPage';
 
 
 

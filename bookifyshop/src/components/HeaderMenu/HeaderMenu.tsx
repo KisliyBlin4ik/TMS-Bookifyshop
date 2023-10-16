@@ -6,6 +6,9 @@ import { AnyAction } from 'redux';
 
 import { SEARCH_POST } from 'src/actions/actions';
 
+import { ReactComponent as SearchIcon } from 'src/assets/icons/SearchIcon.svg';
+import { ReactComponent as CancelIcon } from 'src/assets/icons/CancelIcon.svg';
+
 import Button from '../Common/Button';
 import Input from '../Common/Input';
 import HeaderLogo from './HeaderLogo';
@@ -28,20 +31,17 @@ const HeaderMenu = () => {
 
   return (
     <header>
-      <HeaderLogo></HeaderLogo>
-      <form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          placeholder="Search..."
-          value={searchValue}
-          onChange={setSearchValue}
-        ></Input>
-        <Button type="submit">search</Button>
-        <Button type="reset" onClick={handleReset}>
-          reset
+      <HeaderLogo/>
+      <form id='form_2' onSubmit={handleSubmit}>
+        <Input type="text" placeholder="Search..." value={searchValue} onChange={setSearchValue}/>
+        <Button type="submit" customClass='form-2__searchBtn form-2__Btn'>
+          <SearchIcon/>
+        </Button>
+        <Button type="reset" customClass='form-2__resetBtn form-2__Btn' onClick={handleReset}>
+          <CancelIcon/>
         </Button>
       </form>
-      <HeaderNavBar></HeaderNavBar>
+      <HeaderNavBar/>
     </header>
   );
 };

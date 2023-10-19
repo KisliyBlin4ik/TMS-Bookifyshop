@@ -1,10 +1,10 @@
-import React, { useEffect, FC } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-import { DELETE_POST, FETCH_POSTS } from './actions/actions';
+import { FETCH_POSTS } from './actions/actions';
 
 import HomePage from './pages/HomePage';
 import BookPage from './pages/BookPage';
@@ -20,7 +20,6 @@ import {
   ROUTE_CART,
   ROUTE_FAVORITES,
   ROUTE_HOME,
-  ROUTE_SEARCH,
   ROUTE_SEARCH_PAGE,
   ROUTE_SIGN_IN,
 } from './utils/routes';
@@ -30,8 +29,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // dispatch(DELETE_POST(navigate, {}));
-    navigate('/sign-in');
+    navigate(ROUTE_HOME);
     dispatch(FETCH_POSTS());
   }, []);
 

@@ -24,9 +24,6 @@ const HeaderNavBar = () => {
             <li>
                 <Link to={ROUTE_ACCOUNT}><UserIcon/></Link>
             </li>
-            {/* <li>
-                <Link to={ROUTE_HOME}>home</Link>
-            </li> */}
         </ul>
     </nav>
   )

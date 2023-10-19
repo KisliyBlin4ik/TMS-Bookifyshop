@@ -35,6 +35,11 @@ export const DECREMENT_COUNTER_TO_CART = (isbn13: string, counter: number) => ({
   payload: { isbn13, counter },
 });
 
+export const SET_AUTHENTICATED = (IsAuthenticated: boolean) => ({
+  type: 'SET_AUTHENTICATED',
+  payload: IsAuthenticated,
+});
+
 export const DELETE_POST = (navigate: any, obj: any) => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
     dispatch({ type: 'DELETE_POST', payload: obj });

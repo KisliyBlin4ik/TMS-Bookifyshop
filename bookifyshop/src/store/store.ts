@@ -9,6 +9,7 @@ export const initialState = {
   cart: [],
   favorites: [],
   search: [],
+  IsAuthenticated: false,
   isLoading: false,
 };
 
@@ -112,6 +113,12 @@ const rootReducer = (state: any = initialState, action: any) => {
       return {
         ...state,
         cart: updatedCart,
+      };
+    }
+    case 'SET_AUTHENTICATED': {
+      return {
+        ...state,
+        IsAuthenticated: action.payload,
       };
     }
     case 'SET_LOADING': {

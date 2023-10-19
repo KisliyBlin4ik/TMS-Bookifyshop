@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
-import { useLocation } from 'react-router-dom';
 
 import { IAddCart, IAddFavorite, IPostItem } from 'src/interface/interface';
 
@@ -15,18 +14,22 @@ import {
 
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
-import Button from '../../Common/Button';
-import LableText from '../../Common/LableText';
-import TabMenu from '../../Common/TabMenu';
+import Button from 'src/components/Common/Button';
+import LableText from 'src/components/Common/LableText';
+import TabMenu from 'src/components/Common/TabMenu';
+import Rating from 'src/components/Common/Rating';
 
 import 'src/scss/App.scss';
-import Rating from 'src/components/Common/Rating';
+import { useNavigate } from 'react-router-dom';
+import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
 const PostSingle: FC<IPostItem> = (props) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
+  const navigate = useNavigate();
 
   const favorites: IAddFavorite[] = useSelector(({ favorites }) => favorites);
   const cart: IAddCart[] = useSelector(({ cart }) => cart);
+  const IsAuthenticated: boolean = useSelector(({ IsAuthenticated }) => IsAuthenticated);
 
   const { ...state } = props;
 
@@ -55,6 +58,10 @@ const PostSingle: FC<IPostItem> = (props) => {
     }
   };
 
+  const handleAuthenticated = () => {
+    navigate(ROUTE_SIGN_IN)
+  }
+
   const toggleTab = (index: number) => {
     setToggleState(index);
   };
@@ -68,7 +75,7 @@ const PostSingle: FC<IPostItem> = (props) => {
               isFavorites ? 'book-description__iconStyle' : ''
             }`}
           >
-            <FavoriteIcon onClick={handleFavoriteClick} />
+            <FavoriteIcon onClick={IsAuthenticated ? handleFavoriteClick : handleAuthenticated} />
           </button>
           <img src={props.image} alt="" />
         </div>
@@ -76,7 +83,6 @@ const PostSingle: FC<IPostItem> = (props) => {
           <div className="book-description__price">
             <div>{props.price}</div>
             <Rating rating={props.rating} />
-            {/* <div>{rating}</div> */}
           </div>
           <div className="book-description__content">
             <LableText

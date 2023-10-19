@@ -5,6 +5,7 @@ export interface IInput {
   placeholder?: string;
   value: string;
   label?: string;
+  children?: ReactNode;
   onChange: (value: string) => void;
 }
 

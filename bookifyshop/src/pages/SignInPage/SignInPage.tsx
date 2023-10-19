@@ -37,13 +37,6 @@ const SignInPage = () => {
           ) : (
             ''
           )}
-          {toggleState === 1 ? (
-            <Button type="button">Sign In</Button>
-          ) : toggleState === 2 ? (
-            <Button type="button">Sign Up</Button>
-          ) : (
-            ''
-          )}
         </FormTemplate>
       </PageTemplate>
     </>

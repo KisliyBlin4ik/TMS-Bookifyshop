@@ -2,20 +2,27 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { useNavigate } from 'react-router-dom';
 
-import { IAddCart, IAddFavorite, IPostItem, IPosts } from 'src/interface/interface';
+import { IAddFavorite } from 'src/interface/interface';
+
+import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
 import PageTemplate from 'src/components/PageTemplate';
-import Post from 'src/components/Post/PostItem';
 import FavoriteItem from 'src/components/Favorite/FavoriteItem';
 
 const FavoritesPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
+  const navigate = useNavigate();
 
   const favorites: IAddFavorite[] = useSelector(({ favorites }) => favorites);
+  const IsAuthenticated: boolean = useSelector(({ IsAuthenticated }) => IsAuthenticated);
 
   useEffect(() => {
     dispatch({ type: 'SET_LOADING', payload: false });
+    if (!IsAuthenticated) {
+      navigate(ROUTE_SIGN_IN);
+    }
   }, []);
 
   return (

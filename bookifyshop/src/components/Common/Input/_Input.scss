@@ -7,7 +7,7 @@
 
     .formInput__label {
         font-weight: 700;
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 200%;
     }
 
@@ -15,5 +15,14 @@
         line-height: 200%;
         padding: 14px 20px;
         border: 1px solid $border-color;
+    }
+
+    .inputError {
+        border: 1px solid $error-color;
+    }
+
+    .error {
+        font-size: 0.875rem;
+        color: $error-color;
     }
 }

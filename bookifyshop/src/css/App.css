@@ -85,7 +85,7 @@ body {
 /*--------------------*/
 button {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: rgb(49, 48, 55);
   background: rgb(226, 200, 255);
   width: 100%;
@@ -102,7 +102,7 @@ button:active {
 .FormTemplate .FormTemplate__label {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .formInput {
@@ -114,13 +114,20 @@ button:active {
 }
 .formInput .formInput__label {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 200%;
 }
 .formInput input {
   line-height: 200%;
   padding: 14px 20px;
   border: 1px solid rgb(231, 231, 231);
+}
+.formInput .inputError {
+  border: 1px solid rgb(252, 133, 127);
+}
+.formInput .error {
+  font-size: 0.875rem;
+  color: rgb(252, 133, 127);
 }
 
 .labelText__detalise {
@@ -151,7 +158,7 @@ button:active {
   align-items: center;
   width: 100%;
   height: 72px;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: rgb(168, 168, 168);
   cursor: pointer;
 }
@@ -201,7 +208,7 @@ button:active {
   gap: 25px;
 }
 .formCartItem .cartItem__description .cartItem__details .cartItem__title {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 133%;
   font-family: "Bebas Neue", sans-serif;
 }
@@ -210,7 +217,7 @@ button:active {
   line-height: 150%;
 }
 .formCartItem .cartItem__price {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-family: "Bebas Neue", sans-serif;
 }
 .formCartItem .cartItem__delete {
@@ -253,7 +260,7 @@ button:active {
 .formCounter .formCounter__counter {
   font-family: "Bebas Neue", sans-serif;
   line-height: 133%;
-  font-size: 24px;
+  font-size: 1.5rem;
   text-align: center;
   width: 56px;
 }
@@ -299,7 +306,7 @@ button:active {
   width: 100%;
 }
 .formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__title {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 133%;
   font-family: "Bebas Neue", sans-serif;
 }
@@ -315,7 +322,7 @@ button:active {
 }
 .formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__amount :nth-child(1n+1) {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 133%;
 }
 .formFavoriteItem .favoriteItem__icon button {
@@ -350,7 +357,7 @@ footer {
   width: 100%;
   min-height: 95px;
   border-radius: 0 0 20px 20px;
-  font-size: 16px;
+  font-size: 1rem;
   background: rgb(226, 200, 255);
 }
 
@@ -368,7 +375,7 @@ nav ul {
   gap: 8px;
 }
 nav ul li {
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 16px;
 }
@@ -519,13 +526,13 @@ main .main__header h1 {
 }
 .formPost .formPost__content .formPost__header .formPost__title {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 133%;
   min-height: 64px;
 }
 .formPost .formPost__content .formPost__header .formPost__publisher {
   color: rgb(168, 168, 168);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
 }
 .formPost .formPost__content .formPost__footer {
@@ -534,7 +541,7 @@ main .main__header h1 {
 }
 .formPost .formPost__content .formPost__footer .formPost__price {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 133%;
 }
 
@@ -612,7 +619,7 @@ main .main__header h1 {
 }
 .post-single .post-single__book-description .book-description__details .book-description__price:first-child div {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 150%;
 }
 .post-single .post-single__book-description .book-description__details .book-description__content {
@@ -633,7 +640,7 @@ main .main__header h1 {
 .post-single .formTabMenu div {
   max-width: 161px;
   height: 48px;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   color: rgb(168, 168, 168);
 }
@@ -749,6 +756,7 @@ main .main__header h1 {
   flex-direction: column;
   max-width: 544px;
   width: 100%;
+  margin: 20px 0;
   border: 1px solid rgb(231, 231, 231);
 }
 .signInPage .formTemplate .formSignIn .formTabMenu {
@@ -768,18 +776,47 @@ main .main__header h1 {
 .signInPage .formTemplate .formSignIn .formSignIn__signIn {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 32px;
+  padding: 32px 32px 40px;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signIn form {
+  display: flex;
+  flex-direction: column;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signIn form > :nth-child(1) {
+  margin-bottom: 16px;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signIn form > :nth-child(2) {
+  margin-bottom: 8px;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signIn form > :nth-child(3) {
+  margin-bottom: 40px;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signIn form p {
+  font-size: 0.875rem;
+  line-height: 228.5%;
 }
 .signInPage .formTemplate .formSignIn .formSignIn__signUp {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 32px;
+  padding: 32px 32px 40px;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signUp form {
+  display: flex;
+  flex-direction: column;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signUp form .success-message {
+  padding: 20px;
+  line-height: 150%;
+  background: rgb(244, 238, 253);
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signUp form > :nth-last-child(1n+3) {
+  margin-bottom: 16px;
+}
+.signInPage .formTemplate .formSignIn .formSignIn__signUp form > :nth-last-child(2) {
+  margin-bottom: 40px;
 }
 .signInPage .formTemplate .formSignIn button {
   max-width: 480px;
-  margin: 8px 32px 40px;
 }
 
 .wrapper {

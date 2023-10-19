@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnyAction } from 'redux';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 
 import Button from 'src/components/Common/Button';
@@ -9,13 +9,26 @@ import PageTemplate from 'src/components/PageTemplate';
 import FormTemplate from 'src/components/Common/FormTemplate';
 
 import 'src/scss/App.scss';
+import { useNavigate } from 'react-router-dom';
+import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
 const AccountPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
+  const navigate = useNavigate();
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const IsAuthenticated: boolean = useSelector(({ IsAuthenticated }) => IsAuthenticated);
+
+  const getStorage = localStorage.getItem('users')
+  const getStorage2 = localStorage.getItem('user')
+  const userArr = getStorage !== null ? JSON.parse(getStorage) : [];
+  const userArr2 = getStorage2 !== null ? JSON.parse(getStorage2) : [];
+  const user = userArr.find((item:any) => {
+    return item.email === userArr2.email
+  })
+  
+  const [name, setName] = useState(user ? user.name : '');
+  const [email, setEmail] = useState(user ? user.email : '');
+  const [password, setPassword] = useState(user ? user.password : '');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
@@ -35,6 +48,9 @@ const AccountPage = () => {
 
   useEffect(() => {
     dispatch({ type: 'SET_LOADING', payload: false });
+    if (!IsAuthenticated) {
+      navigate(ROUTE_SIGN_IN);
+    }
   }, []);
 
   return (

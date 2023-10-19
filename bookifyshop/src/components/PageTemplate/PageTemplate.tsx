@@ -27,7 +27,7 @@ const PageTemplate: FC<IPageTemplate> = ({
   const upperCaseTitlePage = titlePage.toUpperCase();
 
   function goBack() {
-    navigate(-1); // Вернуться на предыдущую страницу
+    navigate(-1);
   }
 
   return (

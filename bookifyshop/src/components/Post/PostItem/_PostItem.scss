@@ -71,3 +71,16 @@
         background-color: $post-bg-color-4;
     }
 }
+
+@media (max-width: 540px) {
+    .formPost {
+        .formPost__content {
+            .formPost__header {
+                .formPost__title {
+                    min-height: auto;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}

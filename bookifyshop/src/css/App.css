@@ -4,13 +4,13 @@
 /*Обнуление*/
 :root {
   font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -135,11 +135,18 @@ button:active {
   align-items: center;
   justify-content: space-between;
 }
-.labelText__detalise div:first-child {
+.labelText__detalise > :nth-child(1) {
   color: rgb(168, 168, 168);
   line-height: 200%;
 }
 
+@media (max-width: 425px) {
+  .book-description__content .labelText__detalise {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 .formRating {
   display: flex;
   gap: 8px;
@@ -205,7 +212,7 @@ button:active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 25px;
+  gap: 24px;
 }
 .formCartItem .cartItem__description .cartItem__details .cartItem__title {
   font-size: 1.5rem;
@@ -217,8 +224,9 @@ button:active {
   line-height: 150%;
 }
 .formCartItem .cartItem__price {
-  font-size: 2.5rem;
   font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  line-height: 150%;
 }
 .formCartItem .cartItem__delete {
   display: flex;
@@ -242,6 +250,48 @@ button:active {
   box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0) inset;
 }
 
+@media (max-width: 800px) {
+  .formCartItem {
+    position: relative;
+    align-items: flex-start;
+  }
+  .formCartItem .cartItem__price {
+    position: absolute;
+    bottom: 72px;
+    right: 36px;
+  }
+}
+@media (max-width: 650px) {
+  .formCartItem {
+    padding-bottom: 36px;
+  }
+  .formCartItem .cartItem__description {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .formCartItem .cartItem__description .cartItem__image {
+    justify-content: center;
+    max-height: 204px;
+    max-width: none;
+  }
+  .formCartItem .cartItem__price {
+    font-size: 1.75rem;
+    bottom: 42px;
+    right: 0;
+  }
+  .formCartItem .cartItem__delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 56px;
+    height: 56px;
+    background-color: rgb(49, 48, 55);
+    cursor: auto;
+  }
+  .formCartItem .cartItem__delete button svg {
+    fill: rgb(255, 255, 255);
+  }
+}
 .cartTotal {
   display: flex;
   flex-direction: column;
@@ -250,7 +300,22 @@ button:active {
   width: 100%;
   margin-bottom: 72px;
 }
+.cartTotal > :nth-child(2) .labelText__detalise {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  line-height: 150%;
+}
+.cartTotal > :nth-child(2) .labelText__detalise > :nth-child(1) {
+  color: rgb(49, 48, 55);
+  line-height: 200%;
+}
 
+@media (max-width: 425px) {
+  .cartTotal {
+    max-width: none;
+    margin-bottom: 56px;
+  }
+}
 .formCounter {
   display: grid;
   align-items: center;
@@ -305,12 +370,12 @@ button:active {
   gap: 24px;
   width: 100%;
 }
-.formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__title {
+.formFavoriteItem .favoriteItem__description .favoriteItem__details div .favoriteItem__title {
   font-size: 1.5rem;
   line-height: 133%;
   font-family: "Bebas Neue", sans-serif;
 }
-.formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__author {
+.formFavoriteItem .favoriteItem__description .favoriteItem__details div .favoriteItem__author {
   color: rgb(168, 168, 168);
   line-height: 150%;
 }
@@ -349,6 +414,57 @@ button:active {
   scale: 1;
 }
 
+@media (max-width: 800px) {
+  .formFavoriteItem {
+    position: relative;
+  }
+  .formFavoriteItem .favoriteItem__description .favoriteItem__details div .favoriteItem__title {
+    margin: 0 88px 0 0;
+  }
+  .formFavoriteItem .favoriteItem__description .favoriteItem__details div .favoriteItem__author {
+    margin: 0 88px 0 0;
+  }
+  .formFavoriteItem .favoriteItem__description .favoriteItem__details .favoriteItem__amount {
+    max-width: none;
+  }
+  .formFavoriteItem .favoriteItem__icon {
+    position: absolute;
+    right: 16px;
+    top: 50px;
+  }
+}
+@media (max-width: 650px) {
+  .formFavoriteItem {
+    padding-bottom: 32px;
+  }
+  .formFavoriteItem .favoriteItem__description {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .formFavoriteItem .favoriteItem__description .favoriteItem__image {
+    justify-content: center;
+    max-height: 204px;
+    max-width: none;
+  }
+  .formFavoriteItem .favoriteItem__description .favoriteItem__details div .favoriteItem__title {
+    margin: 0;
+  }
+  .formFavoriteItem .favoriteItem__description .favoriteItem__details div .favoriteItem__author {
+    margin: 0;
+  }
+  .formFavoriteItem .favoriteItem__icon {
+    top: 0;
+    right: 0;
+    width: 56px;
+    height: 56px;
+    background-color: rgb(49, 48, 55);
+    cursor: auto;
+  }
+  .formFavoriteItem .favoriteItem__icon button {
+    display: block;
+    height: 56px;
+  }
+}
 footer {
   display: flex;
   justify-content: space-between;
@@ -501,9 +617,20 @@ main .main__header .goBackBtn:active {
 }
 main .main__header h1 {
   font-size: 56px;
+  line-height: 114.3%;
   font-family: "Bebas Neue", sans-serif;
 }
 
+@media (max-width: 650px) {
+  main .main__header {
+    gap: 24px;
+    margin: 56px 0 36px;
+  }
+  main .main__header h1 {
+    font-size: 32px;
+    line-height: 137.5%;
+  }
+}
 .formPost {
   display: flex;
   flex-direction: column;
@@ -561,9 +688,16 @@ main .main__header h1 {
   background-color: rgb(244, 238, 253);
 }
 
+@media (max-width: 540px) {
+  .formPost .formPost__content .formPost__header .formPost__title {
+    min-height: auto;
+    margin-bottom: 8px;
+  }
+}
 .post-single .post-single__book-description {
   display: flex;
   justify-content: space-between;
+  gap: 128px;
 }
 .post-single .post-single__book-description .book-description__image {
   position: relative;
@@ -657,6 +791,42 @@ main .main__header h1 {
   line-height: 200%;
 }
 
+@media (max-width: 800px) {
+  .post-single .post-single__book-description {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+  .post-single .post-single__book-description .book-description__image {
+    max-width: none;
+  }
+  .post-single .post-single__book-description .book-description__details {
+    max-width: none;
+  }
+  .post-single .post-single__book-description .book-description__details .book-description__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 36px;
+  }
+  .post-single .post-single__book-description .book-description__details .book-description__btn {
+    gap: 32px;
+  }
+}
+@media (max-width: 425px) {
+  .post-single .post-single__book-description .book-description__image img {
+    max-height: 272px;
+  }
+  .post-single .post-single__book-description .book-description__details .book-description__price {
+    padding: 40px 0 24px;
+  }
+  .post-single .formTabMenu {
+    margin: 54px 0 0 0;
+  }
+  .post-single .post-single__text {
+    padding: 32px 0;
+  }
+}
 #form_1 {
   display: flex;
   flex-direction: column;
@@ -667,6 +837,11 @@ main .main__header h1 {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+#form_1 .formTemplate .formTemplate__label {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  line-height: 133%;
 }
 #form_1 .formTemplate .account__profile {
   display: grid;
@@ -684,7 +859,7 @@ main .main__header h1 {
 #form_1 .formTemplate .account__password .formInput__Password {
   width: calc(50% - 16px);
 }
-#form_1 .formTemplate .account__password .bb {
+#form_1 .formTemplate .account__password .password__box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
@@ -706,6 +881,47 @@ main .main__header h1 {
   height: 56px;
 }
 
+@media (max-width: 800px) {
+  #form_1 .formTemplate .account__profile {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  #form_1 .formTemplate .account__profile .formInput {
+    max-width: none;
+  }
+  #form_1 .formTemplate .account__password {
+    grid-template-rows: 1fr;
+  }
+  #form_1 .formTemplate .account__password .formInput {
+    max-width: none;
+  }
+  #form_1 .formTemplate .account__password .formInput__Password {
+    width: 100%;
+  }
+  #form_1 .formTemplate .account__password .password__box {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  #form_1 .account__buttons {
+    justify-content: space-between;
+  }
+  #form_1 .account__buttons button {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  #form_1 {
+    gap: 36px;
+    margin: 0 0 56px;
+  }
+  #form_1 .formTemplate .account__password {
+    padding-bottom: 56px;
+  }
+  #form_1 .account__buttons {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
 .cartPage {
   display: flex;
   flex-direction: column;
@@ -734,6 +950,17 @@ main .main__header h1 {
   margin-bottom: 72px;
 }
 
+@media (max-width: 800px) {
+  .homePage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .homePage {
+    row-gap: 36px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .searchPage {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -745,6 +972,17 @@ main .main__header h1 {
   margin-bottom: 72px;
 }
 
+@media (max-width: 800px) {
+  .searchPage {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 540px) {
+  .searchPage {
+    gap: 36px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .signInPage {
   display: flex;
   justify-content: center;
@@ -819,9 +1057,49 @@ main .main__header h1 {
   max-width: 480px;
 }
 
+@media (max-width: 425px) {
+  .signInPage .formTemplate {
+    border: none;
+    margin: 56px 0;
+  }
+  .signInPage .formTemplate .formSignIn .formTabMenu {
+    padding: 0;
+  }
+  .signInPage .formTemplate .formSignIn .formTabMenu div {
+    height: 44px;
+    align-items: flex-start;
+  }
+  .signInPage .formTemplate .formSignIn .formTabMenu div:hover {
+    color: rgb(49, 48, 55);
+  }
+  .signInPage .formTemplate .formSignIn .formTabMenu .active {
+    border-bottom: 3px solid rgb(49, 48, 55);
+  }
+  .signInPage .formTemplate .formSignIn .formSignIn__signIn {
+    padding: 32px 0 0;
+  }
+  .signInPage .formTemplate .formSignIn .formSignIn__signIn form > :nth-child(3) {
+    margin-bottom: 32px;
+  }
+  .signInPage .formTemplate .formSignIn .formSignIn__signUp {
+    padding: 32px 0 0;
+  }
+  .signInPage .formTemplate .formSignIn .formSignIn__signUp form {
+    display: flex;
+    flex-direction: column;
+  }
+  .signInPage .formTemplate .formSignIn .formSignIn__signUp form .success-message {
+    padding: 20px;
+    line-height: 150%;
+    background: rgb(244, 238, 253);
+  }
+  .signInPage .formTemplate .formSignIn .formSignIn__signUp form > :nth-last-child(2) {
+    margin-bottom: 32px;
+  }
+}
 .wrapper {
   overflow-x: hidden;
-  background-color: #F7F7F7;
+  background-color: rgb(247, 247, 247);
 }
 .wrapper .app {
   display: flex;

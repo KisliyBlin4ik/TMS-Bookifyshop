@@ -92,3 +92,64 @@
         }
     }
 }
+
+@media (max-width: 425px) {
+    .signInPage {
+
+        .formTemplate {
+            border: none;
+            margin: 56px 0;
+
+            .formSignIn {
+                .formTabMenu {
+                    padding: 0;
+
+                    div {
+                        height: 44px;
+                        align-items: flex-start;
+
+                        &:hover {
+                            color: $font-color;
+                        }
+                    }
+
+                    .active {
+                        border-bottom: 3px solid $font-color;
+                    }
+
+                }
+
+                .formSignIn__signIn {
+                    padding: 32px 0 0;
+
+                    form {
+                        &> :nth-child(3) {
+                            margin-bottom: 32px
+                        }
+
+                    }
+
+                }
+
+                .formSignIn__signUp {
+                    padding: 32px 0 0;
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+
+                        .success-message {
+                            padding: 20px;
+                            line-height: 150%;
+                            background: $registation-complete;
+                        }
+
+                        &> :nth-last-child(2) {
+                            margin-bottom: 32px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

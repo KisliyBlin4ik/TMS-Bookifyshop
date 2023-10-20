@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import LabelText from '../../Common/LableText/LabelText';
+import LabelText from '../../Common/LabelText/LabelText';
 import Button from '../../Common/Button';
 
 const CartTotal = () => {
@@ -31,7 +31,7 @@ const CartTotal = () => {
         <LabelText text1="VAT" text2={`$${vatTotal}`} onChange={() => {}} />
       </div>
       <div>
-        <LabelText text1="Total" text2={`$${total}`} onChange={() => {}} />
+        <LabelText text1="Total:" text2={`$${total}`} onChange={() => {}} />
       </div>
       <Button type="button">check out</Button>
     </div>

@@ -29,9 +29,22 @@ main {
 
         h1 {
             font-size: 56px;
+            line-height: 114.3%;
             font-family: 'Bebas Neue', sans-serif;
         }
     }
+}
 
+@media (max-width: 650px) {
+    main {
+        .main__header {
+            gap: 24px;
+            margin: 56px 0 36px;
 
+            h1 {
+                font-size: 32px;
+                line-height: 137.5%;
+            }
+        }
+    }
 }

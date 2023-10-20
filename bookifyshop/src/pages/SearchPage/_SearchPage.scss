@@ -7,3 +7,16 @@
     column-gap: 32px;
     margin-bottom: 72px;
 }
+
+@media (max-width: 800px) {
+    .searchPage {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .searchPage {
+        gap: 36px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

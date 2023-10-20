@@ -2,6 +2,7 @@
     .post-single__book-description {
         display: flex;
         justify-content: space-between;
+        gap: 128px;
 
         .book-description__image {
             position: relative;
@@ -115,5 +116,61 @@
         padding: 49px 0;
         color: $font-color;
         line-height: 200%;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-single {
+        .post-single__book-description {
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+
+            .book-description__image {
+                max-width: none;
+            }
+
+            .book-description__details {
+                max-width: none;
+
+                .book-description__content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    padding-bottom: 36px;
+                }
+
+                .book-description__btn {
+                    gap: 32px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .post-single {
+        .post-single__book-description {
+            .book-description__image {
+                img {
+                    max-height: 272px;
+                }
+            }
+            .book-description__details {
+
+                .book-description__price {
+                    padding: 40px 0 24px;
+                }
+
+            }
+        }
+
+        .formTabMenu {
+            margin: 54px 0 0 0;
+        }
+
+        .post-single__text {
+            padding: 32px 0;
+        }
     }
 }

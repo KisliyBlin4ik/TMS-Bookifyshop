@@ -1,13 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 
-import Button from 'src/components/Common/Button';
 import FormTemplate from 'src/components/Common/FormTemplate';
 import PageTemplate from 'src/components/PageTemplate';
 import SignIn from 'src/components/SignIn';
 import SignUp from 'src/components/SignUp';
 import TabMenu from 'src/components/Common/TabMenu';
-
-import 'src/scss/App.scss';
 
 const SignInPage = () => {
   const [toggleState, setToggleState] = useState(1);

@@ -33,15 +33,18 @@
             gap: 24px;
             width: 100%;
 
-            .favoriteItem__title {
-                font-size: 1.5rem;
-                line-height: 133%;
-                font-family: 'Bebas Neue', sans-serif;
-            }
+            div {
 
-            .favoriteItem__author {
-                color: $font-color-2;
-                line-height: 150%;
+                .favoriteItem__title {
+                    font-size: 1.5rem;
+                    line-height: 133%;
+                    font-family: 'Bebas Neue', sans-serif;
+                }
+
+                .favoriteItem__author {
+                    color: $font-color-2;
+                    line-height: 150%;
+                }
             }
 
             .favoriteItem__amount {
@@ -86,6 +89,79 @@
                 &:active {
                     scale: (1);
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .formFavoriteItem {
+        position: relative;
+
+        .favoriteItem__description {
+            .favoriteItem__details {
+                div {
+                    .favoriteItem__title {
+                        margin: 0 88px 0 0;
+                    }
+
+                    .favoriteItem__author {
+                        margin: 0 88px 0 0;
+                    }
+                }
+
+                .favoriteItem__amount {
+                    max-width: none;
+                }
+            }
+        }
+
+        .favoriteItem__icon {
+            position: absolute;
+            right: 16px;
+            top: 50px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .formFavoriteItem {
+        padding-bottom: 32px;
+
+        .favoriteItem__description {
+            flex-direction: column;
+            gap: 20px;
+
+            .favoriteItem__image {
+                justify-content: center;
+                max-height: 204px;
+                max-width: none;
+            }
+
+            .favoriteItem__details {
+                div {
+                    .favoriteItem__title {
+                        margin: 0;
+                    }
+
+                    .favoriteItem__author {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .favoriteItem__icon {
+            top: 0;
+            right: 0;
+            width: 56px;
+            height: 56px;
+            background-color: $font-color;
+            cursor: auto;
+
+            button {
+                display: block;
+                height: 56px;
             }
         }
     }

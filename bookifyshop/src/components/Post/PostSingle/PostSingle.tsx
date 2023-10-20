@@ -15,7 +15,7 @@ import {
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
 import Button from 'src/components/Common/Button';
-import LableText from 'src/components/Common/LableText';
+import LabelText from 'src/components/Common/LabelText';
 import TabMenu from 'src/components/Common/TabMenu';
 import Rating from 'src/components/Common/Rating';
 
@@ -85,23 +85,23 @@ const PostSingle: FC<IPostItem> = (props) => {
             <Rating rating={props.rating} />
           </div>
           <div className="book-description__content">
-            <LableText
+            <LabelText
               text1="Authors"
               text2={props.authors}
               onChange={() => {}}
             />
-            <LableText
+            <LabelText
               text1="Publisher"
               text2={props.publisher}
               text3={props.year}
               onChange={() => {}}
             />
-            <LableText
+            <LabelText
               text1="Language"
               text2={props.language}
               onChange={() => {}}
             />
-            <LableText
+            <LabelText
               text1="Format"
               text2="Paper book / ebook (PDF)"
               onChange={() => {}}

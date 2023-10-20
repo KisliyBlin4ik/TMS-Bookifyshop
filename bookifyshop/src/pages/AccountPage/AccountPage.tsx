@@ -81,7 +81,7 @@ const AccountPage = () => {
               placeholder="Enter your password"
               onChange={setPassword}
             />
-            <div className="bb">
+            <div className="password__box">
               <Input
                 type="password"
                 label="New password"

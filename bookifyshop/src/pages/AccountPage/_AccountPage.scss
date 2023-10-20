@@ -1,0 +1,121 @@
+#form_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 0 72px;
+
+    .formTemplate {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .formTemplate__label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            line-height: 133%;
+        }
+
+        .account__profile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            width: 100%;
+        }
+
+        .account__password {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            padding-bottom: 72px;
+            border-bottom: 1px solid $border-color;
+
+            .formInput__Password {
+                width: calc(50% - 16px);
+            }
+
+            .password__box {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+        }
+    }
+
+    .account__buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 30px;
+
+        :last-child {
+            &:hover {
+                background-color: $border-color;
+            }
+
+            border: 1px solid $border-color;
+            background-color: rgb(255, 255, 255);
+        }
+
+        button {
+            width: 257px;
+            height: 56px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    #form_1 {
+        .formTemplate {
+            .account__profile {
+                grid-template-columns: 1fr;
+                gap: 16px;
+
+                .formInput {
+                    max-width: none;
+                }
+            }
+
+            .account__password {
+                grid-template-rows: 1fr;
+
+                .formInput {
+                    max-width: none;
+                }
+
+                .formInput__Password {
+                    width: 100%;
+                }
+
+                .password__box {
+                    grid-template-columns: 1fr;
+                    gap: 16px;
+                }
+            }
+        }
+
+        .account__buttons {
+            justify-content: space-between;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    #form_1 {
+        gap: 36px;
+        margin: 0 0 56px;
+
+        .formTemplate {
+            .account__password {
+                padding-bottom: 56px;
+            }
+        }
+
+        .account__buttons {
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+}

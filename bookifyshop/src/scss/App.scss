@@ -1,0 +1,47 @@
+@import './_fonts';
+@import './_colors';
+@import './_reset';
+
+@import '../components/Common/Button/_Button';
+@import '../components/Common/FormTemplate/_FormTemplate';
+@import '../components/Common/Input/_Input';
+@import '../components/Common/LabelText/_LabelText';
+@import '../components/Common/Rating/_Rating';
+@import '../components/Common/TabMenu/_TabMenu';
+
+@import '../components/Cart/CartItem/_CartItem';
+@import '../components/Cart/CartTotal/_CartTotal';
+@import '../components/Cart/CartCounter/_CartCounter';
+@import '../components/Favorite/FavoriteItem/_FavoriteItem';
+@import '../components/Footer/Footer';
+@import '../components/HeaderMenu/HeaderLogo/HeaderLogo';
+@import '../components/HeaderMenu/HeaderNavBar/HeaderNavBar';
+@import '../components/HeaderMenu/HeaderMenu';
+@import '../components/Loader/Loader';
+@import '../components/PageTemplate/PageTemplate';
+@import '../components/Post/PostItem/_PostItem';
+@import '../components/Post/PostSingle/_PostSingle';
+
+@import '../pages/AccountPage/_AccountPage';
+@import '../pages/CartPage/_CartPage';
+@import '../pages/FavoritesPage/FavoritePage';
+@import '../pages/HomePage/_HomePage';
+@import '../pages/SearchPage/_SearchPage';
+@import '../pages/SignInPage/_SignInPage';
+
+.wrapper {
+    overflow-x: hidden;
+    background-color: $wrapper-color;
+
+    .app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1170px;
+        min-height: 100vh;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        box-shadow: 0px 0px 12px 0px rgba(34, 60, 80, 0.2);
+    }
+}

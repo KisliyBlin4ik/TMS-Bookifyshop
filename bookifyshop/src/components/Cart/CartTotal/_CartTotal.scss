@@ -1,0 +1,28 @@
+.cartTotal {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 256px;
+    width: 100%;
+    margin-bottom: 72px;
+
+    &> :nth-child(2) {
+        .labelText__detalise {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            line-height: 150%;
+
+            &> :nth-child(1) {
+                color: $font-color;
+                line-height: 200%;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .cartTotal {
+        max-width: none;
+        margin-bottom: 56px;
+    }
+}

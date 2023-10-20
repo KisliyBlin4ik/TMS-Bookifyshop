@@ -1,0 +1,155 @@
+.signInPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    .formTemplate {
+        display: flex;
+        flex-direction: column;
+        max-width: 544px;
+        width: 100%;
+        margin: 20px 0;
+        border: 1px solid $border-color;
+
+        .formSignIn {
+            .formTabMenu {
+                border-bottom: 1px solid $border-color ;
+
+                div {
+                    color: $font-color-2;
+                    font-family: 'Bebas Neue', sans-serif;
+
+                    &:hover {
+                        color: $font-color;
+                    }
+                }
+
+                .active {
+                    color: $font-color;
+                    border-bottom: 2px solid $font-color;
+                }
+
+            }
+
+            .formSignIn__signIn {
+                display: flex;
+                flex-direction: column;
+                padding: 32px 32px 40px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    &> :nth-child(1) {
+                        margin-bottom: 16px
+                    }
+
+                    &> :nth-child(2) {
+                        margin-bottom: 8px
+                    }
+
+                    &> :nth-child(3) {
+                        margin-bottom: 40px
+                    }
+
+                    p {
+                        font-size: 0.875rem;
+                        line-height: 228.5%;
+                    }
+                }
+
+            }
+
+            .formSignIn__signUp {
+                display: flex;
+                flex-direction: column;
+                padding: 32px 32px 40px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    .success-message {
+                        padding: 20px;
+                        line-height: 150%;
+                        background: $registation-complete;
+                    }
+
+                    &> :nth-last-child(1n + 3) {
+                        margin-bottom: 16px
+                    }
+
+                    &> :nth-last-child(2) {
+                        margin-bottom: 40px
+                    }
+                }
+            }
+
+            button {
+                max-width: 480px;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .signInPage {
+
+        .formTemplate {
+            border: none;
+            margin: 56px 0;
+
+            .formSignIn {
+                .formTabMenu {
+                    padding: 0;
+
+                    div {
+                        height: 44px;
+                        align-items: flex-start;
+
+                        &:hover {
+                            color: $font-color;
+                        }
+                    }
+
+                    .active {
+                        border-bottom: 3px solid $font-color;
+                    }
+
+                }
+
+                .formSignIn__signIn {
+                    padding: 32px 0 0;
+
+                    form {
+                        &> :nth-child(3) {
+                            margin-bottom: 32px
+                        }
+
+                    }
+
+                }
+
+                .formSignIn__signUp {
+                    padding: 32px 0 0;
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+
+                        .success-message {
+                            padding: 20px;
+                            line-height: 150%;
+                            background: $registation-complete;
+                        }
+
+                        &> :nth-last-child(2) {
+                            margin-bottom: 32px
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

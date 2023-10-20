@@ -93,21 +93,11 @@ export const FETCH_POST = (isbn13Arr: string[]) => {
   };
 };
 
-export const SEARCH_POST = (navigate:any, search: string) => {
+export const SEARCH_POST = (navigate: any, search: string) => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
     const activateUser = async () => {
       try {
-        const response = await fetch(
-          `https://api.itbook.store/1.0/search/${search}`
-        );
-        if (!response.ok) {
-          throw new Error('Ошибка при запросе');
-        }
-        const data = await response.json();
-        const books = data.books;
-        // console.log(books);
-        dispatch({ type: 'SEARCH_POST', payload: books });
-        navigate(`${ROUTE_SEARCH}/${search}`, {state: books})
+        navigate(`${ROUTE_SEARCH}/${search}`);
       } catch (err) {
         console.log(err);
       }
@@ -116,14 +106,22 @@ export const SEARCH_POST = (navigate:any, search: string) => {
   };
 };
 
-export const FETCH_SEARCH_POST = (isbn13Arr: string[]) => {
+export const SEARCH_ON_PAGE = (search: string, page: any) => {
   return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
-    dispatch({ type: 'SET_LOADING', payload: true });
     const activateUser = async () => {
       try {
-        const fetchPromises = isbn13Arr.map(async (isbn13) => {
+        const response = await fetch(
+          `https://api.itbook.store/1.0/search/${search}/${page}`
+        );
+        if (!response.ok) {
+          throw new Error('Ошибка при запросе');
+        }
+        const data = await response.json();
+        dispatch({ type: 'SEARCH_POST', payload: data });
+        const books = data.books;
+        const fetchPromises = books.map(async (item: any) => {
           const response = await fetch(
-            `https://api.itbook.store/1.0/books/${isbn13}`
+            `https://api.itbook.store/1.0/books/${item.isbn13}`
           );
           if (!response.ok) {
             throw new Error('Ошибка при запросе');
@@ -132,11 +130,9 @@ export const FETCH_SEARCH_POST = (isbn13Arr: string[]) => {
           return data;
         });
         const results = await Promise.all(fetchPromises);
-        dispatch({ type: 'SEARCH_POST', payload: results });
+        dispatch({ type: 'SEARCH_ON_PAGE', payload: results });
       } catch (err) {
         console.log(err);
-      } finally {
-        dispatch({ type: 'SET_LOADING', payload: false });
       }
     };
     activateUser();

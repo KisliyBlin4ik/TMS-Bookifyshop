@@ -1,0 +1,26 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 0 72px 0;
+    border-top: 1px solid $border-color;
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        max-width: 68px;
+        background: rgba(255, 255, 255, 0);
+    }
+    span {
+        color: $font-color-2;
+        line-height: 150%;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .active {
+        color: $font-color;
+    }
+}

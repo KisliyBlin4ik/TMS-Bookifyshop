@@ -13,12 +13,13 @@
 @import '../components/Cart/CartTotal/_CartTotal';
 @import '../components/Cart/CartCounter/_CartCounter';
 @import '../components/Favorite/FavoriteItem/_FavoriteItem';
-@import '../components/Footer/Footer';
-@import '../components/HeaderMenu/HeaderLogo/HeaderLogo';
-@import '../components/HeaderMenu/HeaderNavBar/HeaderNavBar';
-@import '../components/HeaderMenu/HeaderMenu';
-@import '../components/Loader/Loader';
-@import '../components/PageTemplate/PageTemplate';
+@import '../components/Footer/_Footer';
+@import '../components/HeaderMenu/HeaderLogo/_HeaderLogo';
+@import '../components/HeaderMenu/HeaderNavBar/_HeaderNavBar';
+@import '../components/HeaderMenu/_HeaderMenu';
+@import '../components/Loader/_Loader';
+@import '../components/PageTemplate/_PageTemplate';
+@import '../components/Pagination/_Pagination';
 @import '../components/Post/PostItem/_PostItem';
 @import '../components/Post/PostSingle/_PostSingle';
 

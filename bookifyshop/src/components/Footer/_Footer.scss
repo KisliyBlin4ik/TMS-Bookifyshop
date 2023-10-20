@@ -1,0 +1,11 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    width: 100%;
+    min-height: 95px;
+    border-radius: 0 0 20px 20px;
+    font-size: 1rem;
+    background: $main-color;
+}

@@ -1,0 +1,28 @@
+.formInput {
+    display: flex;
+    flex-direction: column;
+    max-width: 544px;
+    width: 100%;
+    gap: 4px;
+
+    .formInput__label {
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 200%;
+    }
+
+    input {
+        line-height: 200%;
+        padding: 14px 20px;
+        border: 1px solid $border-color;
+    }
+
+    .inputError {
+        border: 1px solid $error-color;
+    }
+
+    .error {
+        font-size: 0.875rem;
+        color: $error-color;
+    }
+}

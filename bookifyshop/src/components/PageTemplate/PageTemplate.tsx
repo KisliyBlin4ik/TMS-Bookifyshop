@@ -1,21 +1,54 @@
 import React, { FC, ReactNode } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+import { IPageTemplate } from 'src/interface/interface';
+
 import HeaderMenu from '../HeaderMenu';
 import Footer from '../Footer';
+import Loader from '../Loader';
+import Button from '../Common/Button';
 
-import './PageTemplate.scss';
+import { ReactComponent as BackIcon } from 'src/assets/icons/Left.svg';
 
-interface IPageTemplate {
-  title: string;
-  children: ReactNode;
-}
+import 'src/scss/App.scss';
 
-const PageTemplate: FC<IPageTemplate> = ({ title, children }) => {
+const PageTemplate: FC<IPageTemplate> = ({
+  title,
+  customClass,
+  children,
+  invisible,
+}) => {
+  const navigate = useNavigate();
+
+  const isLoading = useSelector(({ isLoading }) => isLoading);
+
+  const titlePage = `${title}`;
+  const upperCaseTitlePage = titlePage.toUpperCase();
+
+  function goBack() {
+    navigate(-1);
+  }
+
   return (
     <>
       <HeaderMenu></HeaderMenu>
       <main>
-        <h1>{title}</h1>
-        <div>{children}</div>
+        {title ? (
+          <div className="main__header">
+            {invisible ? (
+              ''
+            ) : (
+              <Button type="button" customClass="goBackBtn" onClick={goBack}>
+                <BackIcon />
+              </Button>
+            )}
+            <h1>{upperCaseTitlePage}</h1>
+          </div>
+        ) : (
+          ''
+        )}
+        {isLoading ? <Loader /> : <div className={customClass}>{children}</div>}
       </main>
       <Footer></Footer>
     </>

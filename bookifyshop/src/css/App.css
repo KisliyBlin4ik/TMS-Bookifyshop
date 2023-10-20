@@ -631,6 +631,33 @@ main .main__header h1 {
     line-height: 137.5%;
   }
 }
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 0 72px 0;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+.pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  max-width: 68px;
+  background: rgba(255, 255, 255, 0);
+}
+.pagination span {
+  color: rgb(168, 168, 168);
+  line-height: 150%;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+}
+.pagination .active {
+  color: rgb(49, 48, 55);
+}
+
 .formPost {
   display: flex;
   flex-direction: column;
@@ -962,7 +989,22 @@ main .main__header h1 {
   }
 }
 .searchPage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.searchPage > :nth-child(1) {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  font-size: 1rem;
+  line-height: 150%;
+  color: rgb(168, 168, 168);
+}
+.searchPage .searchPage__content {
   display: grid;
+  flex-grow: 1;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
   justify-items: center;
@@ -973,12 +1015,15 @@ main .main__header h1 {
 }
 
 @media (max-width: 800px) {
-  .searchPage {
+  .searchPage > :nth-child(1) {
+    display: none;
+  }
+  .searchPage .searchPage__content {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 540px) {
-  .searchPage {
+  .searchPage .searchPage__content {
     gap: 36px;
     grid-template-columns: repeat(1, 1fr);
   }

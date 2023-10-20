@@ -4,8 +4,6 @@ import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 
-import { SEARCH_POST } from 'src/actions/actions';
-
 import { ReactComponent as SearchIcon } from 'src/assets/icons/SearchIcon.svg';
 import { ReactComponent as CancelIcon } from 'src/assets/icons/CancelIcon.svg';
 
@@ -13,6 +11,7 @@ import Button from '../Common/Button';
 import Input from '../Common/Input';
 import HeaderLogo from './HeaderLogo';
 import HeaderNavBar from './HeaderNavBar';
+import { ROUTE_SEARCH } from 'src/utils/routes';
 
 const HeaderMenu = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
@@ -22,7 +21,8 @@ const HeaderMenu = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    dispatch(SEARCH_POST(navigate, searchValue));
+    navigate(`${ROUTE_SEARCH}/${searchValue}`)
+    // dispatch(SEARCH_POST(navigate, searchValue));
   };
 
   const handleReset = () => {

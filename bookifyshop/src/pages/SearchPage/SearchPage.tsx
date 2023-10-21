@@ -20,6 +20,8 @@ const SearchPage = () => {
   const itemsPerPage = 10;
   const searchOnPage: IPostItem[] = useSelector(({ searchOnPage }) => searchOnPage);
   const searchTotal = useSelector(({ search }) => search);
+  console.log(searchTotal);
+  
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -45,7 +47,7 @@ const SearchPage = () => {
           ))}
         </div>
         <>
-          <Pagination totalItems={1000} itemsPerPage={itemsPerPage} onPageChange={handlePageChange} />
+          <Pagination totalItems={searchTotal.total} itemsPerPage={itemsPerPage} onPageChange={handlePageChange} />
         </>
       </PageTemplate>
     </>

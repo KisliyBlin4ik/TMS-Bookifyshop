@@ -34,6 +34,9 @@ const PostSingle: FC<IPostItem> = (props) => {
   const { ...state } = props;
 
   const [toggleState, setToggleState] = useState(1);
+  const [moreDetailsBtn, setMoreDetailsBtn] = useState(false);
+  console.log(moreDetailsBtn);
+  
 
   const addFavorite: IAddFavorite = { ...state };
 
@@ -65,6 +68,9 @@ const PostSingle: FC<IPostItem> = (props) => {
   const toggleTab = (index: number) => {
     setToggleState(index);
   };
+  const moreDetails = (open: boolean) => {
+    setMoreDetailsBtn(open)
+  };
 
   return (
     <div className="post-single">
@@ -88,38 +94,35 @@ const PostSingle: FC<IPostItem> = (props) => {
             <LabelText
               text1="Authors"
               text2={props.authors}
-              onChange={() => {}}
             />
             <LabelText
               text1="Publisher"
               text2={props.publisher}
               text3={props.year}
-              onChange={() => {}}
             />
             <LabelText
               text1="Language"
               text2={props.language}
-              onChange={() => {}}
             />
             <LabelText
               text1="Format"
               text2="Paper book / ebook (PDF)"
-              onChange={() => {}}
             />
           </div>
           <div className="book-description__btn">
             <Button type="button" onClick={handleCartClick}>
               add to card
             </Button>
-            <p>Preview book</p>
-            {/* ссылка из url */}
+            <Button type="button" onClick={()=>{}}>
+              {props.pdf ? <a href={props.pdf['Free eBook']}>Preview book</a> : <p>Preview book</p>}
+            </Button>
           </div>
         </div>
       </div>
       <TabMenu
         text1="Description"
         text2="Authors"
-        text3="Rviews"
+        text3={<a href={`https://www.amazon.com/dp/${props.isbn10}/?tag=isbndir-20#customerReviews`}>Reviews</a>}
         onChange={toggleTab}
       />
       <div className="post-single__text">
@@ -128,7 +131,7 @@ const PostSingle: FC<IPostItem> = (props) => {
           : toggleState === 2
           ? props.authors
           : toggleState === 3
-          ? 'No reviews'
+          ? ''
           : ''}
       </div>
     </div>

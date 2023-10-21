@@ -4,7 +4,7 @@ import { ReactComponent as ArrowLeft } from 'src/assets/icons/ArrowLeftIcon.svg'
 import { ReactComponent as ArrowRight } from 'src/assets/icons/ArrowRightIcon.svg';
 
 interface IPagination {
-  totalItems: any;
+  totalItems: number;
   itemsPerPage: number;
   onPageChange: (value: number) => void;
 }

@@ -98,6 +98,7 @@ const AccountPage = () => {
               />
             </div>
           </FormTemplate>
+          <div>dark theme</div>
           <div className="account__buttons">
             <Button type="submit">Save Changes</Button>
             <Button type="button">Cancel</Button>

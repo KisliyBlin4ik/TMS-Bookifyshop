@@ -7,6 +7,7 @@ export interface IInput {
   label?: string;
   children?: ReactNode;
   onChange: (value: string) => void;
+  onClick?: () => void;
 }
 
 export interface IPageTemplate {

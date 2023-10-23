@@ -12,6 +12,7 @@ export const initialState = {
   searchOnPage: [],
   IsAuthenticated: false,
   isLoading: false,
+  postAutosuggest: [],
 };
 
 const rootReducer = (state: any = initialState, action: any) => {
@@ -132,6 +133,12 @@ const rootReducer = (state: any = initialState, action: any) => {
       return {
         ...state,
         isLoading: action.payload,
+      };
+    }
+    case 'SET_SEARCH_WITH_AUTOSUGGEST': {
+      return {
+        ...state,
+        postAutosuggest: action.payload,
       };
     }
     default:

@@ -26,10 +26,27 @@ const HomePage = () => {
     <>
       {/* предложение о разделах */}
       {/* сменить иконку */}
+      {/* просмотренные посты? */}
+      {/* цифра кол-ва в корзине и избранном */}
       <PageTemplate title="Home page" customClass="homePage" invisible>
+        <ul className='homePage__list'>
+          <li>Programming</li>
+          <li>Web dev</li>
+          <li>Mobile dev</li>
+          <li>Databases</li>
+          <li>Algorithms and data structures</li>
+          <li>Information Security</li>
+          <li>Software architecture and design</li>
+          <li>Game dev</li>
+          <li>for Beginners</li>
+          <li>Software testing and quality</li>
+        </ul>
+        <div className='grid'>
+
         {post.map((postItem, index) => (
           <PostItem key={index} {...postItem} />
         ))}
+        </div>
       </PageTemplate>
     </>
   );

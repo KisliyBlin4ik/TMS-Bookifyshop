@@ -240,7 +240,7 @@ button:active {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   width: 360px;
@@ -621,6 +621,10 @@ nav ul li svg:active {
     display: none;
   }
 }
+#form-3 {
+  display: none;
+}
+
 #form-2,
 #form-3 {
   position: relative;
@@ -651,10 +655,33 @@ nav ul li svg:active {
 #form-3 .form-2__resetBtn {
   right: 11px;
 }
+#form-2 .autocomplete,
+#form-3 .autocomplete {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  background: white;
+  width: 100%;
+  box-shadow: 0px 0px 12px 0px rgba(34, 60, 80, 0.2);
+  z-index: 50;
+}
+#form-2 .autocomplete .autocomplete__item,
+#form-3 .autocomplete .autocomplete__item {
+  cursor: pointer;
+  padding: 10px;
+}
+#form-2 .autocomplete .autocomplete__item:hover,
+#form-3 .autocomplete .autocomplete__item:hover {
+  background: rgb(226, 200, 255);
+  transition: cubic-bezier(1, 0, 0, 1) 0.3s all;
+}
 
 @media (max-width: 800px) {
   #form-2 {
     display: none;
+  }
+  #form-3 {
+    display: block;
   }
 }
 header {
@@ -1107,6 +1134,34 @@ main .main__header h1 {
 }
 
 .homePage {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 72px;
+}
+.homePage .homePage__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 16px;
+}
+.homePage .homePage__list li {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgb(168, 168, 168);
+  padding: 15px;
+  transition: cubic-bezier(1, 0, 0, 1) 0.2s all;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+.homePage .homePage__list li:hover {
+  color: rgb(49, 48, 55);
+  background: rgb(226, 200, 255);
+}
+.homePage .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
@@ -1114,7 +1169,6 @@ main .main__header h1 {
   row-gap: 48px;
   -moz-column-gap: 32px;
        column-gap: 32px;
-  margin-bottom: 72px;
 }
 
 @media (max-width: 800px) {

@@ -4,7 +4,7 @@ import { IInput } from 'src/interface/interface';
 
 import 'src/scss/App.scss';
 
-const Input: FC<IInput> = ({ type = 'text', placeholder = '', value, label, children, onChange }) => {
+const Input: FC<IInput> = ({ type = 'text', placeholder = '', value, label, children, onChange, onClick }) => {
   return (
     <div className={label ? `formInput formInput__${label}` : 'formInput'}>
       {label ? <label className="formInput__label">{label}</label> : ''}
@@ -14,6 +14,7 @@ const Input: FC<IInput> = ({ type = 'text', placeholder = '', value, label, chil
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.currentTarget.value)}
+        onClick={onClick}
       />
       {children}
     </div>

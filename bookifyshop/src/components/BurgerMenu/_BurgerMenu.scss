@@ -22,7 +22,7 @@
         right: -100%;
     }
 
-    .burgerMenu__header {
+    &__header {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -30,7 +30,7 @@
         border-bottom: 1px solid $border-color ;
     }
 
-    .burgerMenu__content {
+    &__content {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -44,7 +44,7 @@
         }
     }
 
-    .burgerMenu__footer {
+    &__footer {
         margin: 56px 0;
     }
 }

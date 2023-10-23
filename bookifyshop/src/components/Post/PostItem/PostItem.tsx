@@ -1,14 +1,12 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { IPostItem } from 'src/interface/interface';
+import { IBookItem } from 'src/utils/interface';
 import { ROUTE_BOOK } from 'src/utils/routes';
 
 import Rating from '../../Common/Rating';
 
-import 'src/scss/App.scss';
-
-const PostItem: FC<IPostItem> = (props) => {
+const PostItem: FC<IBookItem> = (props) => {
   const navigate = useNavigate();
 
   const handlePostClick = () => {

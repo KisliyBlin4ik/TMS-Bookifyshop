@@ -8,9 +8,10 @@ import Input from 'src/components/Common/Input';
 import PageTemplate from 'src/components/PageTemplate';
 import FormTemplate from 'src/components/Common/FormTemplate';
 
-import 'src/scss/App.scss';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_SIGN_IN } from 'src/utils/routes';
+
+import { findUserInStorage } from 'src/utils/helpers';
 
 const AccountPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
@@ -18,13 +19,7 @@ const AccountPage = () => {
 
   const IsAuthenticated: boolean = useSelector(({ IsAuthenticated }) => IsAuthenticated);
 
-  const getStorage = localStorage.getItem('users')
-  const getStorage2 = localStorage.getItem('user')
-  const userArr = getStorage !== null ? JSON.parse(getStorage) : [];
-  const userArr2 = getStorage2 !== null ? JSON.parse(getStorage2) : [];
-  const user = userArr.find((item:any) => {
-    return item.email === userArr2.email
-  })
+  const user = findUserInStorage();
   
   const [name, setName] = useState(user ? user.name : '');
   const [email, setEmail] = useState(user ? user.email : '');
@@ -98,7 +93,6 @@ const AccountPage = () => {
               />
             </div>
           </FormTemplate>
-          <div>dark theme</div>
           <div className="account__buttons">
             <Button type="submit">Save Changes</Button>
             <Button type="button">Cancel</Button>

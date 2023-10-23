@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 
-import { IPageTemplate } from 'src/interface/interface';
-
-import 'src/scss/App.scss';
+import { IPageTemplate } from 'src/utils/interface';
 
 const FormTemplate: FC<IPageTemplate> = ({ customClass, title, children }) => {
   return (

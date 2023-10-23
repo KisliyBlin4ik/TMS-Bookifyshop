@@ -4,7 +4,7 @@
     grid-template-columns: repeat(3, 1fr);
     width: 168px;
 
-    .formCounter__counter {
+    &__counter {
         font-family: 'Bebas Neue', sans-serif;
         line-height: 133%;
         font-size: 1.5rem;

@@ -18,7 +18,7 @@
 @import '../components/Footer/_Footer';
 @import '../components/HeaderMenu/HeaderLogo/_HeaderLogo';
 @import '../components/HeaderMenu/HeaderNavBar/_HeaderNavBar';
-@import '../components/HeaderMenu/HeaderSearch/HeaderSearch';
+@import '../components/HeaderMenu/HeaderSearch/_HeaderSearch';
 @import '../components/HeaderMenu/_HeaderMenu';
 @import '../components/Loader/_Loader';
 @import '../components/PageTemplate/_PageTemplate';
@@ -28,7 +28,7 @@
 
 @import '../pages/AccountPage/_AccountPage';
 @import '../pages/CartPage/_CartPage';
-@import '../pages/FavoritesPage/FavoritePage';
+@import '../pages/FavoritesPage/_FavoritePage';
 @import '../pages/HomePage/_HomePage';
 @import '../pages/SearchPage/_SearchPage';
 @import '../pages/SignInPage/_SignInPage';

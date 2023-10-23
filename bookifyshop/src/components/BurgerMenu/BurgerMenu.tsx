@@ -12,9 +12,9 @@ import {
     ROUTE_SIGN_IN,
 } from 'src/utils/routes';
 
-import { IBurgerMenu } from 'src/interface/interface';
+import { IBurgerMenu } from 'src/utils/interface';
 
-import { SET_AUTHENTICATED } from 'src/actions/actions';
+import { SET_AUTHENTICATED } from 'src/actions/authenticated';
 
 import { ReactComponent as CloseIcon } from 'src/assets/icons/CloseIcon.svg';
 

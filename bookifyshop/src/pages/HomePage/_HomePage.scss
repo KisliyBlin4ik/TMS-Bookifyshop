@@ -1,42 +1,11 @@
 .homePage {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    justify-items: center;
+    row-gap: 48px;
+    column-gap: 32px;
     margin-bottom: 72px;
-
-   .homePage__list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 10px;
-    row-gap: 16px;
-
-    li {
-        cursor: pointer;
-        font-weight: 400;
-        font-size: 18px;
-        color: $font-color-2;
-        padding: 15px;
-        transition: cubic-bezier(1, 0, 0, 1).2s all;
-        border-bottom: 1px solid $border-color;
-
-        &:hover {
-        color: $font-color;
-
-            background: $main-color;
-        }
-    }
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: start;
-        justify-items: center;
-        row-gap: 48px;
-        column-gap: 32px;
-    }
 }
 
 @media (max-width: 800px) {

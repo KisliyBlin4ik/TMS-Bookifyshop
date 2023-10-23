@@ -9,7 +9,7 @@ import { ReactComponent as CancelIcon } from 'src/assets/icons/CancelIcon.svg';
 
 import { ROUTE_BOOK, ROUTE_SEARCH } from 'src/utils/routes';
 
-import { FETCH_POST, SEARCH_WITH_AUTOSUGGEST } from 'src/actions/actions';
+import { SEARCH_WITH_AUTOSUGGEST } from 'src/actions/search';
 
 import Input from 'src/components/Common/Input';
 import Button from 'src/components/Common/Button';
@@ -20,7 +20,9 @@ const HeaderSearch = ({formID}: any) => {
     
   const [searchValue, setSearchValue] = useState('');
   const [isOpen, setIsOpen] = useState(true);
+
   const postAutosuggest = useSelector(({ postAutosuggest }) => postAutosuggest);
+  
   const red = postAutosuggest.slice(0,5)
 
   const handleSubmit = (event: any) => {

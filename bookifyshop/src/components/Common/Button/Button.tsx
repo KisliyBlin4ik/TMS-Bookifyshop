@@ -1,8 +1,6 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 
-import { IButton } from 'src/interface/interface';
-
-// import 'src/scss/App.scss';
+import { IButton } from 'src/utils/interface';
 
 const Button: FC<IButton> = ({ type= 'button', children, customClass, onClick }) => {
   return (

@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 import Input from '../Common/Input';
 import Button from '../Common/Button';
-import { SET_AUTHENTICATED } from 'src/actions/actions';
+import { SET_AUTHENTICATED } from 'src/actions/authenticated';
+import { getUserDataFromLocalStorage } from 'src/utils/helpers';
 
 const SignIn = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
@@ -27,9 +28,8 @@ const SignIn = () => {
       email,
       password,
     };
-
-    const getStorage = localStorage.getItem('users')
-    const userArr = getStorage !== null ? JSON.parse(getStorage) : [];
+   
+    const userArr = getUserDataFromLocalStorage('users');
     const isUserArr = userArr.some((post: any) => post.email === formData.email && post.password === formData.password);
 
     if (isUserArr) {

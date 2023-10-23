@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 
-import { SEARCH_ON_PAGE } from 'src/actions/actions';
+import { SEARCH_ON_PAGE } from 'src/actions/search';
 
-import { IPostItem } from 'src/interface/interface';
+import { IBookItem } from 'src/utils/interface';
 
 import PageTemplate from 'src/components/PageTemplate';
 import PostItem from 'src/components/Post/PostItem';
@@ -18,7 +18,7 @@ const SearchPage = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  const searchOnPage: IPostItem[] = useSelector(({ searchOnPage }) => searchOnPage);
+  const searchOnPage: IBookItem[] = useSelector(({ searchOnPage }) => searchOnPage);
   const searchTotal = useSelector(({ search }) => search);
   
   let total = 0;
@@ -42,7 +42,7 @@ const SearchPage = () => {
 
   return (
     <>
-      <PageTemplate title={`Search results '${book}'`} customClass="searchPage" invisible>
+      <PageTemplate title={`Search results '${book}'`} customClass="searchPage">
         <p>Found {searchTotal.total} books</p>
         <div className="searchPage__content">
           {searchOnPage.map((postItem, index) => (

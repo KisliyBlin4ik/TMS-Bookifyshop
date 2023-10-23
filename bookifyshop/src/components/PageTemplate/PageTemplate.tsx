@@ -1,8 +1,8 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { IPageTemplate } from 'src/interface/interface';
+import { IPageTemplate } from 'src/utils/interface';
 
 import HeaderMenu from '../HeaderMenu';
 import Footer from '../Footer';
@@ -10,8 +10,6 @@ import Loader from '../Loader';
 import Button from '../Common/Button';
 
 import { ReactComponent as BackIcon } from 'src/assets/icons/Left.svg';
-
-import 'src/scss/App.scss';
 
 const PageTemplate: FC<IPageTemplate> = ({
   title,

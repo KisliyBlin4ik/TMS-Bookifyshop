@@ -13,7 +13,7 @@
         color: $font-color-2;
     }
 
-    .searchPage__content {
+    &__content {
         display: grid;
         flex-grow: 1;
         grid-template-columns: repeat(3, 1fr);
@@ -31,7 +31,7 @@
             display: none;
         }
 
-        .searchPage__content {
+        &__content {
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -39,7 +39,7 @@
 
 @media (max-width: 540px) {
     .searchPage {
-        .searchPage__content {
+        &__content {
             gap: 36px;
             grid-template-columns: repeat(1, 1fr);
         }

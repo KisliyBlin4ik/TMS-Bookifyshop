@@ -1,18 +1,13 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
-import { ICartCounter } from 'src/interface/interface';
+import { ICartCounter } from 'src/utils/interface';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 
-import {
-  DECREMENT_COUNTER_TO_CART,
-  INCREMENT_COUNTER_TO_CART,
-} from 'src/actions/actions';
+import { DECREMENT_COUNTER_TO_CART, INCREMENT_COUNTER_TO_CART } from 'src/actions/changeCounter';
 
 import { ReactComponent as Plus } from 'src/assets/icons/PlusIcon.svg';
 import { ReactComponent as Minus } from 'src/assets/icons/MinusIcon.svg';
-
-import 'src/scss/App.scss';
 
 const CartCounter: FC<ICartCounter> = ({ counter, isbn13 }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

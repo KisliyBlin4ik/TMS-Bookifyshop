@@ -4,7 +4,7 @@ import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { useNavigate } from 'react-router-dom';
 
-import { IAddFavorite } from 'src/interface/interface';
+import { IAddFavorite } from 'src/utils/interface';
 
 import { ROUTE_SIGN_IN } from 'src/utils/routes';
 

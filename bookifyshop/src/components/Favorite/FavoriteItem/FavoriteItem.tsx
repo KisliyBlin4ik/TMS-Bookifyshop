@@ -3,18 +3,17 @@ import { useNavigate } from 'react-router-dom';
 
 import { ROUTE_BOOK } from 'src/utils/routes';
 
-import { IAddCart, IAddFavorite } from 'src/interface/interface';
+import { IAddFavorite } from 'src/utils/interface';
 
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
 import Rating from 'src/components/Common/Rating';
 
-import 'src/scss/App.scss';
 import Button from 'src/components/Common/Button';
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
-import { REMOVE_FROM_FAVORITES } from 'src/actions/actions';
+import { REMOVE_FROM_FAVORITES } from 'src/actions/changeFavorites';
 
 const FavoriteItem: FC<IAddFavorite> = (props) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

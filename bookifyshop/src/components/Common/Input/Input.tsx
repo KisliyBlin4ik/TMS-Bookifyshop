@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 
-import { IInput } from 'src/interface/interface';
-
-import 'src/scss/App.scss';
+import { IInput } from 'src/utils/interface';
 
 const Input: FC<IInput> = ({ type = 'text', placeholder = '', value, label, children, onChange, onClick }) => {
   return (

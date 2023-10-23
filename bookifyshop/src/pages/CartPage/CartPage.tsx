@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 
-import { IAddCart } from 'src/interface/interface';
+import { IAddCart } from 'src/utils/interface';
 
 import CartItem from 'src/components/Cart/CartItem';
 import CartTotal from 'src/components/Cart/CartTotal';

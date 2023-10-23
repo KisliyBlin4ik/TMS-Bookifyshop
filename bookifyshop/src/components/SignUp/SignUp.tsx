@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../Common/Input';
 import Button from '../Common/Button';
+import { getUserDataFromLocalStorage } from 'src/utils/helpers';
 
 const SignUp = () => {
 
@@ -15,9 +16,17 @@ const SignUp = () => {
     confirmPassword: '',
   });
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
+  const [registrationError, setRegistrationError] = useState(false);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    
+    setErrorMessages({
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    })
 
     if (!name || !email || !password || !confirmPassword) {
       setErrorMessages({
@@ -36,9 +45,7 @@ const SignUp = () => {
       confirmPassword,
     };
 
-    const getStorage = localStorage.getItem('users')
-
-    const userArr = getStorage !== null ? JSON.parse(getStorage) : [];
+    const userArr =  getUserDataFromLocalStorage('users');
 
     const isUserName = userArr.some((post: any) => post.name === formData.name);
     const isUserEmail = userArr.some((post: any) => post.email === formData.email);
@@ -46,15 +53,14 @@ const SignUp = () => {
     if ((!isUserName && !isUserEmail) && password === confirmPassword) {
       userArr.push(formData)
       localStorage.setItem('users', JSON.stringify(userArr));
+      setRegistrationError(false);
       setRegistrationSuccess(true);
     } else {
+      setRegistrationSuccess(false);
+      setRegistrationError(true);
       console.log('Ошибка: имя пользователя или адрес электронной почты уже существуют');
     }
   };
-
-  useEffect(()=>{
-
-  },[])
 
   return (
     <form id='5' onSubmit={handleSubmit}>
@@ -91,6 +97,7 @@ const SignUp = () => {
         children={errorMessages.confirmPassword && <p className="error">{errorMessages.confirmPassword}</p>}
         onChange={setConfirmPassword}
       />
+      {registrationError ? <p className='error-message'><strong>Error: </strong>Username or email address already exists</p> : ''}
       <Button type="submit">Sign Up</Button>
     </form>
   );

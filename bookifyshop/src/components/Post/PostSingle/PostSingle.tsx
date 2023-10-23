@@ -2,28 +2,24 @@ import React, { FC, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
+import { useNavigate } from 'react-router-dom';
 
-import { IAddCart, IAddFavorite, IPostItem } from 'src/interface/interface';
+import { IAddCart, IAddFavorite, IBookItem } from 'src/utils/interface';
 
-import {
-  ADD_TO_CART,
-  ADD_TO_CART_AGAIN,
-  ADD_TO_FAVORITES,
-  REMOVE_FROM_FAVORITES,
-} from 'src/actions/actions';
+import { ADD_TO_CART, ADD_TO_CART_AGAIN } from 'src/actions/changeCart';
+import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from 'src/actions/changeFavorites';
 
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
+
+import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
 import Button from 'src/components/Common/Button';
 import LabelText from 'src/components/Common/LabelText';
 import TabMenu from 'src/components/Common/TabMenu';
 import Rating from 'src/components/Common/Rating';
 
-import 'src/scss/App.scss';
-import { useNavigate } from 'react-router-dom';
-import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
-const PostSingle: FC<IPostItem> = (props) => {
+const PostSingle: FC<IBookItem> = (props) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();
 
@@ -34,9 +30,6 @@ const PostSingle: FC<IPostItem> = (props) => {
   const { ...state } = props;
 
   const [toggleState, setToggleState] = useState(1);
-  const [moreDetailsBtn, setMoreDetailsBtn] = useState(false);
-  console.log(moreDetailsBtn);
-  
 
   const addFavorite: IAddFavorite = { ...state };
 
@@ -67,9 +60,6 @@ const PostSingle: FC<IPostItem> = (props) => {
 
   const toggleTab = (index: number) => {
     setToggleState(index);
-  };
-  const moreDetails = (open: boolean) => {
-    setMoreDetailsBtn(open)
   };
 
   return (

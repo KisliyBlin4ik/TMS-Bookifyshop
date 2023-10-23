@@ -21,7 +21,7 @@ export interface IFormTemplate extends IPageTemplate {
   id: string;
 }
 
-export interface IPosts {
+export interface IBooks {
   image: string;
   isbn13: string;
   price: string;
@@ -30,7 +30,7 @@ export interface IPosts {
   url: string;
 }
 
-export interface IPostItem extends IPosts {
+export interface IBookItem extends IBooks {
   authors: string;
   desc: string;
   error: string;
@@ -44,10 +44,10 @@ export interface IPostItem extends IPosts {
   rating: string;
   year: string;
 }
-export interface IAddCart extends IPostItem {
+export interface IAddCart extends IBookItem {
   counter: number;
 }
-export interface IAddFavorite extends IPostItem {
+export interface IAddFavorite extends IBookItem {
 }
 
 export interface IButton {
@@ -78,4 +78,10 @@ export interface IRating {
 export interface IBurgerMenu {
   handleBurger: boolean;
   handleSwitchBurger: () => void;
+}
+
+export interface IPagination {
+  totalItems: number;
+  itemsPerPage: number;
+  onPageChange: (value: number) => void;
 }

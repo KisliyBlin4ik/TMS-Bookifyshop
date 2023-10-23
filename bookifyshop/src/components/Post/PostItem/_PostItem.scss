@@ -11,7 +11,7 @@
         object-fit: contain;
     }
 
-    .formPost__content {
+    &__content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -74,7 +74,7 @@
 
 @media (max-width: 540px) {
     .formPost {
-        .formPost__content {
+        &__content {
             .formPost__header {
                 .formPost__title {
                     min-height: auto;

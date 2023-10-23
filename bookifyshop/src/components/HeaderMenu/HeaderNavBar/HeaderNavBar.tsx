@@ -8,6 +8,7 @@ import { ReactComponent as UserIcon } from 'src/assets/icons/UserIcon.svg';
 import { ROUTE_ACCOUNT, ROUTE_CART, ROUTE_FAVORITES, ROUTE_HOME } from 'src/utils/routes';
 
 import 'src/scss/App.scss'
+import Burger from 'src/components/BurgerMenu/Burger';
 
 const HeaderNavBar = () => {
   const navigate = useNavigate();
@@ -23,6 +24,9 @@ const HeaderNavBar = () => {
             </li>
             <li>
                 <Link to={ROUTE_ACCOUNT}><UserIcon/></Link>
+            </li>
+            <li>
+                <Burger/>
             </li>
         </ul>
     </nav>

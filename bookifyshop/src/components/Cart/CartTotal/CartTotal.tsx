@@ -27,11 +27,11 @@ const CartTotal = () => {
   return (
     <div className="cartTotal">
       <div>
-        <LabelText text1="Sum total:" text2={`$${sumTotal}`} onChange={() => {}} />
-        <LabelText text1="VAT" text2={`$${vatTotal}`} onChange={() => {}} />
+        <LabelText text1="Sum total:" text2={`$${sumTotal}`} />
+        <LabelText text1="VAT" text2={`$${vatTotal}`} />
       </div>
       <div>
-        <LabelText text1="Total:" text2={`$${total}`} onChange={() => {}} />
+        <LabelText text1="Total:" text2={`$${total}`} />
       </div>
       <Button type="button">check out</Button>
     </div>

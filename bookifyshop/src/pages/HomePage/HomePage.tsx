@@ -24,11 +24,12 @@ const HomePage = () => {
 
   return (
     <>
+      {/* предложение о разделах */}
+      {/* сменить иконку */}
       <PageTemplate title="Home page" customClass="homePage" invisible>
         {post.map((postItem, index) => (
           <PostItem key={index} {...postItem} />
         ))}
-        {/* сделать пагинацию */}
       </PageTemplate>
     </>
   );

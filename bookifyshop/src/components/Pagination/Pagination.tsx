@@ -4,7 +4,7 @@ import { ReactComponent as ArrowLeft } from 'src/assets/icons/ArrowLeftIcon.svg'
 import { ReactComponent as ArrowRight } from 'src/assets/icons/ArrowRightIcon.svg';
 
 interface IPagination {
-  totalItems: any;
+  totalItems: number;
   itemsPerPage: number;
   onPageChange: (value: number) => void;
 }
@@ -15,7 +15,7 @@ const Pagination: FC<IPagination> = ({
   onPageChange,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const totalPages = Math.ceil(totalItems / itemsPerPage) > 100 ? 100 : Math.ceil(totalItems / itemsPerPage);
 
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= totalPages) {

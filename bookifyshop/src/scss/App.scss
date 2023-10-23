@@ -9,6 +9,8 @@
 @import '../components/Common/Rating/_Rating';
 @import '../components/Common/TabMenu/_TabMenu';
 
+@import '../components/BurgerMenu/Burger/_Burger';
+@import '../components/BurgerMenu/_BurgerMenu';
 @import '../components/Cart/CartItem/_CartItem';
 @import '../components/Cart/CartTotal/_CartTotal';
 @import '../components/Cart/CartCounter/_CartCounter';
@@ -16,6 +18,7 @@
 @import '../components/Footer/_Footer';
 @import '../components/HeaderMenu/HeaderLogo/_HeaderLogo';
 @import '../components/HeaderMenu/HeaderNavBar/_HeaderNavBar';
+@import '../components/HeaderMenu/HeaderSearch/HeaderSearch';
 @import '../components/HeaderMenu/_HeaderMenu';
 @import '../components/Loader/_Loader';
 @import '../components/PageTemplate/_PageTemplate';

@@ -28,4 +28,19 @@
         padding-bottom: 1px;
         border-bottom: 2px solid $font-color;
     }
+
+    .formTabMenu__text3 {
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: $font-color-2;
+            &:hover {
+                transition: 0.2s;
+                color: $font-color;
+            }
+        }
+    }
 }

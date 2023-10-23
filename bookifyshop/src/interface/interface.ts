@@ -37,7 +37,7 @@ export interface IPostItem extends IPosts {
   language: string;
   pages: string;
   pdf: {
-    FreeeBook: string;
+    'Free eBook': string;
   };
   publisher: string;
   rating: string;
@@ -59,7 +59,9 @@ export interface IButton {
 export interface ILabelText {
   text1: string;
   text2: string;
-  text3?: string;
+  text3?: string | ReactNode;
+}
+export interface ITabMenu extends ILabelText {
   onChange: (value: number) => void;
 }
 
@@ -70,4 +72,9 @@ export interface ICartCounter {
 
 export interface IRating {
   rating: string;
+}
+
+export interface IBurgerMenu {
+  handleBurger: boolean;
+  handleSwitchBurger: () => void;
 }

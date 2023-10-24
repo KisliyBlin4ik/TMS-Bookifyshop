@@ -24,7 +24,7 @@ import {
   ROUTE_SIGN_IN,
 } from './utils/routes';
 
-import 'src/css/App.css';
+import 'src/scss/App.scss';
 
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

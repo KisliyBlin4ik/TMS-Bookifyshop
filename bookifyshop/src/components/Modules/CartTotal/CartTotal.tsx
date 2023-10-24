@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import LabelText from '../../Elements/LabelText/LabelText';
-import Button from '../../Elements/Button';
+import Button from 'src/components/Elements/Button';
 
 const CartTotal = () => {
   const cart = useSelector(({ cart }) => cart);

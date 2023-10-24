@@ -18,7 +18,7 @@ import { SET_AUTHENTICATED } from 'src/actions/authenticated';
 
 import { ReactComponent as CloseIcon } from 'src/assets/icons/CloseIcon.svg';
 
-import Button from 'src/components/Elements/Button';
+import Button from '../../Elements/Button';
 import HeaderSearch from '../HeaderSearch';
 
 const BurgerMenu: FC<IBurgerMenu> = ({ handleBurger, handleSwitchBurger }) => {

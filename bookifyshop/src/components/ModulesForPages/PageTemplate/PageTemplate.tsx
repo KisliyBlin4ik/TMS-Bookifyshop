@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { IPageTemplate } from 'src/utils/interface';
 
 import HeaderMenu from '../HeaderMenu';
-import Footer from '../Footer';
+import Footer from '../../Elements/Footer';
 import Loader from '../../Elements/Loader';
-import Button from 'src/components/Elements/Button';
+import Button from '../../Elements/Button';
 
 import { ReactComponent as BackIcon } from 'src/assets/icons/Left.svg';
 

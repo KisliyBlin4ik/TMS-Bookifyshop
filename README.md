@@ -48,7 +48,7 @@ This will launch the development server, and you can access the application in y
 
 To create a production build of the application, use the following command: npm run build
 
-## nodejs v18.15.0 required
+## nodejs min v14.19.1 required
 
 ## Contributors
 

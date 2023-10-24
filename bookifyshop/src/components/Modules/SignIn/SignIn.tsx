@@ -5,8 +5,8 @@ import { AnyAction } from 'redux';
 import { useNavigate } from 'react-router-dom';
 
 
-import Input from '../../Elements/Input';
-import Button from '../../Elements/Button';
+import Input from 'src/components/Elements/Input';
+import Button from 'src/components/Elements/Button';
 import { SET_AUTHENTICATED } from 'src/actions/authenticated';
 import { getUserDataFromLocalStorage } from 'src/utils/helpers';
 

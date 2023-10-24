@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Input from '../../Elements/Input';
-import Button from '../../Elements/Button';
+import Input from 'src/components/Elements/Input';
+import Button from 'src/components/Elements/Button';
 import { getUserDataFromLocalStorage } from 'src/utils/helpers';
 
 const SignUp = () => {

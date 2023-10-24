@@ -4,7 +4,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-import { FETCH_POSTS } from './actions/actions';
+import { FETCH_BOOKS } from './actions/fetchBooks';
 
 import HomePage from './pages/HomePage';
 import BookPage from './pages/BookPage';
@@ -24,13 +24,15 @@ import {
   ROUTE_SIGN_IN,
 } from './utils/routes';
 
+import 'src/scss/App.scss';
+
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();
 
   useEffect(() => {
     navigate(ROUTE_HOME);
-    dispatch(FETCH_POSTS());
+    dispatch(FETCH_BOOKS());
   }, []);
 
   return (

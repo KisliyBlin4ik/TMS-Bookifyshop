@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import FormTemplate from 'src/components/Common/FormTemplate';
-import PageTemplate from 'src/components/PageTemplate';
-import SignIn from 'src/components/SignIn';
-import SignUp from 'src/components/SignUp';
-import TabMenu from 'src/components/Common/TabMenu';
+import FormTemplate from 'src/components/Elements/FormTemplate';
+import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
+import SignIn from 'src/components/Modules/SignIn';
+import SignUp from 'src/components/Modules/SignUp';
+import TabMenu from 'src/components/Elements/TabMenu';
 
 const SignInPage = () => {
   const [toggleState, setToggleState] = useState(1);

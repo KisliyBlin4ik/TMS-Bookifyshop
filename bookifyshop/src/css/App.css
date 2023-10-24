@@ -99,12 +99,84 @@ button:active {
   box-shadow: 0px 0px 12px 12px rgba(34, 60, 80, 0.2) inset;
 }
 
-.FormTemplate .FormTemplate__label {
+.formCounter {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  width: 168px;
+}
+.formCounter__counter {
+  font-family: "Bebas Neue", sans-serif;
+  line-height: 133%;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 56px;
+}
+.formCounter button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.FormTemplate__label {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
 }
 
+.logo {
+  cursor: pointer;
+}
+.logo a {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 41px;
+  color: rgb(49, 48, 55);
+}
+
+nav > ul {
+  display: flex;
+  gap: 8px;
+}
+nav > ul li {
+  position: relative;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 16px;
+}
+nav > ul li svg {
+  cursor: pointer;
+  transition: 0.2s;
+}
+nav > ul li svg:hover {
+  transition: 0.2s;
+  scale: 1.2;
+}
+nav > ul li svg:active {
+  scale: 1;
+}
+nav > ul > :not(:last-child) span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  min-width: 18px;
+  min-height: 18px;
+  border: 2px solid rgb(226, 200, 255);
+  border-radius: 10px;
+  color: rgb(49, 48, 55);
+  background-color: rgb(252, 133, 127);
+  font-size: 14px;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+@media (max-width: 800px) {
+  nav ul > :nth-last-child(2n+2) {
+    display: none;
+  }
+}
 .formInput {
   display: flex;
   flex-direction: column;
@@ -112,7 +184,7 @@ button:active {
   width: 100%;
   gap: 4px;
 }
-.formInput .formInput__label {
+.formInput__label {
   font-weight: 700;
   font-size: 1rem;
   line-height: 200%;
@@ -147,6 +219,80 @@ button:active {
     align-items: flex-start;
   }
 }
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 220px auto;
+}
+.sk-cube-grid .sk-cube1 {
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: rgb(226, 200, 255);
+  float: left;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    transform: scale3D(0, 0, 1);
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 0 72px 0;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+.pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  max-width: 68px;
+  background: rgba(255, 255, 255, 0);
+}
+.pagination span {
+  color: rgb(168, 168, 168);
+  line-height: 150%;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px;
+  cursor: pointer;
+}
+.pagination .active {
+  color: rgb(49, 48, 55);
+}
+
 .formRating {
   display: flex;
   gap: 8px;
@@ -180,7 +326,7 @@ button:active {
   padding-bottom: 1px;
   border-bottom: 2px solid rgb(49, 48, 55);
 }
-.formTabMenu .formTabMenu__text3 a {
+.formTabMenu__text3 a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,7 +334,7 @@ button:active {
   height: 100%;
   color: rgb(168, 168, 168);
 }
-.formTabMenu .formTabMenu__text3 a:hover {
+.formTabMenu__text3 a:hover {
   transition: 0.2s;
   color: rgb(49, 48, 55);
 }
@@ -201,14 +347,14 @@ button:active {
   width: 100%;
   height: 100%;
 }
-.burger .burger__icon {
+.burger__icon {
   position: relative;
   border: 1px solid rgb(49, 48, 55);
   width: 24px;
   border-radius: 10px;
   transition: all 0.1s ease 0s;
 }
-.burger .burger__icon::before, .burger .burger__icon::after {
+.burger__icon::before, .burger__icon::after {
   position: absolute;
   width: 24px;
   left: -1px;
@@ -218,21 +364,21 @@ button:active {
   border-radius: 10px;
   transition: all 0.3s ease 0s;
 }
-.burger .burger__icon::before {
+.burger__icon::before {
   top: 8px;
 }
-.burger .burger__icon::after {
+.burger__icon::after {
   bottom: 8px;
 }
-.burger .burger__icon.open::before {
+.burger__icon.open::before {
   transform: rotate(45deg);
   top: -1px;
 }
-.burger .burger__icon.open::after {
+.burger__icon.open::after {
   transform: rotate(-45deg);
   bottom: -1px;
 }
-.burger .burger__icon.open {
+.burger__icon.open {
   border: 1px solid rgba(171, 93, 192, 0);
 }
 
@@ -240,7 +386,7 @@ button:active {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   width: 360px;
@@ -258,14 +404,14 @@ button:active {
   transition: 0.2s;
   right: -100%;
 }
-.burgerMenu .burgerMenu__header {
+.burgerMenu__header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 104px;
   border-bottom: 1px solid rgb(231, 231, 231);
 }
-.burgerMenu .burgerMenu__content {
+.burgerMenu__content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -274,10 +420,10 @@ button:active {
   margin-top: 56px;
   flex-grow: 1;
 }
-.burgerMenu .burgerMenu__content > :nth-child(1n) {
+.burgerMenu__content > :nth-child(1n) {
   background: rgba(255, 255, 255, 0);
 }
-.burgerMenu .burgerMenu__footer {
+.burgerMenu__footer {
   margin: 56px 0;
 }
 
@@ -425,26 +571,6 @@ button:active {
     margin-bottom: 56px;
   }
 }
-.formCounter {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  width: 168px;
-}
-.formCounter .formCounter__counter {
-  font-family: "Bebas Neue", sans-serif;
-  line-height: 133%;
-  font-size: 1.5rem;
-  text-align: center;
-  width: 56px;
-}
-.formCounter button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0);
-}
-
 .formFavoriteItem {
   display: flex;
   justify-content: space-between;
@@ -574,53 +700,10 @@ button:active {
     height: 56px;
   }
 }
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px;
-  width: 100%;
-  min-height: 95px;
-  border-radius: 0 0 20px 20px;
-  font-size: 1rem;
-  background: rgb(226, 200, 255);
+#form-3 {
+  display: none;
 }
 
-.logo {
-  cursor: pointer;
-}
-.logo a {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 41px;
-  color: rgb(49, 48, 55);
-}
-
-nav ul {
-  display: flex;
-  gap: 8px;
-}
-nav ul li {
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 16px;
-}
-nav ul li svg {
-  cursor: pointer;
-  transition: 0.2s;
-}
-nav ul li svg:hover {
-  transition: 0.2s;
-  scale: 1.2;
-}
-nav ul li svg:active {
-  scale: 1;
-}
-
-@media (max-width: 800px) {
-  nav ul > :nth-last-child(2n+2) {
-    display: none;
-  }
-}
 #form-2,
 #form-3 {
   position: relative;
@@ -651,12 +734,257 @@ nav ul li svg:active {
 #form-3 .form-2__resetBtn {
   right: 11px;
 }
+#form-2 .autocomplete,
+#form-3 .autocomplete {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  background: white;
+  width: 100%;
+  box-shadow: 0px 0px 12px 0px rgba(34, 60, 80, 0.2);
+  z-index: 50;
+}
+#form-2 .autocomplete .autocomplete__item,
+#form-3 .autocomplete .autocomplete__item {
+  cursor: pointer;
+  padding: 10px;
+}
+#form-2 .autocomplete .autocomplete__item:hover,
+#form-3 .autocomplete .autocomplete__item:hover {
+  background: rgb(226, 200, 255);
+  transition: cubic-bezier(1, 0, 0, 1) 0.3s all;
+}
 
 @media (max-width: 800px) {
   #form-2 {
     display: none;
   }
+  #form-3 {
+    display: block;
+  }
 }
+.formPost {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 352px;
+  width: 100%;
+  height: 100%;
+}
+.formPost img {
+  max-height: 264px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.formPost__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  height: 100%;
+}
+.formPost__content .formPost__header .formPost__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  line-height: 133%;
+  min-height: 64px;
+}
+.formPost__content .formPost__header .formPost__publisher {
+  color: rgb(168, 168, 168);
+  font-size: 1rem;
+  line-height: 150%;
+}
+.formPost__content .formPost__footer {
+  display: flex;
+  justify-content: space-between;
+}
+.formPost__content .formPost__footer .formPost__price {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  line-height: 133%;
+}
+
+.formPost:nth-child(4n+1) img {
+  background-color: rgb(254, 233, 226);
+}
+
+.formPost:nth-child(4n+2) img {
+  background-color: rgb(202, 239, 240);
+}
+
+.formPost:nth-child(4n+3) img {
+  background-color: rgb(215, 228, 253);
+}
+
+.formPost:nth-child(4n+4) img {
+  background-color: rgb(244, 238, 253);
+}
+
+@media (max-width: 540px) {
+  .formPost__content .formPost__header .formPost__title {
+    min-height: auto;
+    margin-bottom: 8px;
+  }
+}
+.post-single__book-description {
+  display: flex;
+  justify-content: space-between;
+  gap: 128px;
+}
+.post-single__book-description .book-description__image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 544px;
+  width: 100%;
+  background-color: rgb(254, 233, 226);
+}
+.post-single__book-description .book-description__image .book-description__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56px;
+  height: 56px;
+  background-color: rgb(49, 48, 55);
+  cursor: auto;
+}
+.post-single__book-description .book-description__image .book-description__icon svg {
+  cursor: pointer;
+  transition: 0.2s;
+}
+.post-single__book-description .book-description__image .book-description__icon svg:hover {
+  transition: 0.2s;
+  scale: 1.2;
+}
+.post-single__book-description .book-description__image .book-description__icon svg:active {
+  scale: 1;
+}
+.post-single__book-description .book-description__image .book-description__iconStyle svg {
+  fill: rgb(252, 133, 127);
+}
+.post-single__book-description .book-description__image .book-description__iconStyle path {
+  stroke: rgb(252, 133, 127);
+}
+.post-single__book-description .book-description__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 448px;
+  width: 100%;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+.post-single__book-description .book-description__details .book-description__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+.post-single__book-description .book-description__details .book-description__price:first-child div {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  line-height: 150%;
+}
+.post-single__book-description .book-description__details .book-description__content {
+  padding-bottom: 99px;
+}
+.post-single__book-description .book-description__details .book-description__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+.post-single__book-description .book-description__details .book-description__btn > :nth-child(2) {
+  background: rgba(255, 255, 255, 0);
+  font-size: 1rem;
+  font-family: inherit;
+  height: 24px;
+  max-width: 150px;
+}
+.post-single__book-description .book-description__details .book-description__btn > :nth-child(2):active {
+  box-shadow: 0px 0px 12px 12px rgba(0, 145, 255, 0) inset;
+}
+.post-single__book-description .book-description__details .book-description__btn > :nth-child(2) p {
+  color: rgb(168, 168, 168);
+  cursor: not-allowed;
+}
+.post-single .formTabMenu {
+  justify-content: flex-start;
+  gap: 40px;
+  margin: 72px 0 0 0;
+  padding: 0;
+}
+.post-single .formTabMenu div {
+  max-width: 161px;
+  height: 48px;
+  font-size: 1rem;
+  line-height: 150%;
+  color: rgb(168, 168, 168);
+}
+.post-single .formTabMenu div:hover {
+  color: rgb(49, 48, 55);
+}
+.post-single .formTabMenu .active {
+  color: rgb(49, 48, 55);
+  border-bottom: 2px solid rgb(49, 48, 55);
+}
+.post-single__text {
+  padding: 49px 0;
+  color: rgb(49, 48, 55);
+  line-height: 200%;
+}
+
+@media (max-width: 800px) {
+  .post-single__book-description {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+  .post-single__book-description .book-description__image {
+    max-width: none;
+  }
+  .post-single__book-description .book-description__details {
+    max-width: none;
+  }
+  .post-single__book-description .book-description__details .book-description__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 36px;
+  }
+  .post-single__book-description .book-description__details .book-description__btn {
+    gap: 32px;
+  }
+}
+@media (max-width: 425px) {
+  .post-single__book-description .book-description__image img {
+    max-height: 272px;
+  }
+  .post-single__book-description .book-description__details .book-description__price {
+    padding: 40px 0 24px;
+  }
+  .post-single .formTabMenu {
+    margin: 54px 0 0 0;
+  }
+  .post-single__text {
+    padding: 32px 0;
+  }
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  width: 100%;
+  min-height: 95px;
+  border-radius: 0 0 20px 20px;
+  font-size: 1rem;
+  background: rgb(226, 200, 255);
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -668,53 +996,6 @@ header {
   background: rgb(226, 200, 255);
 }
 
-.sk-cube-grid {
-  width: 40px;
-  height: 40px;
-  margin: 220px auto;
-}
-.sk-cube-grid .sk-cube1 {
-  animation-delay: 0.2s;
-}
-.sk-cube-grid .sk-cube2 {
-  animation-delay: 0.3s;
-}
-.sk-cube-grid .sk-cube3 {
-  animation-delay: 0.4s;
-}
-.sk-cube-grid .sk-cube4 {
-  animation-delay: 0.1s;
-}
-.sk-cube-grid .sk-cube5 {
-  animation-delay: 0.2s;
-}
-.sk-cube-grid .sk-cube6 {
-  animation-delay: 0.3s;
-}
-.sk-cube-grid .sk-cube7 {
-  animation-delay: 0s;
-}
-.sk-cube-grid .sk-cube8 {
-  animation-delay: 0.1s;
-}
-.sk-cube-grid .sk-cube9 {
-  animation-delay: 0.2s;
-}
-.sk-cube-grid .sk-cube {
-  width: 33%;
-  height: 33%;
-  background-color: rgb(226, 200, 255);
-  float: left;
-  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-}
-@keyframes sk-cubeGridScaleDelay {
-  0%, 70%, 100% {
-    transform: scale3D(1, 1, 1);
-  }
-  35% {
-    transform: scale3D(0, 0, 1);
-  }
-}
 main {
   display: flex;
   flex-direction: column;
@@ -757,243 +1038,6 @@ main .main__header h1 {
     line-height: 137.5%;
   }
 }
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 48px 0 72px 0;
-  border-top: 1px solid rgb(231, 231, 231);
-}
-.pagination button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  max-width: 68px;
-  background: rgba(255, 255, 255, 0);
-}
-.pagination span {
-  color: rgb(168, 168, 168);
-  line-height: 150%;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 10px;
-  cursor: pointer;
-}
-.pagination .active {
-  color: rgb(49, 48, 55);
-}
-
-.formPost {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 352px;
-  width: 100%;
-  height: 100%;
-}
-.formPost img {
-  max-height: 264px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.formPost .formPost__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 40px;
-  height: 100%;
-}
-.formPost .formPost__content .formPost__header .formPost__title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1.5rem;
-  line-height: 133%;
-  min-height: 64px;
-}
-.formPost .formPost__content .formPost__header .formPost__publisher {
-  color: rgb(168, 168, 168);
-  font-size: 1rem;
-  line-height: 150%;
-}
-.formPost .formPost__content .formPost__footer {
-  display: flex;
-  justify-content: space-between;
-}
-.formPost .formPost__content .formPost__footer .formPost__price {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1.5rem;
-  line-height: 133%;
-}
-
-.formPost:nth-child(4n+1) img {
-  background-color: rgb(254, 233, 226);
-}
-
-.formPost:nth-child(4n+2) img {
-  background-color: rgb(202, 239, 240);
-}
-
-.formPost:nth-child(4n+3) img {
-  background-color: rgb(215, 228, 253);
-}
-
-.formPost:nth-child(4n+4) img {
-  background-color: rgb(244, 238, 253);
-}
-
-@media (max-width: 540px) {
-  .formPost .formPost__content .formPost__header .formPost__title {
-    min-height: auto;
-    margin-bottom: 8px;
-  }
-}
-.post-single .post-single__book-description {
-  display: flex;
-  justify-content: space-between;
-  gap: 128px;
-}
-.post-single .post-single__book-description .book-description__image {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 544px;
-  width: 100%;
-  background-color: rgb(254, 233, 226);
-}
-.post-single .post-single__book-description .book-description__image .book-description__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 56px;
-  height: 56px;
-  background-color: rgb(49, 48, 55);
-  cursor: auto;
-}
-.post-single .post-single__book-description .book-description__image .book-description__icon svg {
-  cursor: pointer;
-  transition: 0.2s;
-}
-.post-single .post-single__book-description .book-description__image .book-description__icon svg:hover {
-  transition: 0.2s;
-  scale: 1.2;
-}
-.post-single .post-single__book-description .book-description__image .book-description__icon svg:active {
-  scale: 1;
-}
-.post-single .post-single__book-description .book-description__image .book-description__iconStyle svg {
-  fill: rgb(252, 133, 127);
-}
-.post-single .post-single__book-description .book-description__image .book-description__iconStyle path {
-  stroke: rgb(252, 133, 127);
-}
-.post-single .post-single__book-description .book-description__details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 448px;
-  width: 100%;
-  border-top: 1px solid rgb(231, 231, 231);
-}
-.post-single .post-single__book-description .book-description__details .book-description__price {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 40px;
-}
-.post-single .post-single__book-description .book-description__details .book-description__price:first-child div {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 2.5rem;
-  line-height: 150%;
-}
-.post-single .post-single__book-description .book-description__details .book-description__content {
-  padding-bottom: 99px;
-}
-.post-single .post-single__book-description .book-description__details .book-description__btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-}
-.post-single .post-single__book-description .book-description__details .book-description__btn > :nth-child(2) {
-  background: rgba(255, 255, 255, 0);
-  font-size: 1rem;
-  font-family: inherit;
-  height: 24px;
-  max-width: 150px;
-}
-.post-single .post-single__book-description .book-description__details .book-description__btn > :nth-child(2):active {
-  box-shadow: 0px 0px 12px 12px rgba(0, 145, 255, 0) inset;
-}
-.post-single .post-single__book-description .book-description__details .book-description__btn > :nth-child(2) p {
-  color: rgb(168, 168, 168);
-  cursor: not-allowed;
-}
-.post-single .formTabMenu {
-  justify-content: flex-start;
-  gap: 40px;
-  margin: 72px 0 0 0;
-  padding: 0;
-}
-.post-single .formTabMenu div {
-  max-width: 161px;
-  height: 48px;
-  font-size: 1rem;
-  line-height: 150%;
-  color: rgb(168, 168, 168);
-}
-.post-single .formTabMenu div:hover {
-  color: rgb(49, 48, 55);
-}
-.post-single .formTabMenu .active {
-  color: rgb(49, 48, 55);
-  border-bottom: 2px solid rgb(49, 48, 55);
-}
-.post-single .post-single__text {
-  padding: 49px 0;
-  color: rgb(49, 48, 55);
-  line-height: 200%;
-}
-
-@media (max-width: 800px) {
-  .post-single .post-single__book-description {
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-  }
-  .post-single .post-single__book-description .book-description__image {
-    max-width: none;
-  }
-  .post-single .post-single__book-description .book-description__details {
-    max-width: none;
-  }
-  .post-single .post-single__book-description .book-description__details .book-description__content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-bottom: 36px;
-  }
-  .post-single .post-single__book-description .book-description__details .book-description__btn {
-    gap: 32px;
-  }
-}
-@media (max-width: 425px) {
-  .post-single .post-single__book-description .book-description__image img {
-    max-height: 272px;
-  }
-  .post-single .post-single__book-description .book-description__details .book-description__price {
-    padding: 40px 0 24px;
-  }
-  .post-single .formTabMenu {
-    margin: 54px 0 0 0;
-  }
-  .post-single .post-single__text {
-    padding: 32px 0;
-  }
-}
 #form_1 {
   display: flex;
   flex-direction: column;
@@ -1005,7 +1049,7 @@ main .main__header h1 {
   flex-direction: column;
   gap: 16px;
 }
-#form_1 .formTemplate .formTemplate__label {
+#form_1 .formTemplate__label {
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.5rem;
   line-height: 133%;
@@ -1142,7 +1186,7 @@ main .main__header h1 {
   line-height: 150%;
   color: rgb(168, 168, 168);
 }
-.searchPage .searchPage__content {
+.searchPage__content {
   display: grid;
   flex-grow: 1;
   grid-template-columns: repeat(3, 1fr);
@@ -1158,12 +1202,12 @@ main .main__header h1 {
   .searchPage > :nth-child(1) {
     display: none;
   }
-  .searchPage .searchPage__content {
+  .searchPage__content {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 540px) {
-  .searchPage .searchPage__content {
+  .searchPage__content {
     gap: 36px;
     grid-template-columns: repeat(1, 1fr);
   }
@@ -1232,6 +1276,11 @@ main .main__header h1 {
   line-height: 150%;
   background: rgb(244, 238, 253);
 }
+.signInPage .formTemplate .formSignIn .formSignIn__signUp form .error-message {
+  padding: 20px;
+  line-height: 150%;
+  background: rgb(252, 133, 127);
+}
 .signInPage .formTemplate .formSignIn .formSignIn__signUp form > :nth-last-child(1n+3) {
   margin-bottom: 16px;
 }
@@ -1268,15 +1317,6 @@ main .main__header h1 {
   }
   .signInPage .formTemplate .formSignIn .formSignIn__signUp {
     padding: 32px 0 0;
-  }
-  .signInPage .formTemplate .formSignIn .formSignIn__signUp form {
-    display: flex;
-    flex-direction: column;
-  }
-  .signInPage .formTemplate .formSignIn .formSignIn__signUp form .success-message {
-    padding: 20px;
-    line-height: 150%;
-    background: rgb(244, 238, 253);
   }
   .signInPage .formTemplate .formSignIn .formSignIn__signUp form > :nth-last-child(2) {
     margin-bottom: 32px;

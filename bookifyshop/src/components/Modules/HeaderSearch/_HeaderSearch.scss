@@ -1,0 +1,71 @@
+#form-3 {
+    display: none;
+}
+
+#form-2,
+#form-3 {
+    position: relative;
+    max-width: 544px;
+    width: 100%;
+
+    input {
+        &:focus {
+            box-shadow: 0 2px 4px #0000001a, 0 0 0 1px #0000001a, 0 12px 12px #0000000d;
+        }
+
+        padding: 14px 2.75rem 14px 3.25rem;
+    }
+
+    .form-2__Btn {
+        background: rgba(255, 255, 255, 0);
+        position: absolute;
+        top: 16px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .form-2__searchBtn {
+        left: 14px;
+    }
+
+    .form-2__resetBtn {
+        right: 11px;
+    }
+
+    .autocomplete {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        background: white;
+        width: 100%;
+        box-shadow: 0px 0px 12px 0px rgba(34, 60, 80, 0.2);
+        z-index: 50;
+
+        // overflow: auto;
+        // max-height: ;
+        // height: ;
+        .autocomplete__item {
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover {
+                background: $main-color;
+                transition: cubic-bezier(1, 0, 0, 1).3s all;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 800px) {
+    #form-2 {
+        display: none;
+    }
+
+    #form-3 {
+        display: block;
+    }
+}
+
+
+@media (max-width: 425px) {}

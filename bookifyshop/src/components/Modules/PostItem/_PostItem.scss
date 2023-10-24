@@ -1,0 +1,86 @@
+.formPost {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 352px;
+    width: 100%;
+    height: 100%;
+
+    img {
+        max-height: 264px;
+        object-fit: contain;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 40px;
+        height: 100%;
+
+        .formPost__header {
+            .formPost__title {
+                font-family: 'Bebas Neue', sans-serif;
+                font-size: 1.5rem;
+                line-height: 133%;
+                min-height: 64px;
+            }
+
+            .formPost__publisher {
+                color: $font-color-2;
+                font-size: 1rem;
+                line-height: 150%;
+            }
+
+        }
+
+        .formPost__footer {
+            display: flex;
+            justify-content: space-between;
+
+            .formPost__price {
+                font-family: 'Bebas Neue', sans-serif;
+                font-size: 1.5rem;
+                line-height: 133%;
+            }
+        }
+    }
+
+}
+
+.formPost:nth-child(4n + 1) {
+    img {
+        background-color: $post-bg-color;
+    }
+}
+
+.formPost:nth-child(4n + 2) {
+    img {
+        background-color: $post-bg-color-2;
+    }
+}
+
+.formPost:nth-child(4n + 3) {
+    img {
+        background-color: $post-bg-color-3;
+    }
+}
+
+.formPost:nth-child(4n + 4) {
+    img {
+        background-color: $post-bg-color-4;
+    }
+}
+
+@media (max-width: 540px) {
+    .formPost {
+        &__content {
+            .formPost__header {
+                .formPost__title {
+                    min-height: auto;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}

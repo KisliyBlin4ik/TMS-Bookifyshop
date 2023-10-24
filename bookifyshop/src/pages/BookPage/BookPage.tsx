@@ -1,24 +1,21 @@
 import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 
-import { IPostItem } from 'src/interface/interface';
+import { IBookItem } from 'src/utils/interface';
 
-import PageTemplate from 'src/components/PageTemplate';
-import PostSingle from 'src/components/Post/PostSingle';
+import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
+import PostSingle from 'src/components/Modules/PostSingle';
 
 const BookPage = () => {
   const { bookId } = useParams();
   const location = useLocation();
 
-  const postProps: IPostItem = location.state;
+  const postProps: IBookItem = location.state;
 
   return (
     <>
       <PageTemplate title={postProps.title} customClass="bookPage">
-        <PostSingle 
-              key={bookId}
-              {...postProps}
-              />
+        <PostSingle key={bookId} {...postProps} />
       </PageTemplate>
     </>
   );

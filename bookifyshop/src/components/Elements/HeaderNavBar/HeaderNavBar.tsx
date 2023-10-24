@@ -8,7 +8,7 @@ import { ReactComponent as UserIcon } from 'src/assets/icons/UserIcon.svg';
 
 import { ROUTE_ACCOUNT, ROUTE_CART, ROUTE_FAVORITES } from 'src/utils/routes';
 
-import Burger from 'src/components/BurgerMenu/Burger';
+import Burger from 'src/components/Modules/Burger';
 
 const HeaderNavBar = () => {
 

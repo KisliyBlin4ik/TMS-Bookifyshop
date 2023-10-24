@@ -12,8 +12,8 @@ import { REMOVE_FROM_CART } from 'src/actions/changeCart';
 
 import { ReactComponent as DeleteIcon } from 'src/assets/icons/DeleteIcon.svg';
 
-import Button from '../../Common/Button';
-import CartCounter from '../CartCounter';
+import Button from 'src/components/Elements/Button';
+import CartCounter from 'src/components/Elements/CartCounter';
 
 import { calculateTotalCost } from 'src/utils/helpers';
 

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { IBookItem } from 'src/utils/interface';
 import { ROUTE_BOOK } from 'src/utils/routes';
 
-import Rating from '../../Common/Rating';
+import Rating from '../../Elements/Rating';
 
 const PostItem: FC<IBookItem> = (props) => {
   const navigate = useNavigate();

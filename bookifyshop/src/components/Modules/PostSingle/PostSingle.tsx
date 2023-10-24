@@ -13,10 +13,10 @@ import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.sv
 
 import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
-import Button from 'src/components/Common/Button';
-import LabelText from 'src/components/Common/LabelText';
-import TabMenu from 'src/components/Common/TabMenu';
-import Rating from 'src/components/Common/Rating';
+import Button from 'src/components/Elements/Button';
+import LabelText from 'src/components/Elements/LabelText';
+import TabMenu from 'src/components/Elements/TabMenu';
+import Rating from 'src/components/Elements/Rating';
 
 
 const PostSingle: FC<IBookItem> = (props) => {

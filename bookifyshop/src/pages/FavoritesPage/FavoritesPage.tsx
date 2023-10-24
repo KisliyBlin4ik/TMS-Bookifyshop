@@ -8,8 +8,8 @@ import { IAddFavorite } from 'src/utils/interface';
 
 import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
-import PageTemplate from 'src/components/PageTemplate';
-import FavoriteItem from 'src/components/Favorite/FavoriteItem';
+import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
+import FavoriteItem from 'src/components/Modules/FavoriteItem';
 
 const FavoritesPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

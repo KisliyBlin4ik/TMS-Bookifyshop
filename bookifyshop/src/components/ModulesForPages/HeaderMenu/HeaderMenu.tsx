@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderLogo from './HeaderLogo';
-import HeaderNavBar from './HeaderNavBar';
-import HeaderSearch from './HeaderSearch';
+import HeaderLogo from '../../Elements/HeaderLogo';
+import HeaderNavBar from '../../Elements/HeaderNavBar';
+import HeaderSearch from '../../Modules/HeaderSearch';
 
 const HeaderMenu = () => {
   return (

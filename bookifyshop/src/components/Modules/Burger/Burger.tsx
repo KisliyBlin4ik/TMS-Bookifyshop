@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BurgerMenu from '../BurgerMenu';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 const Burger = () => {
   const [handleBurger, setHandleBurger] = useState(false);

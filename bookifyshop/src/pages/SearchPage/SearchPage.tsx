@@ -8,9 +8,9 @@ import { SEARCH_ON_PAGE } from 'src/actions/search';
 
 import { IBookItem } from 'src/utils/interface';
 
-import PageTemplate from 'src/components/PageTemplate';
-import PostItem from 'src/components/Post/PostItem';
-import Pagination from 'src/components/Pagination';
+import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
+import PostItem from 'src/components/Modules/PostItem';
+import Pagination from 'src/components/Elements/Pagination';
 
 const SearchPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

@@ -7,8 +7,8 @@ import { IBookItem, IBooks } from 'src/utils/interface';
 
 import { FETCH_BOOK } from 'src/actions/fetchBook';
 
-import PageTemplate from 'src/components/PageTemplate';
-import PostItem from 'src/components/Post/PostItem';
+import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
+import PostItem from 'src/components/Modules/PostItem';
 
 const HomePage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

@@ -3,10 +3,10 @@ import { AnyAction } from 'redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 
-import Button from 'src/components/Common/Button';
-import Input from 'src/components/Common/Input';
-import PageTemplate from 'src/components/PageTemplate';
-import FormTemplate from 'src/components/Common/FormTemplate';
+import Button from 'src/components/Elements/Button';
+import Input from 'src/components/Elements/Input';
+import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
+import FormTemplate from 'src/components/Elements/FormTemplate';
 
 import { useNavigate } from 'react-router-dom';
 import { ROUTE_SIGN_IN } from 'src/utils/routes';

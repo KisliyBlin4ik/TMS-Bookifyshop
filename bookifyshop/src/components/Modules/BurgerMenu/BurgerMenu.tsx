@@ -18,8 +18,8 @@ import { SET_AUTHENTICATED } from 'src/actions/authenticated';
 
 import { ReactComponent as CloseIcon } from 'src/assets/icons/CloseIcon.svg';
 
-import Button from '../Common/Button';
-import HeaderSearch from '../HeaderMenu/HeaderSearch';
+import Button from '../../Elements/Button';
+import HeaderSearch from '../HeaderSearch';
 
 const BurgerMenu: FC<IBurgerMenu> = ({ handleBurger, handleSwitchBurger }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

@@ -7,9 +7,9 @@ import { IAddFavorite } from 'src/utils/interface';
 
 import { ReactComponent as FavoriteIcon } from 'src/assets/icons/FavoriteIcon.svg';
 
-import Rating from 'src/components/Common/Rating';
+import Rating from 'src/components/Elements/Rating';
 
-import Button from 'src/components/Common/Button';
+import Button from 'src/components/Elements/Button';
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';

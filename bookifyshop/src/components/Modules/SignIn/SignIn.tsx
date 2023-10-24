@@ -31,18 +31,15 @@ const SignIn = () => {
     };
    
     const userArr = getUserDataFromLocalStorage('users');
-    console.log(userArr);
     
     const isUserArr = userArr.some((post: any) => post.email === formData.email && post.password === formData.password);
 
     if (isUserArr) {
-      console.log('loginOK');
       dispatch(SET_AUTHENTICATED(true))
       localStorage.setItem('user', JSON.stringify(formData));
       goBack()
     } else {
       setSignInError(true)
-      console.log('error email or pass');
     }
   };
 

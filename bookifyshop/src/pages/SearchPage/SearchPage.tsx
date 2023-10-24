@@ -20,10 +20,11 @@ const SearchPage = () => {
   const itemsPerPage = 10;
   const searchOnPage: IBookItem[] = useSelector(({ searchOnPage }) => searchOnPage);
   const searchTotal = useSelector(({ search }) => search);
+  console.log(searchTotal);
   
   let total = 0;
   if (searchTotal.total) {
-    total = searchTotal.total > 100 ? 100 : searchTotal.total
+    total = searchTotal.total > 100 ? 1000 : searchTotal.total
   }
 
   const handlePageChange = (newPage: number) => {

@@ -16,6 +16,7 @@ const SignIn = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [signInError, setSignInError] = useState(false);
 
   function goBack() {
     navigate(-1);
@@ -30,6 +31,8 @@ const SignIn = () => {
     };
    
     const userArr = getUserDataFromLocalStorage('users');
+    console.log(userArr);
+    
     const isUserArr = userArr.some((post: any) => post.email === formData.email && post.password === formData.password);
 
     if (isUserArr) {
@@ -38,12 +41,14 @@ const SignIn = () => {
       localStorage.setItem('user', JSON.stringify(formData));
       goBack()
     } else {
+      setSignInError(true)
       console.log('error email or pass');
     }
   };
 
   return (
     <form id='4' onSubmit={handleSubmit}>
+      {signInError ? <p className='error-message'>Incorrect username or password.</p> : ''}
       <Input
         type="text"
         value={email}

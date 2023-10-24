@@ -19,7 +19,7 @@
 
     &.close {
         transition: 0.2s;
-        right: -100%;
+        right: -200%;
     }
 
     &__header {
@@ -55,7 +55,7 @@
 
         &.close {
             right: 0;
-            top: -100%;
+            top: -200%;
         }
     }
 }

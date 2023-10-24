@@ -38,12 +38,8 @@ const HeaderSearch = ({formID}: any) => {
 
   const itemClickHandler = (e: any) => {
     setIsOpen(false)
-    console.log(e.target);
-    
     const itemIsbn13 = red.find((item: any) => item.title === e.target.textContent)
-    console.log(itemIsbn13);
     navigate(`${ROUTE_BOOK}/${itemIsbn13.isbn13}`, { state: itemIsbn13 });
-    
   }
 
   const inputClickHandle = () => {

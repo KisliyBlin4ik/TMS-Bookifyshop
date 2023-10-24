@@ -58,7 +58,6 @@ const SignUp = () => {
     } else {
       setRegistrationSuccess(false);
       setRegistrationError(true);
-      console.log('Ошибка: имя пользователя или адрес электронной почты уже существуют');
     }
   };
 

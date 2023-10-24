@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { FETCH_BOOKS } from './actions/fetchBooks';
 
@@ -28,10 +28,8 @@ import 'src/scss/App.scss';
 
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
-  const navigate = useNavigate();
 
   useEffect(() => {
-    navigate(ROUTE_HOME);
     dispatch(FETCH_BOOKS());
   }, []);
 
@@ -39,6 +37,7 @@ function App() {
     <div className="wrapper">
       <div className="app">
         <Routes>
+          <Route path='/' element={<Navigate to={ROUTE_HOME}/>}></Route>
           <Route path={ROUTE_HOME} element={<HomePage />}></Route>
           <Route path={ROUTE_SEARCH_PAGE} element={<SearchPage />}></Route>
           <Route path={ROUTE_BOOK_PAGE} element={<BookPage />}></Route>

@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 
 import { IPageTemplate } from 'src/utils/interface';
 
+import './_FormTemplate.scss';
+
 const FormTemplate: FC<IPageTemplate> = ({ customClass, title, children }) => {
   return (
     <div

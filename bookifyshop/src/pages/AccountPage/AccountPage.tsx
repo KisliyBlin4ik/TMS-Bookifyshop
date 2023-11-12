@@ -13,6 +13,8 @@ import { ROUTE_SIGN_IN } from 'src/utils/routes';
 
 import { findUserInStorage } from 'src/utils/helpers';
 
+import './_AccountPage.scss';
+
 const AccountPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();

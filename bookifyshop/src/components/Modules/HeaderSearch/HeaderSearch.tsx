@@ -14,6 +14,8 @@ import { SEARCH_WITH_AUTOSUGGEST } from 'src/actions/search';
 import Input from 'src/components/Elements/Input';
 import Button from 'src/components/Elements/Button';
 
+import './_HeaderSearch.scss';
+
 const HeaderSearch = ({formID}: any) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();

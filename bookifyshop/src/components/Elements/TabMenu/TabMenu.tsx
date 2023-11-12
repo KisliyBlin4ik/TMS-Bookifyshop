@@ -2,6 +2,8 @@ import React, { FC, useState } from 'react';
 
 import { ITabMenu } from 'src/utils/interface';
 
+import './_TabMenu.scss'
+
 const TabMenu: FC<ITabMenu> = ({ text1, text2, text3, onChange }) => {
   const [toggleState, setToggleState] = useState(1);
 

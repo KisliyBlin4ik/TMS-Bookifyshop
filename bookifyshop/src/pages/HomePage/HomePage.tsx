@@ -10,6 +10,8 @@ import { FETCH_BOOK } from 'src/actions/fetchBook';
 import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
 import PostItem from 'src/components/Modules/PostItem';
 
+import './_HomePage.scss';
+
 const HomePage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 

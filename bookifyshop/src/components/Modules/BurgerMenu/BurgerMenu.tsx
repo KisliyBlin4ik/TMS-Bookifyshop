@@ -21,6 +21,8 @@ import { ReactComponent as CloseIcon } from 'src/assets/icons/CloseIcon.svg';
 import Button from 'src/components/Elements/Button';
 import HeaderSearch from '../HeaderSearch';
 
+import './_BurgerMenu.scss';
+
 const BurgerMenu: FC<IBurgerMenu> = ({ handleBurger, handleSwitchBurger }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();

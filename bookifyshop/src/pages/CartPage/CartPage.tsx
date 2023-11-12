@@ -9,6 +9,8 @@ import CartItem from 'src/components/Modules/CartItem';
 import CartTotal from 'src/components/Modules/CartTotal';
 import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
 
+import './_CartPage.scss';
+
 const CartPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 

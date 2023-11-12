@@ -6,6 +6,8 @@ import { ReactComponent as ArrowRight } from 'src/assets/icons/ArrowRightIcon.sv
 import { IPagination } from 'src/utils/interface';
 import { generatePageNumbers } from 'src/utils/helpers';
 
+import './_Pagination.scss';
+
 const Pagination: FC<IPagination> = ({
   totalItems,
   itemsPerPage,

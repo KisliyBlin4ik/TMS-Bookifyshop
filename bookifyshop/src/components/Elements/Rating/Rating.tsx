@@ -5,6 +5,8 @@ import { IRating } from 'src/utils/interface';
 import { ReactComponent as EmptyStarIcon } from 'src/assets/icons/EmptyStarIcon.svg';
 import { ReactComponent as FilledStarIcon } from 'src/assets/icons/FilledStarIcon.svg';
 
+import './_Rating.scss'
+
 const Rating: FC<IRating> = ({ rating }) => {
   const maxRating = [1, 2, 3, 4, 5];
 

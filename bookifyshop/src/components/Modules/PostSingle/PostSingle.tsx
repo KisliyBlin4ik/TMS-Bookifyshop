@@ -18,6 +18,7 @@ import LabelText from 'src/components/Elements/LabelText';
 import TabMenu from 'src/components/Elements/TabMenu';
 import Rating from 'src/components/Elements/Rating';
 
+import './_PostSingle.scss';
 
 const PostSingle: FC<IBookItem> = (props) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

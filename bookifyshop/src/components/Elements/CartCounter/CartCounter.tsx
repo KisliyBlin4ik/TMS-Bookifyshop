@@ -9,6 +9,8 @@ import { DECREMENT_COUNTER_TO_CART, INCREMENT_COUNTER_TO_CART } from 'src/action
 import { ReactComponent as Plus } from 'src/assets/icons/PlusIcon.svg';
 import { ReactComponent as Minus } from 'src/assets/icons/MinusIcon.svg';
 
+import './_CartCounter.scss';
+
 const CartCounter: FC<ICartCounter> = ({ counter, isbn13 }) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
 

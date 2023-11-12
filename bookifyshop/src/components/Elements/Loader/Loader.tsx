@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './_Loader.scss';
+
 const Loader = () => {
   return (
     <div className="sk-cube-grid">

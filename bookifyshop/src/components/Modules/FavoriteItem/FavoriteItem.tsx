@@ -15,6 +15,8 @@ import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { REMOVE_FROM_FAVORITES } from 'src/actions/changeFavorites';
 
+import './_FavoriteItem.scss';
+
 const FavoriteItem: FC<IAddFavorite> = (props) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();

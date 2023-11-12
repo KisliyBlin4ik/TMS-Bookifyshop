@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { ILabelText } from 'src/utils/interface';
 
+import './_LabelText.scss';
+
 const LabelText: FC<ILabelText> = ({ text1, text2, text3 }) => {
   return (
     <div className="labelText__detalise">

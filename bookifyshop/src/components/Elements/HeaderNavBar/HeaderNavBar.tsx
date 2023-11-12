@@ -10,6 +10,8 @@ import { ROUTE_ACCOUNT, ROUTE_CART, ROUTE_FAVORITES } from 'src/utils/routes';
 
 import Burger from 'src/components/Modules/Burger';
 
+import './_HeaderNavBar.scss';
+
 const HeaderNavBar = () => {
 
   const searchTotal = useSelector(({ cart }) => cart);

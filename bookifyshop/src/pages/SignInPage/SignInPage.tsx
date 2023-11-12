@@ -6,6 +6,8 @@ import SignIn from 'src/components/Modules/SignIn';
 import SignUp from 'src/components/Modules/SignUp';
 import TabMenu from 'src/components/Elements/TabMenu';
 
+import './_SignInPage.scss';
+
 const SignInPage = () => {
   const [toggleState, setToggleState] = useState(1);
 

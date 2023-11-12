@@ -17,6 +17,8 @@ import CartCounter from 'src/components/Elements/CartCounter';
 
 import { calculateTotalCost } from 'src/utils/helpers';
 
+import './_CartItem.scss';
+
 const CartItem: FC<IAddCart> = (props) => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate();

@@ -12,6 +12,8 @@ import PageTemplate from 'src/components/ModulesForPages/PageTemplate';
 import PostItem from 'src/components/Modules/PostItem';
 import Pagination from 'src/components/Elements/Pagination';
 
+import './_SearchPage.scss';
+
 const SearchPage = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const { book } = useParams();

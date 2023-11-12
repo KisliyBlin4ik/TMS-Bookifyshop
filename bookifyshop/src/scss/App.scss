@@ -2,38 +2,6 @@
 @import './_colors';
 @import './_reset';
 
-@import '../components/Elements/Button/_Button';
-@import '../components/Elements/CartCounter/_CartCounter';
-@import '../components/Elements/FormTemplate/_FormTemplate';
-@import '../components/Elements/HeaderLogo/_HeaderLogo';
-@import '../components/Elements/HeaderNavBar/_HeaderNavBar';
-@import '../components/Elements/Input/_Input';
-@import '../components/Elements/LabelText/_LabelText';
-@import '../components/Elements/Loader/_Loader';
-@import '../components/Elements/Pagination/_Pagination';
-@import '../components/Elements/Rating/_Rating';
-@import '../components/Elements/TabMenu/_TabMenu';
-
-@import '../components/Modules/Burger/_Burger';
-@import '../components/Modules/BurgerMenu/_BurgerMenu';
-@import '../components/Modules/CartItem/_CartItem';
-@import '../components/Modules/CartTotal/_CartTotal';
-@import '../components/Modules/FavoriteItem/_FavoriteItem';
-@import '../components/Modules/HeaderSearch/_HeaderSearch';
-@import '../components/Modules/PostItem/_PostItem';
-@import '../components/Modules/PostSingle/_PostSingle';
-
-@import '../components/ModulesForPages/Footer/_Footer';
-@import '../components/ModulesForPages/HeaderMenu/_HeaderMenu';
-@import '../components/ModulesForPages/PageTemplate/_PageTemplate';
-
-@import '../pages/AccountPage/_AccountPage';
-@import '../pages/CartPage/_CartPage';
-@import '../pages/FavoritesPage/_FavoritePage';
-@import '../pages/HomePage/_HomePage';
-@import '../pages/SearchPage/_SearchPage';
-@import '../pages/SignInPage/_SignInPage';
-
 .wrapper {
     overflow-x: hidden;
     background-color: $wrapper-color;

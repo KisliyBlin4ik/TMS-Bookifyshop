@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import LabelText from '../../Elements/LabelText/LabelText';
 import Button from 'src/components/Elements/Button';
 
+import './_CartTotal.scss';
+
 const CartTotal = () => {
   const cart = useSelector(({ cart }) => cart);
 

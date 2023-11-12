@@ -11,6 +11,8 @@ import Button from 'src/components/Elements/Button';
 
 import { ReactComponent as BackIcon } from 'src/assets/icons/Left.svg';
 
+import './_PageTemplate.scss';
+
 const PageTemplate: FC<IPageTemplate> = ({
   title,
   customClass,

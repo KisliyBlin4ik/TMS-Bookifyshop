@@ -6,6 +6,8 @@ import { ROUTE_BOOK } from 'src/utils/routes';
 
 import Rating from '../../Elements/Rating';
 
+import './_PostItem.scss';
+
 const PostItem: FC<IBookItem> = (props) => {
   const navigate = useNavigate();
 

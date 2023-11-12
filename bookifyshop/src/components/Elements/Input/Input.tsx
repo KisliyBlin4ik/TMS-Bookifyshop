@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 
 import { IInput } from 'src/utils/interface';
 
+import './_Input.scss';
+
 const Input: FC<IInput> = ({ type = 'text', placeholder = '', value, label, children, onChange, onClick }) => {
   return (
     <div className={label ? `formInput formInput__${label}` : 'formInput'}>
